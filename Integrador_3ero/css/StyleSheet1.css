@@ -1,0 +1,610 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+}
+
+header {
+    background-color: #1B565A;
+    color: white;
+    text-align: center;
+    width: 100%;
+    /* Ocupa todo el ancho de la página */
+    position: fixed;
+    /* Permite que el header quede fijo en la parte superior */
+    top: 0;
+    /* Asegura que esté anclado a la parte superior */
+    z-index: 9999;
+    /* Evita que otros elementos lo cubran */
+    height: 8%;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    overflow: hidden;
+    height: 10vh;
+}
+
+.sidebar {
+    background-color: #004b5e;
+    color: white;
+    height: 100vh;
+    padding: 20px;
+    height: calc(100vh - 55px);
+    top: 55px;
+    position: fixed;
+    width: 250px;
+}
+
+    .sidebar a {
+        color: white;
+        text-decoration: none;
+        font-size: 1rem;
+        margin: 15px 0;
+        display: block;
+        transition: color 0.3s;
+    }
+
+        .sidebar a:hover {
+            color: #ff8800;
+        }
+
+    .sidebar .icon {
+        font-size: 1.5rem;
+        margin-right: 10px;
+    }
+
+.main-content {
+    margin-left: 250px;
+    padding: 20px;
+}
+
+.welcome-banner {
+    background-image: url('Resources/Rectangle 39.jpg');
+    /* Reemplaza con la ruta de tu imagen */
+    background-size: cover;
+    /* Ajusta la imagen para que cubra completamente el área */
+    background-position: center;
+    /* Centra la imagen */
+    color: white;
+    /* Asegura que el texto sea visible sobre la imagen */
+    padding: 1px 1px;
+    /* Añade espacio interno para que el texto tenga margen */
+    text-align: center;
+    /* Centra el texto dentro del div */
+    border-radius: 10px;
+    /* (Opcional) Bordes redondeados para mejor estética */
+    margin: 20px;
+    /* Añade un margen para separar este bloque del resto */
+    margin-top: 80px;
+    overflow: hidden;
+    position: relative;
+}
+
+.banner-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta la imagen para cubrir todo el contenedor */
+}
+
+.banner-text {
+    position: absolute;
+    top: 50%; /* Centra el texto verticalmente */
+    left: 50%; /* Centra el texto horizontalmente */
+    transform: translate(-50%, -50%); /* Ajusta el texto para que esté perfectamente centrado */
+    color: white; /* Color del texto */
+    font-size: 3rem; /* Tamaño del texto */
+    z-index: 1000; /* Asegura que el texto esté encima de la imagen */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Agrega un efecto de sombra para mejor visibilidad */
+}
+
+.container {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+.row-cols-4 {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.row-cols-2 {
+    width: 50%;
+    height: 50%;
+}
+
+.card {
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+    .card:hover {
+        transform: scale(1.05);
+        /*/Agranda ligeramente la tarjeta */
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+        /* Mayor profundidad*/
+    }
+
+.row .col {
+    flex: 1 1 calc(50% - 10px);
+    /* 2 tarjetas por fila */
+    max-width: calc(50% - 10px);
+}
+
+.card-body {
+    padding: 15px;
+}
+
+/* Espaciado entre tarjetas principales y secundarias */
+.d-flex {
+    gap: 20px;
+}
+
+.card-body i {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.card.yellow {
+    background-color: #FFEB3B;
+}
+
+.card.cyan {
+    background-color: #00BCD4;
+    color: #fff;
+}
+
+.card.blue {
+    background-color: #2196F3;
+    color: #fff;
+}
+
+.card.green {
+    background-color: #4CAF50;
+    color: #fff;
+}
+
+.card h6 {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.card p {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* Estilos para las secciones de la derecha */
+.card-body h5 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.card-body ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+    .card-body ul li {
+        margin-bottom: 10px;
+    }
+
+.card-body button {
+    width: 100%;
+}
+
+/* Estilos generales */
+.row-cols-2 > .col {
+    padding: 10px;
+}
+
+.g-2 {
+    gap: 15px;
+}
+
+.mt-4 {
+    margin-top: 30px;
+}
+
+.ms-3 {
+    margin-left: 20px;
+}
+
+.w-25 {
+    width: 25%;
+}
+
+.w-50 {
+    width: 50%;
+}
+
+footer {
+    background-color: #004b5e;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+.section {
+    display: none;
+    padding-top: 30px;
+    /* Oculta todas las secciones por defecto */
+}
+
+
+.row-cols-2 .card {
+    margin: 2px;
+    /* Reduce aún más el margen entre tarjetas */
+    padding: 5px;
+    /* Reduce el relleno interno */
+    width: calc(150% - 30px);
+    /* Ajusta el ancho para que entren más juntas */
+    max-width: 200px;
+    /* Reduce el tamaño máximo */
+    min-height: 180px;
+    /* Reduce la altura mínima */
+    right: 30%;
+}
+
+
+
+.row-cols-2 {
+    display: flex;
+    flex-wrap: wrap;
+    /* Permite que las tarjetas se ajusten en filas */
+    justify-content: center;
+    /* Centra las tarjetas horizontalmente */
+    gap: 3px;
+    /* Reduce el espaciado entre tarjetas */
+    margin: 0 auto;
+    /* Centra el contenedor */
+    width: 40%;
+}
+
+
+
+    .row-cols-2 .card-body i {
+        font-size: 30px;
+        /* Reduce el tamaño de los íconos */
+    }
+
+    .row-cols-2 .card-body h6 {
+        font-size: 20px;
+        /* Reduce el tamaño del texto del título */
+        margin: 3px 0;
+        /* Reduce el margen superior e inferior */
+    }
+
+    .row-cols-2 .card-body p {
+        font-size: 30px;
+        /* Reduce el tamaño del número */
+        font-weight: normal;
+        margin: 0;
+    }
+
+
+.derecha {
+    display: grid;
+    /* Cambia a grid para organizar el contenido */
+    grid-template-columns: repeat(2, 1fr);
+    /* Define dos columnas del mismo tamaño */
+    gap: 15px;
+    /* Espaciado entre filas y columnas */
+    max-width: 400px;
+    /* Ancho total del contenedor */
+    margin: 0 auto;
+    /* Centra el contenedor */
+}
+
+    .derecha .card {
+        padding: 10px;
+        width: 300px;
+        right: 50%;
+    }
+
+    .derecha .card-body {
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        /* Espaciado entre elementos internos */
+        justify-content: space-between;
+        /* Espacio uniforme en el contenido interno */
+    }
+
+
+        .derecha .card-body h5 {
+            font-size: 16px;
+            /* Tamaño del título */
+            font-weight: bold;
+            color: #333;
+            /* Color oscuro para el texto */
+            margin: 0;
+            border-bottom: 1px solid #ccc;
+            /* Línea divisora debajo del título */
+            padding-bottom: 5px;
+        }
+
+        .derecha .card-body ul {
+            list-style: none;
+            /* Elimina los puntos de lista */
+            padding: 0;
+            margin: 0;
+        }
+
+            .derecha .card-body ul li {
+                font-size: 14px;
+                /* Tamaño del texto */
+                color: #555;
+                /* Color gris oscuro */
+                display: flex;
+                align-items: center;
+                gap: 5px;
+                /* Espacio entre iconos y texto */
+                padding: 5px 0;
+                /* Espaciado vertical entre elementos */
+                border-bottom: 1px solid #eee;
+                /* Línea divisora entre elementos */
+            }
+
+                .derecha .card-body ul li:last-child {
+                    border-bottom: none;
+                    /* Quita la línea del último elemento */
+                }
+
+                .derecha .card-body ul li i {
+                    font-size: 18px;
+                    /* Tamaño de los íconos */
+                    color: #007bff;
+                    /* Color azul para los íconos */
+                }
+
+        .derecha .card-body button {
+            background-color: #004b5e;
+            /* Fondo azul oscuro */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            text-align: center;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.3s;
+        }
+
+            .derecha .card-body button:hover {
+                background-color: #006d88;
+                /* Color más claro al pasar el mouse */
+            }
+
+
+.form-container {
+    background-color: #4a90e2;
+    padding: 20px;
+    border-radius: 10px;
+    width: 500px;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+    .form-container h2 {
+        text-align: left;
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        color: #000;
+    }
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+    .form-group label {
+        display: block;
+        font-size: 16px;
+        font-weight: bold;
+        color: #000;
+        margin-bottom: 5px;
+    }
+
+    .form-group select,
+    .form-group input,
+    .form-group textarea {
+        width: 100%;
+        padding: 10px;
+        font-size: 14px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+
+    .form-group textarea {
+        resize: none;
+        height: 100px;
+    }
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+    .buttons .image-preview {
+        width: 100px;
+        height: 100px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-image: url('https://via.placeholder.com/100'); /* Reemplaza con tu imagen */
+        background-size: cover;
+        background-position: center;
+    }
+
+    .buttons button {
+        padding: 10px 20px;
+        font-size: 14px;
+        font-weight: bold;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        color: white;
+    }
+
+    .buttons .select-button {
+        background-color: #004b5e;
+    }
+
+        .buttons .select-button:hover {
+            background-color: #006d88;
+        }
+
+    .buttons .view-button {
+        background-color: #007bff;
+    }
+
+        .buttons .view-button:hover {
+            background-color: #0056b3;
+        }
+
+.submit-button {
+    width: 100%;
+    background-color: #004b5e;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    padding: 15px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+    .submit-button:hover {
+        background-color: #006d88;
+    }
+
+h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.filtros {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+    .filtros input[type="text"],
+    .filtros select {
+        padding: 8px;
+        font-size: 14px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        width: 150px;
+        box-sizing: border-box;
+    }
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+thead {
+    background-color: #009688;
+    color: white;
+}
+
+    thead th {
+        padding: 10px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+
+tbody td {
+    padding: 10px;
+    border: 1px solid #000; /* Línea negra entre celdas */
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tbody tr:hover {
+    background-color: #e0f7fa;
+}
+
+.acciones i {
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+    .acciones i.ver {
+        color: #007bff;
+    }
+
+    .acciones i.editar {
+        color: #ffcc00;
+    }
+
+    .acciones i.eliminar {
+        color: #ff4d4d;
+    }
+
+.icon-info {
+    font-weight: bold;
+    color: #009688;
+}
+
+
+
+
+
+
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    margin-top: 20px;
+}
+
+    .table th, .table td {
+        border: 1px solid #ddd;
+        padding: 8px;
+    }
+
+    .table th {
+        background-color: #f2f2f2;
+        color: black;
+    }
+
+    .table tr:hover {
+        background-color: #f5f5f5;
+    }
+
+.btn {
+    background-color: #1B565A;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+    .btn:hover {
+        background-color: #154749;
+    }
+

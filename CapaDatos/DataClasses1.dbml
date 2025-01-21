@@ -1,0 +1,346 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="bd_int" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=SLURM;Initial Catalog=bd_int;Integrated Security=True;Encrypt=False" SettingsObjectName="CapaDatos.Properties.Settings" SettingsPropertyName="bd_intConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.tbl_usuario" Member="tbl_usuario">
+    <Type Name="tbl_usuario">
+      <Column Name="usu_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="usu_nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="usu_apellido" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="usu_correo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="usu_contrasenia" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="usu_fecha_nacimiento" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="usu_cedula" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="usu_intento" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="usu_codigo" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="est_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="per_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="tbl_usuario_tbl_incidencia" Member="tbl_incidencia" ThisKey="usu_id" OtherKey="usu_id" Type="tbl_incidencia" />
+      <Association Name="tbl_perfil_tbl_usuario" Member="tbl_perfil" ThisKey="per_id" OtherKey="per_id" Type="tbl_perfil" IsForeignKey="true" />
+      <Association Name="tbl_estado_tbl_usuario" Member="tbl_estado" ThisKey="est_id" OtherKey="est_id" Type="tbl_estado" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_tipo_incidencia" Member="tbl_tipo_incidencia">
+    <Type Name="tbl_tipo_incidencia">
+      <Column Name="tip_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="tip_nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="tbl_tipo_incidencia_tbl_incidencia" Member="tbl_incidencia" ThisKey="tip_id" OtherKey="tip_id" Type="tbl_incidencia" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_perfil" Member="tbl_perfil">
+    <Type Name="tbl_perfil">
+      <Column Name="per_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="per_nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="tbl_perfil_tbl_usuario" Member="tbl_usuario" ThisKey="per_id" OtherKey="per_id" Type="tbl_usuario" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_mantenimiento" Member="tbl_mantenimiento">
+    <Type Name="tbl_mantenimiento">
+      <Column Name="man_tipo" Type="System.Char" DbType="Char(1) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_incidencia" Member="tbl_incidencia">
+    <Type Name="tbl_incidencia">
+      <Column Name="inc_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="inc_titulo" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="inc_descripcion" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="inc_imagen" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="inc_respuesta" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="inc_calificacion" Type="System.Decimal" DbType="Decimal(2,1)" CanBeNull="true" />
+      <Column Name="inc_fecha_creacion" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="inc_feha_asignacion" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="inc_fecha_cierre" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="esi_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="cat_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="equ_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="tip_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="usu_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="tbl_tipo_incidencia_tbl_incidencia" Member="tbl_tipo_incidencia" ThisKey="tip_id" OtherKey="tip_id" Type="tbl_tipo_incidencia" IsForeignKey="true" />
+      <Association Name="tbl_usuario_tbl_incidencia" Member="tbl_usuario" ThisKey="usu_id" OtherKey="usu_id" Type="tbl_usuario" IsForeignKey="true" />
+      <Association Name="tbl_estado_incidencia_tbl_incidencia" Member="tbl_estado_incidencia" ThisKey="esi_id" OtherKey="esi_id" Type="tbl_estado_incidencia" IsForeignKey="true" />
+      <Association Name="tbl_equipo_tbl_incidencia" Member="tbl_equipo" ThisKey="equ_id" OtherKey="equ_id" Type="tbl_equipo" IsForeignKey="true" />
+      <Association Name="tbl_categoria_incidencia_tbl_incidencia" Member="tbl_categoria_incidencia" ThisKey="cat_id" OtherKey="cat_id" Type="tbl_categoria_incidencia" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_estado_incidencia" Member="tbl_estado_incidencia">
+    <Type Name="tbl_estado_incidencia">
+      <Column Name="esi_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="esi_nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="tbl_estado_incidencia_tbl_incidencia" Member="tbl_incidencia" ThisKey="esi_id" OtherKey="esi_id" Type="tbl_incidencia" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_estado" Member="tbl_estado">
+    <Type Name="tbl_estado">
+      <Column Name="est_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="est_nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="tbl_estado_tbl_usuario" Member="tbl_usuario" ThisKey="est_id" OtherKey="est_id" Type="tbl_usuario" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_equipo" Member="tbl_equipo">
+    <Type Name="tbl_equipo">
+      <Column Name="equ_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="equ_nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="tbl_equipo_tbl_incidencia" Member="tbl_incidencia" ThisKey="equ_id" OtherKey="equ_id" Type="tbl_incidencia" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_categoria_incidencia" Member="tbl_categoria_incidencia">
+    <Type Name="tbl_categoria_incidencia">
+      <Column Name="cat_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="cat_nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="tbl_categoria_incidencia_tbl_incidencia" Member="tbl_incidencia" ThisKey="cat_id" OtherKey="cat_id" Type="tbl_incidencia" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_auditoria" Member="tbl_auditoria">
+    <Type Name="tbl_auditoria">
+      <Column Name="log_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="log_accion" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="log_fecha" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="usu_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.sp_cargar_cedula" Method="sp_cargar_cedula">
+    <ElementType Name="sp_cargar_cedulaResult">
+      <Column Name="usu_cedula" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_cargar_correo" Method="sp_cargar_correo">
+    <ElementType Name="sp_cargar_correoResult">
+      <Column Name="usu_correo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_registrar_usuario" Method="sp_registrar_usuario">
+    <Parameter Name="nombre" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="apellido" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="correo" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="pass" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="fecha" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="cedula" Type="System.String" DbType="VarChar(10)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.hash_pass" Method="hash_pass" IsComposable="true">
+    <Parameter Name="clave" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Data.Linq.Binary" />
+  </Function>
+  <Function Name="dbo.sp_correo_usuario" Method="sp_correo_usuario">
+    <Parameter Name="correo" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="sp_correo_usuarioResult">
+      <Column Name="usu_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="usu_nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="usu_apellido" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="usu_correo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="usu_contrasenia" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" />
+      <Column Name="usu_fecha_nacimiento" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="usu_cedula" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="usu_intento" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="usu_codigo" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="est_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="per_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_credenciales_usuario" Method="sp_credenciales_usuario">
+    <Parameter Name="correo" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="contrasenia" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="sp_credenciales_usuarioResult">
+      <Column Name="usu_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="usu_nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="usu_apellido" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="usu_correo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="usu_contrasenia" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" />
+      <Column Name="usu_fecha_nacimiento" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="usu_cedula" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="usu_intento" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="usu_codigo" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="est_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="per_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_registrar_usuario" Method="sp_registrar_usuario1">
+    <Parameter Name="nombre" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="apellido" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="correo" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="pass" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="fecha" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="cedula" Type="System.String" DbType="VarChar(10)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.cargar_usuario_por_correo" Method="cargar_usuario_por_correo">
+    <Parameter Name="correo" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="cargar_usuario_por_correoResult">
+      <Column Name="usu_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="usu_nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="usu_apellido" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="usu_correo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="usu_contrasenia" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" />
+      <Column Name="usu_fecha_nacimiento" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="usu_cedula" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="usu_intento" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="usu_codigo" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="est_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="per_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_cargar_usuarios" Method="sp_cargar_usuarios">
+    <ElementType Name="sp_cargar_usuariosResult">
+      <Column Name="usu_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="usu_nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="usu_apellido" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="usu_correo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="usu_contrasenia" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" />
+      <Column Name="usu_fecha_nacimiento" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="usu_cedula" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="usu_intento" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="usu_codigo" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="est_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="per_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="per_nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="est_nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_cargar_perfiles_ddl" Method="sp_cargar_perfiles_ddl">
+    <ElementType Name="sp_cargar_perfiles_ddlResult">
+      <Column Name="per_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="per_nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_cargar_estados" Method="sp_cargar_estados">
+    <ElementType Name="sp_cargar_estadosResult">
+      <Column Name="est_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="est_nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_cargar_tipos_incidencias" Method="sp_cargar_tipos_incidencias">
+    <ElementType Name="sp_cargar_tipos_incidenciasResult">
+      <Column Name="tip_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="tip_nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_cargar_categorias_incidencias" Method="sp_cargar_categorias_incidencias">
+    <ElementType Name="sp_cargar_categorias_incidenciasResult">
+      <Column Name="cat_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="cat_nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_cargar_equipos" Method="sp_cargar_equipos">
+    <ElementType Name="sp_cargar_equiposResult">
+      <Column Name="equ_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="equ_nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_cargar_estado_incidencia" Method="sp_cargar_estado_incidencia">
+    <ElementType Name="sp_cargar_estado_incidenciaResult">
+      <Column Name="esi_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="esi_nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_cargar_incidencias" Method="sp_cargar_incidencias">
+    <ElementType Name="sp_cargar_incidenciasResult">
+      <Column Name="inc_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="inc_titulo" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="inc_descripcion" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="inc_imagen" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" />
+      <Column Name="inc_respuesta" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="inc_calificacion" Type="System.Decimal" DbType="Decimal(2,1)" CanBeNull="true" />
+      <Column Name="inc_fecha_creacion" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="inc_feha_asignacion" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="inc_fecha_cierre" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="esi_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="cat_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="equ_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="tip_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="usu_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="esi_id1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="esi_nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="cat_id1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="cat_nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="equ_id1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="equ_nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="tip_id1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="tip_nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="usu_id1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="usu_nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="usu_apellido" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="usu_correo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="usu_contrasenia" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" />
+      <Column Name="usu_fecha_nacimiento" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="usu_cedula" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="usu_intento" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="usu_codigo" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="est_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="per_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_agregar_perfil_usuario" Method="sp_agregar_perfil_usuario">
+    <Parameter Name="nombre" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_agregar_tipo_incidencia" Method="sp_agregar_tipo_incidencia">
+    <Parameter Name="nombre" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_agregar_estado_usuario" Method="sp_agregar_estado_usuario">
+    <Parameter Name="nombre" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_agregar_equipo" Method="sp_agregar_equipo">
+    <Parameter Name="nombre" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_agregar_categoria_incidencia" Method="sp_agregar_categoria_incidencia">
+    <Parameter Name="nombre" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_agregar_estado_incidencia" Method="sp_agregar_estado_incidencia">
+    <Parameter Name="nombre" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_buscar_usuario_recup" Method="sp_buscar_usuario_recup">
+    <Parameter Name="correo" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="cedula" Type="System.String" DbType="VarChar(10)" />
+    <ElementType Name="sp_buscar_usuario_recupResult">
+      <Column Name="usu_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="usu_nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="usu_apellido" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="usu_correo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="usu_contrasenia" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" />
+      <Column Name="usu_fecha_nacimiento" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="usu_cedula" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="usu_intento" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="usu_codigo" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="est_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="per_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_enviar_codigo_recup" Method="sp_enviar_codigo_recup">
+    <Parameter Name="correo" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="codigo" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="cedula" Type="System.String" DbType="VarChar(10)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_cambiar_pass_recup" Method="sp_cambiar_pass_recup">
+    <Parameter Name="pass" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_contar_inc_asignadas" Method="sp_contar_inc_asignadas">
+    <ElementType Name="sp_contar_inc_asignadasResult">
+      <Column Name="total" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_contar_inc_finalizadas" Method="sp_contar_inc_finalizadas">
+    <ElementType Name="sp_contar_inc_finalizadasResult">
+      <Column Name="total" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_contar_inc_proceso" Method="sp_contar_inc_proceso">
+    <ElementType Name="sp_contar_inc_procesoResult">
+      <Column Name="total" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_contar_inc_registradas" Method="sp_contar_inc_registradas">
+    <ElementType Name="sp_contar_inc_registradasResult">
+      <Column Name="total" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_eliminar_usuario" Method="sp_eliminar_usuario">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>
