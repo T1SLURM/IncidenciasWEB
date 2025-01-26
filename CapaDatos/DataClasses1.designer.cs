@@ -412,6 +412,13 @@ namespace CapaDatos
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
 			return ((ISingleResult<sp_ver_estado_mantemientoResult>)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_registrar_accion_auditoria")]
+		public int sp_registrar_accion_auditoria([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(150)")] string accion, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> usuario)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), accion, usuario);
+			return ((int)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbl_usuario")]
@@ -564,7 +571,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_contrasenia", DbType="VarBinary(MAX)", UpdateCheck=UpdateCheck.Never)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_contrasenia", DbType="VarBinary(MAX)", CanBeNull=true, UpdateCheck=UpdateCheck.Never)]
 		public System.Data.Linq.Binary usu_contrasenia
 		{
 			get
@@ -1264,7 +1271,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inc_imagen", DbType="Image", UpdateCheck=UpdateCheck.Never)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inc_imagen", DbType="Image", CanBeNull=true, UpdateCheck=UpdateCheck.Never)]
 		public System.Data.Linq.Binary inc_imagen
 		{
 			get
@@ -2516,7 +2523,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_contrasenia", DbType="VarBinary(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_contrasenia", DbType="VarBinary(MAX)", CanBeNull=true)]
 		public System.Data.Linq.Binary usu_contrasenia
 		{
 			get
@@ -2722,7 +2729,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_contrasenia", DbType="VarBinary(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_contrasenia", DbType="VarBinary(MAX)", CanBeNull=true)]
 		public System.Data.Linq.Binary usu_contrasenia
 		{
 			get
@@ -2928,7 +2935,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_contrasenia", DbType="VarBinary(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_contrasenia", DbType="VarBinary(MAX)", CanBeNull=true)]
 		public System.Data.Linq.Binary usu_contrasenia
 		{
 			get
@@ -3138,7 +3145,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_contrasenia", DbType="VarBinary(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_contrasenia", DbType="VarBinary(MAX)", CanBeNull=true)]
 		public System.Data.Linq.Binary usu_contrasenia
 		{
 			get
@@ -3668,7 +3675,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inc_imagen", DbType="Image")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inc_imagen", DbType="Image", CanBeNull=true)]
 		public System.Data.Linq.Binary inc_imagen
 		{
 			get
@@ -4036,7 +4043,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_contrasenia", DbType="VarBinary(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_contrasenia", DbType="VarBinary(MAX)", CanBeNull=true)]
 		public System.Data.Linq.Binary usu_contrasenia
 		{
 			get
@@ -4242,7 +4249,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_contrasenia", DbType="VarBinary(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_contrasenia", DbType="VarBinary(MAX)", CanBeNull=true)]
 		public System.Data.Linq.Binary usu_contrasenia
 		{
 			get

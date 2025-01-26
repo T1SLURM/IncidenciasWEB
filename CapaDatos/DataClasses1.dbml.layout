@@ -69,7 +69,7 @@
         <classShapeMoniker Id="4771d0b4-89ad-4337-b296-100a91b30195" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 6.28125); (6.21353666666667 : 6.28125 : JumpStart); (6.41145583333333 : 6.28125 : JumpEnd); (6.46875 : 6.28125); (6.46875 : 5.12660970052083)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(5.5 : 6.28125); (6.46875 : 6.28125); (6.46875 : 5.12660970052083)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/DataClasses1DataContext/tbl_tipo_incidencia/tbl_tipo_incidencia_tbl_incidencia" />
       <nodes>
         <classShapeMoniker Id="7864fd5c-7ae1-428c-bd7c-b7d22ce01cfe" />
@@ -90,7 +90,7 @@
         <classShapeMoniker Id="86e96102-d2f4-4425-9f60-fb44b505084d" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 1.3124995); (4.5 : 1.3124995); (4.5 : 1.875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 1.3124995); (4.5 : 1.3124995); (4.5 : 1.875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/DataClasses1DataContext/tbl_estado/tbl_estado_tbl_usuario" />
       <nodes>
         <classShapeMoniker Id="b59f28c3-2362-4934-bbee-518fe0c16738" />

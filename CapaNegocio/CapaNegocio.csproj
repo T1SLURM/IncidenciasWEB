@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="cn_auditoria.cs" />
     <Compile Include="cn_categoria_incidencia.cs" />
     <Compile Include="cn_equipo.cs" />
     <Compile Include="cn_estado_incidencia.cs" />

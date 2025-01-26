@@ -880,7 +880,7 @@
 
                     <div class="cerrar-sesion-btn-container">
                         <asp:Button ID="btnCerrarSesion" runat="server" Text="Cerrar Sesión"
-                            CssClass="cerrar-sesion-btn" OnClick="btnCerrarSesion_Click1" />
+                            CssClass="cerrar-sesion-btn" OnClick="btnCerrarSesion_Click" />
                     </div>
 
                 </div>
@@ -915,69 +915,6 @@
 
 
                     </div>
-                </div>
-
-                <div id="perfil" class="section" style="display: none;">
-                    <div>
-                        <br />
-                        <br />
-                    </div>
-                    <h2 style="text-align: center;">Usuarios</h2>
-
-                    <div class="form-container">
-                        <div class="form-group">
-                            <label for="txtNombre">Nombre:</label>
-                            <asp:TextBox ID="txtNombre" runat="server" CssClass="text-input"
-                                Placeholder="Ingresa tu nombre"></asp:TextBox>
-                        </div>
-                        <div class="form-group">
-                            <label for="txtApellido">Apellido:</label>
-                            <asp:TextBox ID="txtApellido" runat="server" CssClass="text-input"
-                                Placeholder="Ingresa tu apellido"></asp:TextBox>
-                        </div>
-                        <div class="form-group">
-                            <label for="txtCorreo">Correo:</label>
-                            <asp:TextBox ID="txtCorreo" runat="server" CssClass="text-input"
-                                Placeholder="Ingresa tu correo" TextMode="Email"></asp:TextBox>
-                        </div>
-                        <div class="form-group">
-                            <label for="txtCedula">Cédula:</label>
-                            <asp:TextBox ID="txtCedula" runat="server" CssClass="text-input"
-                                Placeholder="Ingresa tu cedula de identidad" TextMode="Number"></asp:TextBox>
-                        </div>
-                        <div class="form-group">
-                            <label for="txtApellido">Fecha De Nacimiento:</label>
-                            <asp:TextBox ID="txtFecha" runat="server" CssClass="text-input"
-                                Placeholder="Ingresa tu fecha de nacimiento" TextMode="Date"></asp:TextBox>
-                        </div>
-                        <div class="form-group">
-                            <label for="txtContrasenia">Contraseña:</label>
-                            <asp:TextBox ID="txtContrasenia" runat="server" CssClass="text-input"
-                                Placeholder="Ingresa una contraseña" TextMode="Password"></asp:TextBox>
-                        </div>
-                        <div class="form-group">
-                            <label for="txtContraseniaV">Verificar Contraseña:</label>
-                            <asp:TextBox ID="txtContraseniaV" runat="server" CssClass="text-input"
-                                Placeholder="verifica tu contraseña" TextMode="Password"></asp:TextBox>
-                        </div>
-                        <div class="mb-3 d-flex justify-content-between align-items-center">
-                            <div class="form-check">
-                                <input type="checkbox" class="form-check-input" id="chk_ver_contra" />
-                                <label class="form-check-label" for="chk_ver_contra">Ver contraseña</label>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="ddlCategoria">Perfil:</label>
-                            <asp:DropDownList ID="ddlPerfil" runat="server" CssClass="dropdown">
-                            </asp:DropDownList>
-                        </div>
-                        <asp:Button ID="btnEnviar" runat="server" Text="Enviar" CssClass="submit-button" OnClick="btnEnviar_Click"/>
-                    </div>
-
-
-
-
-
                 </div>
 
                 <div id="editarperfil" class="section" style="display: none;">
@@ -1168,7 +1105,7 @@
                                 <asp:TextBox ID="txtDescripcion" runat="server" CssClass="form-control"
                                     TextMode="MultiLine" Rows="4" placeholder="Descripción"></asp:TextBox>
                             </div>
-                            <asp:Button ID="Button1" runat="server" CssClass="ticket-btn-update" Text="Actualizar" OnClick="Button1_Click"/>
+                            <asp:Button ID="Button1" runat="server" CssClass="ticket-btn-update" Text="Actualizar"/>
                         </div>
                     </div>
                 </div>
@@ -1226,16 +1163,6 @@
                 </div>
 
 
-
-
-
-
-                <div id="cerrar" class="section" style="display: none;">
-                    <h2>Cerrar Sesión</h2>
-                    <p>Gracias por usar el sistema. ¡Hasta luego!</p>
-                </div>
-
-
                 <script>
                     document.addEventListener("DOMContentLoaded", function () {
                         const links = document.querySelectorAll(".sidebar a");
@@ -1265,7 +1192,7 @@
                     });
 
                 </script>
-                <script>
+                <%--<script>
                     function togglePassword() {
                         // Obtén los elementos de los campos de contraseña
                         const passwordField = document.getElementById('<%= txtContrasenia.ClientID %>');
@@ -1280,7 +1207,7 @@
                             confirmPasswordField.type = "password";
                         }
                     }
-                </script>
+                </script>--%>
             </contenttemplate>
         </asp:UpdatePanel>
 

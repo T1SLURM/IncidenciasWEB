@@ -11,9 +11,12 @@ namespace Integrador_3ero
 {
     public partial class paginaAdministrador : System.Web.UI.Page
     {
+        cn_auditoria cn_Auditoria = new cn_auditoria();
         protected void Page_Load(object sender, EventArgs e)
         {
             lblBienvenido.Text = $"Bienvenido {Session["nombre"]}";
+
+
             if (!IsPostBack)
             {
                 cargar_usuarios();
@@ -57,11 +60,13 @@ namespace Integrador_3ero
             {
                 btn_mantenimiento.CssClass = "mi-boton";
                 btn_mantenimiento.Text = "Activar Mantenimiento";
+                
             }
             else if (man == "A")
             {
                 btn_mantenimiento.CssClass = "mi-boton-exito";
                 btn_mantenimiento.Text = "Desactivar Mantenimiento";
+                
             }
         }
 
@@ -70,12 +75,16 @@ namespace Integrador_3ero
             cn_mantenimiento cn_Mantenimiento = new cn_mantenimiento();
             if (btn_mantenimiento.Text == "Activar Mantenimiento")
             {
+                int id = Convert.ToInt32(Session["id"]);
                 cn_Mantenimiento.activar_mantenimiento();
+                cn_Auditoria.registrar_accion_auditoria("Activación de Mantenimiento", id);
                 mantenimiento();
             }
             else if (btn_mantenimiento.Text == "Desactivar Mantenimiento")
             {
+                int id = Convert.ToInt32(Session["id"]);
                 cn_Mantenimiento.desactivar_mantenimiento();
+                cn_Auditoria.registrar_accion_auditoria("Desactivación de Mantenimiento", id);
                 mantenimiento();
             }
         }
@@ -184,6 +193,8 @@ namespace Integrador_3ero
             else
             {
                 cn_Perfil.agregar_perfil(txtNombrePerfil.Text);
+                int id = Convert.ToInt32(Session["id"]);
+                cn_Auditoria.registrar_accion_auditoria("Registro de Nuevo Perfil de Usuario", id);
                 lbl_mensajeP.ForeColor = System.Drawing.Color.Green;
                 lbl_mensajeP.Text = "Se registro correctamente el perfil para el usuario";
                 txtNombrePerfil.Text = "";
@@ -208,6 +219,8 @@ namespace Integrador_3ero
             else
             {
                 cn_Estado_Usuario.agregar_estado_usuario(txtNombreEstado.Text);
+                int id = Convert.ToInt32(Session["id"]);
+                cn_Auditoria.registrar_accion_auditoria("Registro de Nuevo Estado de Usuario", id);
                 lbl_mensaje.ForeColor = System.Drawing.Color.Green;
                 lbl_mensaje.Text = "Se registro correctamente el estado para el usuario";
                 txtNombreEstado.Text = "";
@@ -232,6 +245,8 @@ namespace Integrador_3ero
             else
             {
                 cn_Tipo_Incidencia.agregar_tipo_incidencia(txtTipodeIncidencia.Text);
+                int id = Convert.ToInt32(Session["id"]);
+                cn_Auditoria.registrar_accion_auditoria("Registro de Nueva Incidencia", id);
                 lbl_mensajeTI.ForeColor = System.Drawing.Color.Green;
                 lbl_mensajeTI.Text = "Se registro correctamente el tipo de incidente";
                 txtTipodeIncidencia.Text = "";
@@ -257,6 +272,8 @@ namespace Integrador_3ero
             else
             {
                 cn_Equipo.agregar_equipo(txtNombreEquipo.Text);
+                int id = Convert.ToInt32(Session["id"]);
+                cn_Auditoria.registrar_accion_auditoria("Registro de Nuevo Equipo", id);
                 lbl_mensajeE.ForeColor = System.Drawing.Color.Green;
                 lbl_mensajeE.Text = "Se registro correctamente el equipo";
                 txtNombreEquipo.Text = "";
@@ -282,6 +299,8 @@ namespace Integrador_3ero
             else
             {
                 cn_Categoria_Incidencia.agregar_categoria_incidencia(txtNombreCatInci.Text);
+                int id = Convert.ToInt32(Session["id"]);
+                cn_Auditoria.registrar_accion_auditoria("Registro de Nueva Categoria de Incidentes", id);
                 lbl_mensajeCI.ForeColor = System.Drawing.Color.Green;
                 lbl_mensajeCI.Text = "Se registro correctamente la categoria de la incidencia";
                 txtNombreCatInci.Text = "";
@@ -306,6 +325,8 @@ namespace Integrador_3ero
             else
             {
                 cn_Estado_Incidencia.agregar_estado_incidencia(txtNombreEstInci.Text);
+                int id = Convert.ToInt32(Session["id"]);
+                cn_Auditoria.registrar_accion_auditoria("Registro de Nuevo Estado de Incidencias", id);
                 lbl_mensajeEI.ForeColor = System.Drawing.Color.Green;
                 lbl_mensajeEI.Text = "Se registro correctamente el estado de la incidencia";
                 txtNombreEstInci.Text = "";
@@ -320,6 +341,8 @@ namespace Integrador_3ero
 
         protected void btnCerrarSesion_Click(object sender, EventArgs e)
         {
+            int id = Convert.ToInt32(Session["id"]);
+            cn_Auditoria.registrar_accion_auditoria("Cerrar Sesión", id);
             Response.Redirect("~/Home.aspx");
 
         }
@@ -392,6 +415,7 @@ namespace Integrador_3ero
             try
             {
                 cn_Usuario.eliminar_logico_usuario(id);
+                cn_Auditoria.registrar_accion_auditoria("Eliminación de Usuario", id);
                 cargar_usuarios();
             }
             catch (Exception)
@@ -415,6 +439,7 @@ namespace Integrador_3ero
 
             try
             {
+                cn_Auditoria.registrar_accion_auditoria("Activación de Usuario", id);
                 cn_Usuario.desbloquear_usuario(id);
                 cargar_usuarios();
             }

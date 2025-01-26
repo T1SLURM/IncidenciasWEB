@@ -11,6 +11,8 @@ namespace Integrador_3ero
 {
     public partial class Login : System.Web.UI.Page
     {
+        cn_auditoria cn_Auditoria = new cn_auditoria();
+
         protected void Page_Load(object sender, EventArgs e)
         {
             Session["id"] = 0;
@@ -69,6 +71,8 @@ namespace Integrador_3ero
                         {
                             Session["id"] = Convert.ToInt32(usuario.usu_id);
                             Session["nombre"] = usuario.usu_nombre;
+                            int id = Convert.ToInt32(Session["id"]);
+                            cn_Auditoria.registrar_accion_auditoria("Inicio de Sesión", id);
                             limpiar();
                             Response.Redirect("~/paginaAdministrador.aspx");
                         }
@@ -83,6 +87,8 @@ namespace Integrador_3ero
                             {
                                 Session["id"] = Convert.ToInt32(usuario.usu_id);
                                 Session["nombre"] = usuario.usu_nombre;
+                                int id = Convert.ToInt32(Session["id"]);
+                                cn_Auditoria.registrar_accion_auditoria("Inicio de Sesión", id);
                                 limpiar();
                                 Response.Redirect("~/paginaUsuario.aspx");
                             }
@@ -98,6 +104,8 @@ namespace Integrador_3ero
                             {
                                 Session["id"] = Convert.ToInt32(usuario.usu_id);
                                 Session["nombre"] = usuario.usu_nombre;
+                                int id = Convert.ToInt32(Session["id"]);
+                                cn_Auditoria.registrar_accion_auditoria("Inicio de Sesión", id);
                                 limpiar();
                                 Response.Redirect("~/paginaTecnico.aspx");
                             }
