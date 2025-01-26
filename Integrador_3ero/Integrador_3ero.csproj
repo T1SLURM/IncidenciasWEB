@@ -69,6 +69,7 @@
   <ItemGroup>
     <Content Include="css\Registro_Incidecia.css" />
     <Content Include="css\StyleSheet1.css" />
+    <Content Include="css\StyleSheet2.css" />
     <Content Include="Estilos\StyleSheet1.css" />
     <Content Include="Home.aspx" />
     <Content Include="Imagenes\1656014482777.jpg" />
