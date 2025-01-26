@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using CapaDatos;
 using CapaNegocio;
 
 namespace Integrador_3ero
@@ -24,6 +25,7 @@ namespace Integrador_3ero
                 cargar_categorias_incidencias();
                 cargar_incidencias();
                 cargar_estados_incidencia();
+                mantenimiento();
             }
             cargar_con_inc_registradas();
             cargar_con_inc_asignada();
@@ -37,6 +39,45 @@ namespace Integrador_3ero
             var incidencias = cn_Incidencia.cargar_incidencias();
             rptIncidencias.DataSource = incidencias; // Cambia a rptIncidencias
             rptIncidencias.DataBind(); // Enlaza los datos al Repeater
+        }
+
+
+        public List<tbl_mantenimiento> ver_estado_mantenimiento()
+        {
+            cn_mantenimiento cn_Mantenimiento = new cn_mantenimiento();
+            var mantenimiento = cn_Mantenimiento.ver_estado_mantenimiento();
+            return mantenimiento;
+        }
+
+        public void mantenimiento()
+        {
+            var mantenimientoList = ver_estado_mantenimiento();
+            string man = mantenimientoList[0].man_tipo.ToString();
+            if (man == "I")
+            {
+                btn_mantenimiento.CssClass = "mi-boton";
+                btn_mantenimiento.Text = "Activar Mantenimiento";
+            }
+            else if (man == "A")
+            {
+                btn_mantenimiento.CssClass = "mi-boton-exito";
+                btn_mantenimiento.Text = "Desactivar Mantenimiento";
+            }
+        }
+
+        protected void btn_mantenimiento_Click(object sender, EventArgs e)
+        {
+            cn_mantenimiento cn_Mantenimiento = new cn_mantenimiento();
+            if (btn_mantenimiento.Text == "Activar Mantenimiento")
+            {
+                cn_Mantenimiento.activar_mantenimiento();
+                mantenimiento();
+            }
+            else if (btn_mantenimiento.Text == "Desactivar Mantenimiento")
+            {
+                cn_Mantenimiento.desactivar_mantenimiento();
+                mantenimiento();
+            }
         }
 
         public void cargar_estados_incidencia()
@@ -363,6 +404,25 @@ namespace Integrador_3ero
         protected void btnAgregarInci_Click(object sender, EventArgs e)
         {
             ScriptManager.RegisterStartupScript(this, this.GetType(), "showModal", "$('#exampleModal').modal('show');", true);
+        }
+
+        protected void btnActivar_usuario_Click(object sender, EventArgs e)
+        {
+            cn_usuario cn_Usuario = new cn_usuario();
+            Button btn = (Button)sender;
+            string usu_id = btn.CommandArgument;
+            int id = Convert.ToInt32(usu_id);
+
+            try
+            {
+                cn_Usuario.desbloquear_usuario(id);
+                cargar_usuarios();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
     }
 }

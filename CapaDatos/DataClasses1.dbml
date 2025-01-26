@@ -96,6 +96,12 @@
       <Column Name="usu_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.tbl_mantenimiento" Member="tbl_mantenimiento1">
+    <Type Name="tbl_mantenimiento1">
+      <Column Name="man_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="man_tipo" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
   <Function Name="dbo.sp_cargar_cedula" Method="sp_cargar_cedula">
     <ElementType Name="sp_cargar_cedulaResult">
       <Column Name="usu_cedula" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
@@ -342,5 +348,17 @@
   <Function Name="dbo.sp_eliminar_usuario" Method="sp_eliminar_usuario">
     <Parameter Name="id" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_activar_mant" Method="sp_activar_mant">
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_desactivar_mant" Method="sp_desactivar_mant">
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_ver_estado_mantemiento" Method="sp_ver_estado_mantemiento">
+    <ElementType Name="sp_ver_estado_mantemientoResult">
+      <Column Name="man_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="man_tipo" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+    </ElementType>
   </Function>
 </Database>

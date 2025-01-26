@@ -60,6 +60,9 @@ namespace CapaDatos
     partial void Inserttbl_auditoria(tbl_auditoria instance);
     partial void Updatetbl_auditoria(tbl_auditoria instance);
     partial void Deletetbl_auditoria(tbl_auditoria instance);
+    partial void Inserttbl_mantenimiento1(tbl_mantenimiento1 instance);
+    partial void Updatetbl_mantenimiento1(tbl_mantenimiento1 instance);
+    partial void Deletetbl_mantenimiento1(tbl_mantenimiento1 instance);
     #endregion
 		
 		public DataClasses1DataContext() : 
@@ -169,6 +172,14 @@ namespace CapaDatos
 			get
 			{
 				return this.GetTable<tbl_auditoria>();
+			}
+		}
+		
+		public System.Data.Linq.Table<tbl_mantenimiento1> tbl_mantenimiento1
+		{
+			get
+			{
+				return this.GetTable<tbl_mantenimiento1>();
 			}
 		}
 		
@@ -380,6 +391,27 @@ namespace CapaDatos
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id);
 			return ((int)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_activar_mant")]
+		public int sp_activar_mant()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_desactivar_mant")]
+		public int sp_desactivar_mant()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ver_estado_mantemiento")]
+		public ISingleResult<sp_ver_estado_mantemientoResult> sp_ver_estado_mantemiento()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<sp_ver_estado_mantemientoResult>)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbl_usuario")]
@@ -532,7 +564,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_contrasenia", DbType="VarBinary(MAX)", CanBeNull=true, UpdateCheck=UpdateCheck.Never)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_contrasenia", DbType="VarBinary(MAX)", UpdateCheck=UpdateCheck.Never)]
 		public System.Data.Linq.Binary usu_contrasenia
 		{
 			get
@@ -1232,7 +1264,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inc_imagen", DbType="Image", CanBeNull=true, UpdateCheck=UpdateCheck.Never)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inc_imagen", DbType="Image", UpdateCheck=UpdateCheck.Never)]
 		public System.Data.Linq.Binary inc_imagen
 		{
 			get
@@ -2253,6 +2285,92 @@ namespace CapaDatos
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbl_mantenimiento")]
+	public partial class tbl_mantenimiento1 : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _man_id;
+		
+		private char _man_tipo;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void Onman_idChanging(int value);
+    partial void Onman_idChanged();
+    partial void Onman_tipoChanging(char value);
+    partial void Onman_tipoChanged();
+    #endregion
+		
+		public tbl_mantenimiento1()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_man_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int man_id
+		{
+			get
+			{
+				return this._man_id;
+			}
+			set
+			{
+				if ((this._man_id != value))
+				{
+					this.Onman_idChanging(value);
+					this.SendPropertyChanging();
+					this._man_id = value;
+					this.SendPropertyChanged("man_id");
+					this.Onman_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_man_tipo", DbType="Char(1) NOT NULL")]
+		public char man_tipo
+		{
+			get
+			{
+				return this._man_tipo;
+			}
+			set
+			{
+				if ((this._man_tipo != value))
+				{
+					this.Onman_tipoChanging(value);
+					this.SendPropertyChanging();
+					this._man_tipo = value;
+					this.SendPropertyChanged("man_tipo");
+					this.Onman_tipoChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
 	public partial class sp_cargar_cedulaResult
 	{
 		
@@ -2398,7 +2516,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_contrasenia", DbType="VarBinary(MAX)", CanBeNull=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_contrasenia", DbType="VarBinary(MAX)")]
 		public System.Data.Linq.Binary usu_contrasenia
 		{
 			get
@@ -2604,7 +2722,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_contrasenia", DbType="VarBinary(MAX)", CanBeNull=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_contrasenia", DbType="VarBinary(MAX)")]
 		public System.Data.Linq.Binary usu_contrasenia
 		{
 			get
@@ -2810,7 +2928,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_contrasenia", DbType="VarBinary(MAX)", CanBeNull=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_contrasenia", DbType="VarBinary(MAX)")]
 		public System.Data.Linq.Binary usu_contrasenia
 		{
 			get
@@ -3020,7 +3138,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_contrasenia", DbType="VarBinary(MAX)", CanBeNull=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_contrasenia", DbType="VarBinary(MAX)")]
 		public System.Data.Linq.Binary usu_contrasenia
 		{
 			get
@@ -3550,7 +3668,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inc_imagen", DbType="Image", CanBeNull=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inc_imagen", DbType="Image")]
 		public System.Data.Linq.Binary inc_imagen
 		{
 			get
@@ -3918,7 +4036,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_contrasenia", DbType="VarBinary(MAX)", CanBeNull=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_contrasenia", DbType="VarBinary(MAX)")]
 		public System.Data.Linq.Binary usu_contrasenia
 		{
 			get
@@ -4124,7 +4242,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_contrasenia", DbType="VarBinary(MAX)", CanBeNull=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_contrasenia", DbType="VarBinary(MAX)")]
 		public System.Data.Linq.Binary usu_contrasenia
 		{
 			get
@@ -4336,6 +4454,50 @@ namespace CapaDatos
 				if ((this._total != value))
 				{
 					this._total = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_ver_estado_mantemientoResult
+	{
+		
+		private int _man_id;
+		
+		private char _man_tipo;
+		
+		public sp_ver_estado_mantemientoResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_man_id", DbType="Int NOT NULL")]
+		public int man_id
+		{
+			get
+			{
+				return this._man_id;
+			}
+			set
+			{
+				if ((this._man_id != value))
+				{
+					this._man_id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_man_tipo", DbType="Char(1) NOT NULL")]
+		public char man_tipo
+		{
+			get
+			{
+				return this._man_tipo;
+			}
+			set
+			{
+				if ((this._man_tipo != value))
+				{
+					this._man_tipo = value;
 				}
 			}
 		}

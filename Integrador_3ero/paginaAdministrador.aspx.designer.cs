@@ -96,6 +96,15 @@ namespace Integrador_3ero
         protected global::System.Web.UI.WebControls.Label lbl_inc_finalizadas;
 
         /// <summary>
+        /// Control btn_mantenimiento.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_mantenimiento;
+
+        /// <summary>
         /// Control txtNombre.
         /// </summary>
         /// <remarks>

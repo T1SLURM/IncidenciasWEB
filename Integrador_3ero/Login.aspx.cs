@@ -20,6 +20,15 @@ namespace Integrador_3ero
 
         }
 
+        public List<tbl_mantenimiento> ver_estado_mantenimiento()
+        {
+            cn_mantenimiento cn_Mantenimiento = new cn_mantenimiento();
+            var mantenimiento = cn_Mantenimiento.ver_estado_mantenimiento();
+            return mantenimiento;
+        }
+
+
+
         protected void btn_registrar_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/Registro.aspx");
@@ -30,6 +39,9 @@ namespace Integrador_3ero
             cn_usuario cn_Usuarios = new cn_usuario();
             string correo = txtCorreo.Text;
             string pass = txtContrasenia.Text;
+
+            List<tbl_mantenimiento> mantenimiento = ver_estado_mantenimiento();
+            tbl_mantenimiento est_mantenimiento = mantenimiento[0];
 
             if (correo == null || correo == "")
             {
@@ -62,17 +74,33 @@ namespace Integrador_3ero
                         }
                         else if (cn_Usuarios.verificar_perfil(correo) == 2)
                         {
-                            Session["id"] = Convert.ToInt32(usuario.usu_id);
-                            Session["nombre"] = usuario.usu_nombre;
-                            limpiar();
-                            Response.Redirect("~/paginaUsuario.aspx");
+                            if (est_mantenimiento.man_tipo.ToString() == "A")
+                            {
+                                lbl_mensaje.Text = "El sistema esta en mantenimiento, reintentelo";
+                                return;
+                            }
+                            else
+                            {
+                                Session["id"] = Convert.ToInt32(usuario.usu_id);
+                                Session["nombre"] = usuario.usu_nombre;
+                                limpiar();
+                                Response.Redirect("~/paginaUsuario.aspx");
+                            }
                         }
                         else if (cn_Usuarios.verificar_perfil(correo) == 3)
                         {
-                            Session["id"] = Convert.ToInt32(usuario.usu_id);
-                            Session["nombre"] = usuario.usu_nombre;
-                            limpiar();
-                            Response.Redirect("~/paginaTecnico.aspx");
+                            if (est_mantenimiento.man_tipo.ToString() == "A")
+                            {
+                                lbl_mensaje.Text = "El sistema esta en mantenimiento, reintentelo";
+                                return;
+                            }
+                            else
+                            {
+                                Session["id"] = Convert.ToInt32(usuario.usu_id);
+                                Session["nombre"] = usuario.usu_nombre;
+                                limpiar();
+                                Response.Redirect("~/paginaTecnico.aspx");
+                            }
                         }
                     }
                     else

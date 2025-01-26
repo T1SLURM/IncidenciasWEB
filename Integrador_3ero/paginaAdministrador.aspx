@@ -332,6 +332,15 @@
                                     </ul>
                                 </div>
                             </div>
+                            <!-- Mantenimiento del sistema -->
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5>Mantenimiento del sistema
+
+                                    </h5>
+                                    <asp:Button ID="btn_mantenimiento" runat="server" Text="" CssClass="mi-boton"  OnClick="btn_mantenimiento_Click"/>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -421,7 +430,7 @@
 
                                     <asp:Button ID="btnEliminar_usuario" runat="server" Text="Eliminar" CommandName="Eliminar" CommandArgument='<%# Eval("usu_id") %>' CssClass="mi-boton-peligro" OnClick="btnEliminar_usuario_Click1" />
 
-                                    <asp:Button ID="btnActivar_usuario" runat="server" Text="Activar" CommandName="Activar" CommandArgument='<%# Eval("usu_id") %>' CssClass="mi-boton-exito" />
+                                    <asp:Button ID="btnActivar_usuario" runat="server" Text="Activar" CommandName="Activar" CommandArgument='<%# Eval("usu_id") %>' CssClass="mi-boton-exito" OnClick="btnActivar_usuario_Click" />
 
                                 </ItemTemplate>
                             </asp:TemplateField>

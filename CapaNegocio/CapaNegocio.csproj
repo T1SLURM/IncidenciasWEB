@@ -48,6 +48,7 @@
     <Compile Include="cn_estado_incidencia.cs" />
     <Compile Include="cn_estado_usuario.cs" />
     <Compile Include="cn_Incidencia.cs" />
+    <Compile Include="cn_mantenimiento.cs" />
     <Compile Include="cn_perfil.cs" />
     <Compile Include="cn_tipo_incidencia.cs" />
     <Compile Include="cn_usuario.cs" />
