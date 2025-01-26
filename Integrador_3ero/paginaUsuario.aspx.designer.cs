@@ -105,13 +105,13 @@ namespace Integrador_3ero
         protected global::System.Web.UI.WebControls.TextBox txtContrasena2;
 
         /// <summary>
-        /// Control btnActualizar.
+        /// Control btnActualizar12.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnActualizar;
+        protected global::System.Web.UI.WebControls.Button btnActualizar12;
 
         /// <summary>
         /// Control iddc.

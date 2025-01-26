@@ -13,5 +13,25 @@ namespace Integrador_3ero
         {
 
         }
+
+        protected void btnCerrarSesion_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnEditar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnActualizar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -8,9 +8,9 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Página Administrador</title>
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/StyleSheet1.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/StyleSheet1.css"/>
     <style>
         .cerrar-sesion-btn {
             margin-top: auto;
@@ -958,7 +958,7 @@
                             <asp:TextBox ID="txtContrasena2" runat="server" CssClass="form-control" TextMode="Password"
                                 Text="********"></asp:TextBox>
                         </div>
-                        <asp:Button ID="btnActualizar" runat="server" CssClass="btn" Text="Actualizar" OnClick="btnActualizar_Click"/>
+                        <asp:Button ID="btnActualizar12" runat="server" CssClass="btn" Text="Actualizar" OnClick="btnActualizar12_Click"/>
                     </div>
                 </div>
 

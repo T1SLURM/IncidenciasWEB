@@ -37,5 +37,12 @@ namespace Integrador_3ero
         {
 
         }
+
+       
+
+        protected void btnActualizar12_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
