@@ -59,9 +59,6 @@ namespace Integrador_3ero
 
         }
 
-        protected void btnCerrarSesion_Click1(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }
