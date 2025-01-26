@@ -7,11 +7,11 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace P_INTEGRADOR_ESTILOS
+namespace Integrador_3ero
 {
 
 
-    public partial class Usuario
+    public partial class paginaUsuario
     {
 
         /// <summary>

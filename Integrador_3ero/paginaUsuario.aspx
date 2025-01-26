@@ -1,7 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="paginaUsuario.aspx.cs" Inherits="Integrador_3ero.paginaUsuario" %>
 
-<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Usuario.aspx.cs" Inherits="P_INTEGRADOR_ESTILOS.Usuario" %>
-
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -12,6 +10,7 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/StyleSheet1.css">
     <style>
         .cerrar-sesion-btn {
             margin-top: auto;
@@ -25,15 +24,15 @@
             cursor: pointer;
         }
 
-            .cerrar-sesion-btn i {
-                margin-right: 8px;
-                /* Espaciado entre el icono y el texto */
-            }
+        .cerrar-sesion-btn i {
+            margin-right: 8px;
+            /* Espaciado entre el icono y el texto */
+        }
 
-            .cerrar-sesion-btn:hover {
-                color: #ff0000;
-                /* Cambia este color según el estilo que desees al pasar el ratón */
-            }
+        .cerrar-sesion-btn:hover {
+            color: #ff0000;
+            /* Cambia este color según el estilo que desees al pasar el ratón */
+        }
 
 
 
@@ -56,41 +55,41 @@
             transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
         }
 
-            .mi-boton:hover {
-                color: #000000;
-                background-color: #e0a800;
-                border-color: #d39e00;
-            }
+        .mi-boton:hover {
+            color: #000000;
+            background-color: #e0a800;
+            border-color: #d39e00;
+        }
 
-            .mi-boton:focus,
-            .mi-boton.focus {
-                color: #000000;
-                background-color: #e0a800;
-                border-color: #d39e00;
-                box-shadow: 0 0 0 0.2rem rgba(255, 193, 7, 0.5);
-            }
+        .mi-boton:focus,
+        .mi-boton.focus {
+            color: #000000;
+            background-color: #e0a800;
+            border-color: #d39e00;
+            box-shadow: 0 0 0 0.2rem rgba(255, 193, 7, 0.5);
+        }
 
-            .mi-boton:disabled,
-            .mi-boton.disabled {
-                color: #000000;
-                background-color: #ffc107;
-                border-color: #ffc107;
-                opacity: 0.65;
-            }
+        .mi-boton:disabled,
+        .mi-boton.disabled {
+            color: #000000;
+            background-color: #ffc107;
+            border-color: #ffc107;
+            opacity: 0.65;
+        }
 
-            .mi-boton:not(:disabled):not(.disabled):active,
-            .mi-boton:not(:disabled):not(.disabled).active,
-            .show > .mi-boton.dropdown-toggle {
-                color: #000000;
-                background-color: #d39e00;
-                border-color: #c69500;
-            }
+        .mi-boton:not(:disabled):not(.disabled):active,
+        .mi-boton:not(:disabled):not(.disabled).active,
+        .show>.mi-boton.dropdown-toggle {
+            color: #000000;
+            background-color: #d39e00;
+            border-color: #c69500;
+        }
 
-                .mi-boton:not(:disabled):not(.disabled):active:focus,
-                .mi-boton:not(:disabled):not(.disabled).active:focus,
-                .show > .mi-boton.dropdown-toggle:focus {
-                    box-shadow: 0 0 0 0.2rem rgba(255, 193, 7, 0.5);
-                }
+        .mi-boton:not(:disabled):not(.disabled):active:focus,
+        .mi-boton:not(:disabled):not(.disabled).active:focus,
+        .show>.mi-boton.dropdown-toggle:focus {
+            box-shadow: 0 0 0 0.2rem rgba(255, 193, 7, 0.5);
+        }
 
 
 
@@ -114,45 +113,45 @@
             transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
         }
 
-            .mi-boton-exito:hover {
-                color: #000;
-                /* Mantener letra negra */
-                background-color: #218838;
-                border-color: #1e7e34;
-            }
+        .mi-boton-exito:hover {
+            color: #000;
+            /* Mantener letra negra */
+            background-color: #218838;
+            border-color: #1e7e34;
+        }
 
-            .mi-boton-exito:focus,
-            .mi-boton-exito.focus {
-                color: #000;
-                /* Mantener letra negra */
-                background-color: #218838;
-                border-color: #1e7e34;
-                box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.5);
-            }
+        .mi-boton-exito:focus,
+        .mi-boton-exito.focus {
+            color: #000;
+            /* Mantener letra negra */
+            background-color: #218838;
+            border-color: #1e7e34;
+            box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.5);
+        }
 
-            .mi-boton-exito:disabled,
-            .mi-boton-exito.disabled {
-                color: #000;
-                /* Mantener letra negra */
-                background-color: #28a745;
-                border-color: #28a745;
-                opacity: 0.65;
-            }
+        .mi-boton-exito:disabled,
+        .mi-boton-exito.disabled {
+            color: #000;
+            /* Mantener letra negra */
+            background-color: #28a745;
+            border-color: #28a745;
+            opacity: 0.65;
+        }
 
-            .mi-boton-exito:not(:disabled):not(.disabled):active,
-            .mi-boton-exito:not(:disabled):not(.disabled).active,
-            .show > .mi-boton-exito.dropdown-toggle {
-                color: #000;
-                /* Mantener letra negra */
-                background-color: #1e7e34;
-                border-color: #1c7430;
-            }
+        .mi-boton-exito:not(:disabled):not(.disabled):active,
+        .mi-boton-exito:not(:disabled):not(.disabled).active,
+        .show>.mi-boton-exito.dropdown-toggle {
+            color: #000;
+            /* Mantener letra negra */
+            background-color: #1e7e34;
+            border-color: #1c7430;
+        }
 
-                .mi-boton-exito:not(:disabled):not(.disabled):active:focus,
-                .mi-boton-exito:not(:disabled):not(.disabled).active:focus,
-                .show > .mi-boton-exito.dropdown-toggle:focus {
-                    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.5);
-                }
+        .mi-boton-exito:not(:disabled):not(.disabled):active:focus,
+        .mi-boton-exito:not(:disabled):not(.disabled).active:focus,
+        .show>.mi-boton-exito.dropdown-toggle:focus {
+            box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.5);
+        }
 
 
 
@@ -176,45 +175,45 @@
             transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
         }
 
-            .mi-boton-peligro:hover {
-                color: #000;
-                /* Mantener letra negra */
-                background-color: #c82333;
-                border-color: #bd2130;
-            }
+        .mi-boton-peligro:hover {
+            color: #000;
+            /* Mantener letra negra */
+            background-color: #c82333;
+            border-color: #bd2130;
+        }
 
-            .mi-boton-peligro:focus,
-            .mi-boton-peligro.focus {
-                color: #000;
-                /* Mantener letra negra */
-                background-color: #c82333;
-                border-color: #bd2130;
-                box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.5);
-            }
+        .mi-boton-peligro:focus,
+        .mi-boton-peligro.focus {
+            color: #000;
+            /* Mantener letra negra */
+            background-color: #c82333;
+            border-color: #bd2130;
+            box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.5);
+        }
 
-            .mi-boton-peligro:disabled,
-            .mi-boton-peligro.disabled {
-                color: #000;
-                /* Mantener letra negra */
-                background-color: #dc3545;
-                border-color: #dc3545;
-                opacity: 0.65;
-            }
+        .mi-boton-peligro:disabled,
+        .mi-boton-peligro.disabled {
+            color: #000;
+            /* Mantener letra negra */
+            background-color: #dc3545;
+            border-color: #dc3545;
+            opacity: 0.65;
+        }
 
-            .mi-boton-peligro:not(:disabled):not(.disabled):active,
-            .mi-boton-peligro:not(:disabled):not(.disabled).active,
-            .show > .mi-boton-peligro.dropdown-toggle {
-                color: #000;
-                /* Mantener letra negra */
-                background-color: #bd2130;
-                border-color: #b21f2d;
-            }
+        .mi-boton-peligro:not(:disabled):not(.disabled):active,
+        .mi-boton-peligro:not(:disabled):not(.disabled).active,
+        .show>.mi-boton-peligro.dropdown-toggle {
+            color: #000;
+            /* Mantener letra negra */
+            background-color: #bd2130;
+            border-color: #b21f2d;
+        }
 
-                .mi-boton-peligro:not(:disabled):not(.disabled):active:focus,
-                .mi-boton-peligro:not(:disabled):not(.disabled).active:focus,
-                .show > .mi-boton-peligro.dropdown-toggle:focus {
-                    box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.5);
-                }
+        .mi-boton-peligro:not(:disabled):not(.disabled):active:focus,
+        .mi-boton-peligro:not(:disabled):not(.disabled).active:focus,
+        .show>.mi-boton-peligro.dropdown-toggle:focus {
+            box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.5);
+        }
 
 
         /* Main Content */
@@ -231,23 +230,23 @@
             color: white;
         }
 
-            .welcome-section img {
-                width: 100%;
-                height: 200px;
-                object-fit: cover;
-                border-radius: 8px;
-            }
+        .welcome-section img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
 
-            .welcome-section .welcome-text {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                color: white;
-                font-size: 3rem;
-                font-weight: bold;
-                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-            }
+        .welcome-section .welcome-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 3rem;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        }
 
         .card-container {
             display: flex;
@@ -269,40 +268,67 @@
             transition: transform 0.3s, box-shadow 0.3s;
         }
 
-            .card:hover {
-                transform: translateY(-10px);
-                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-            }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
 
-            .card h2 {
-                margin-top: 0;
-                font-size: 1.8rem;
-                font-weight: bold;
-            }
+        .card h2 {
+            margin-top: 0;
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
 
-            .card p {
-                margin: 15px 0;
-                font-size: 1rem;
-                color: #333;
-            }
+        .card p {
+            margin: 15px 0;
+            font-size: 1rem;
+            color: #333;
+        }
 
-            .card button {
-                background-color: #005b6e;
-                color: white;
-                padding: 10px 15px;
-                border: none;
-                cursor: pointer;
-                border-radius: 5px;
-                font-size: 1rem;
-                transition: background-color 0.3s;
-            }
+        .card button {
+            background-color: #005b6e;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+        }
 
-                .card button:hover {
-                    background-color: #007b8a;
-                }
+        .card button:hover {
+            background-color: #007b8a;
+        }
 
-        /* Main Content */
+        /*carta incidencias*/
+        .card {
+            margin: 10px auto;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            font-size: 0.9rem;
+        }
 
+        .card-title {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .card-text {
+            font-size: 1.2rem;
+            margin: 5px 0;
+        }
+
+        .card img {
+            border-radius: 5px;
+            object-fit: cover;
+            height: 100px;
+            width: 100%;
+        }
+
+        .text-body-secondary {
+            color: #6c757d;
+            font-size: 0.85rem;
+        }
 
         .tickets-section {
             background-color: white;
@@ -317,58 +343,58 @@
             margin-bottom: 20px;
         }
 
-            .filters input,
-            .filters select {
-                padding: 10px;
-                border: 1px solid #ccc;
-                border-radius: 4px;
-            }
+        .filters input,
+        .filters select {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
 
         .tickets-table {
             border-collapse: collapse;
         }
 
-            .tickets-table thead {
-                background-color: #005b6e;
-                color: white;
-            }
+        .tickets-table thead {
+            background-color: #005b6e;
+            color: white;
+        }
 
-            .tickets-table th,
-            .tickets-table td {
-                border: 1px solid #ccc;
-                padding: 10px;
-                text-align: left;
-            }
+        .tickets-table th,
+        .tickets-table td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+        }
 
-            .tickets-table tbody tr:nth-child(odd) {
-                background-color: #f9f9f9;
-            }
+        .tickets-table tbody tr:nth-child(odd) {
+            background-color: #f9f9f9;
+        }
 
-            .tickets-table tbody tr:nth-child(even) {
-                background-color: #e6e6e6;
-            }
+        .tickets-table tbody tr:nth-child(even) {
+            background-color: #e6e6e6;
+        }
 
-            .tickets-table td button {
-                padding: 5px 10px;
-                border: none;
-                border-radius: 4px;
-                cursor: pointer;
-            }
+        .tickets-table td button {
+            padding: 5px 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
 
-                .tickets-table td button.view {
-                    background-color: #007bff;
-                    color: white;
-                }
+        .tickets-table td button.view {
+            background-color: #007bff;
+            color: white;
+        }
 
-                .tickets-table td button.edit {
-                    background-color: #ffc107;
-                    color: white;
-                }
+        .tickets-table td button.edit {
+            background-color: #ffc107;
+            color: white;
+        }
 
-                .tickets-table td button.delete {
-                    background-color: #dc3545;
-                    color: white;
-                }
+        .tickets-table td button.delete {
+            background-color: #dc3545;
+            color: white;
+        }
 
         .busqu-container {
             display: flex;
@@ -415,33 +441,33 @@
             left: 375px;
         }
 
-            .nuevo-container h2 {
-                margin-bottom: 0px;
-            }
+        .nuevo-container h2 {
+            margin-bottom: 0px;
+        }
 
         .form-group {
             margin-bottom: 15px;
         }
 
-            .form-group label {
-                display: block;
-                font-weight: bold;
-            }
+        .form-group label {
+            display: block;
+            font-weight: bold;
+        }
 
-            .form-group select,
-            .form-group input[type="text"],
-            .form-group textarea {
-                width: 100%;
-                padding: 8px;
-                margin-top: 5px;
-                border: 1px solid #ccc;
-                border-radius: 5px;
-                resize: none;
-            }
+        .form-group select,
+        .form-group input[type="text"],
+        .form-group textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            resize: none;
+        }
 
-            .form-group textarea {
-                height: 80px;
-            }
+        .form-group textarea {
+            height: 80px;
+        }
 
         .image-section {
             display: flex;
@@ -450,25 +476,25 @@
             margin-bottom: 15px;
         }
 
-            .image-section img {
-                max-width: 60px;
-                max-height: 60px;
-                border: 1px solid #ccc;
-                border-radius: 5px;
-            }
+        .image-section img {
+            max-width: 60px;
+            max-height: 60px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
 
-            .image-section button {
-                padding: 8px 15px;
-                border: none;
-                border-radius: 5px;
-                background-color: #00264d;
-                color: #fff;
-                cursor: pointer;
-            }
+        .image-section button {
+            padding: 8px 15px;
+            border: none;
+            border-radius: 5px;
+            background-color: #00264d;
+            color: #fff;
+            cursor: pointer;
+        }
 
-                .image-section button:hover {
-                    background-color: #00509e;
-                }
+        .image-section button:hover {
+            background-color: #00509e;
+        }
 
         .submit-btn {
             display: block;
@@ -482,9 +508,9 @@
             cursor: pointer;
         }
 
-            .submit-btn:hover {
-                background-color: #00509e;
-            }
+        .submit-btn:hover {
+            background-color: #00509e;
+        }
 
         .titulo-line {
             border-bottom: 2px solid #000;
@@ -510,65 +536,66 @@
             gap: 10px;
         }
 
-            .search-bar input[type="text"],
-            .search-bar select {
-                padding: 10px;
-                border: 1px solid #ccc;
-                border-radius: 5px;
-                width: 25%;
-            }
+        .search-bar input[type="text"],
+        .search-bar select {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 25%;
+        }
 
-            .search-bar input::placeholder {
-                color: #aaa;
-            }
+        .search-bar input::placeholder {
+            color: #aaa;
+        }
 
         .knowledge-base {
             border-top: 2px solid #ffa500;
             padding-top: 20px;
         }
 
-            .knowledge-base h3 {
-                margin-bottom: 20px;
-                color: #333;
-                text-align: center;
-            }
+        .knowledge-base h3 {
+            margin-bottom: 20px;
+            color: #333;
+            text-align: center;
+        }
 
-            .knowledge-base .row {
-                display: flex;
-                justify-content: space-between;
-                gap: 20px;
-            }
+        .knowledge-base .row {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
 
-            .knowledge-base .column {
-                flex: 1;
-            }
+        .knowledge-base .column {
+            flex: 1;
+        }
 
-            .knowledge-base ul {
-                list-style: none;
-                padding: 0;
-            }
+        .knowledge-base ul {
+            list-style: none;
+            padding: 0;
+        }
 
-                .knowledge-base ul li {
-                    margin-bottom: 10px;
-                    color: #555;
-                }
+        .knowledge-base ul li {
+            margin-bottom: 10px;
+            color: #555;
+        }
 
-                    .knowledge-base ul li:hover {
-                        text-decoration: underline;
-                        cursor: pointer;
-                    }
+        .knowledge-base ul li:hover {
+            text-decoration: underline;
+            cursor: pointer;
+        }
 
         .search-container {
             display: flex;
             align-items: center;
         }
 
-            .search-container input, .search-container select {
-                margin-right: 10px;
-                padding: 5px;
-                border-radius: 5px;
-                border: 1px solid #ccc;
-            }
+        .search-container input,
+        .search-container select {
+            margin-right: 10px;
+            padding: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
 
         .search-title {
             font-size: 18px;
@@ -602,11 +629,11 @@
             margin: auto;
         }
 
-            .knowledge-base h1 {
-                font-size: 20px;
-                margin-bottom: 10px;
-                color: #333;
-            }
+        .knowledge-base h1 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #333;
+        }
 
         .divider {
             height: 3px;
@@ -626,23 +653,23 @@
             color: #333;
         }
 
-            .column h2 {
-                font-size: 16px;
-                font-weight: bold;
-                margin-bottom: 10px;
-                color: #000;
-            }
+        .column h2 {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #000;
+        }
 
-            .column ul {
-                list-style-type: none;
-                padding: 0;
-                margin: 0;
-            }
+        .column ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
 
-                .column ul li {
-                    margin-bottom: 5px;
-                    line-height: 1.5;
-                }
+        .column ul li {
+            margin-bottom: 5px;
+            line-height: 1.5;
+        }
 
         .editar_card {
             max-width: 500px;
@@ -654,38 +681,38 @@
             color: white;
         }
 
-            .editar_card h2 {
-                font-size: 20px;
-                text-align: center;
-                margin-bottom: 20px;
-            }
+        .editar_card h2 {
+            font-size: 20px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
 
         .form-group {
             margin-bottom: 15px;
         }
 
-            .form-group label {
-                display: block;
-                font-size: 14px;
-                margin-bottom: 5px;
-            }
+        .form-group label {
+            display: block;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
 
-            .form-group input {
-                width: 100%;
-                padding: 10px;
-                border-radius: 5px;
-                border: none;
-                font-size: 14px;
-                box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.2);
-            }
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            font-size: 14px;
+            box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.2);
+        }
 
-                .form-group input[readonly] {
-                    background-color: #e0e0e0;
-                }
+        .form-group input[readonly] {
+            background-color: #e0e0e0;
+        }
 
-                .form-group input[type="password"] {
-                    background-color: white;
-                }
+        .form-group input[type="password"] {
+            background-color: white;
+        }
 
         .btn {
             display: block;
@@ -703,9 +730,9 @@
             transition: background-color 0.3s;
         }
 
-            .btn:hover {
-                background-color: #004766;
-            }
+        .btn:hover {
+            background-color: #004766;
+        }
 
         .titulo {
             text-align: center;
@@ -761,26 +788,26 @@
             justify-content: center;
         }
 
-            .ticket-image img {
-                width: 100px;
-                height: 100px;
-                object-fit: contain;
-                margin-bottom: 10px;
-            }
+        .ticket-image img {
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+            margin-bottom: 10px;
+        }
 
-            .ticket-image button {
-                background-color: #007baf;
-                color: white;
-                border: none;
-                padding: 5px 10px;
-                border-radius: 5px;
-                cursor: pointer;
-                margin: 5px 0;
-            }
+        .ticket-image button {
+            background-color: #007baf;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px 0;
+        }
 
-                .ticket-image button:hover {
-                    background-color: #005f85;
-                }
+        .ticket-image button:hover {
+            background-color: #005f85;
+        }
 
         .ticket-form-section {
             background-color: #20b2aa;
@@ -825,468 +852,482 @@
             transition: background-color 0.3s;
         }
 
-            .ticket-btn-update:hover {
-                background-color: #003647;
-            }
+        .ticket-btn-update:hover {
+            background-color: #003647;
+        }
     </style>
 </head>
 
 <body>
     <form id="form1" runat="server">
         <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
-        <asp:UpdatePanel ID="UpdatePanel1" runat="server"></asp:UpdatePanel>
-        <contenttemplate>
+        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+            <contenttemplate>
 
 
-            <header>
-                <img src="img/1.png" alt="Logo">
-            </header>
-            <div class="sidebar">
-                <h4>Vista General</h4>
-                <a href="#" data-target="inicio"><i class="bi bi-house-door-fill icon"></i>Inicio</a>
-                <a href="#" data-target="perfil"><i class="bi bi-people-fill icon"></i>Mi perfil</a>
-                <a href="#" data-target="editarperfil"><i class="bi bi-people-fill icon"></i>Editar mi perfil</a>
-                <a href="#" data-target="tickets"><i class="bi bi-person-badge-fill icon"></i>Mis tickets</a>
-                <a href="#" data-target="nuevo"><i class="bi bi-check-circle-fill icon"></i>Nuevo ticket</a>
-                <a href="#" data-target="editar"><i class="bi bi-tags-fill icon"></i>Editar ticket</a>
-                <a href="#" data-target="buscar"><i class="bi bi-laptop-fill icon"></i>Buscar ticket</a>
+                <header>
+                    <img src="img/1.png" alt="Logo">
+                </header>
+                <div class="sidebar">
+                    <h4>Vista General</h4>
+                    <a href="#" data-target="inicio"><i class="bi bi-house-door-fill icon"></i>Inicio</a>
+                    <a href="#" data-target="perfil"><i class="bi bi-people-fill icon"></i>Mi perfil</a>
+                    <a href="#" data-target="editarperfil"><i class="bi bi-people-fill icon"></i>Editar mi perfil</a>
+                    <a href="#" data-target="tickets"><i class="bi bi-person-badge-fill icon"></i>Mis tickets</a>
+                    <a href="#" data-target="nuevo"><i class="bi bi-check-circle-fill icon"></i>Nuevo ticket</a>
+                    <a href="#" data-target="editar"><i class="bi bi-tags-fill icon"></i>Editar ticket</a>
+                    <a href="#" data-target="buscar"><i class="bi bi-laptop-fill icon"></i>Buscar ticket</a>
 
-                <div class="cerrar-sesion-btn-container">
-                    <asp:Button ID="btnCerrarSesion" runat="server" Text="Cerrar Sesión" CssClass="cerrar-sesion-btn" />
-                </div>
-
-            </div>
-
-
-            <div class="main-content">
-                <div id="inicio" class="section" style="display: block;">
-
-                    <section class="welcome-section">
-                        <img src="img/Rectangle 39.jpg" alt="Fondo">
-                        <div class="welcome-text">Bienvenido Max</div>
-                    </section>
-
-                    <section class="card-container">
-                        <div class="card">
-                            <h2>Tickets</h2>
-                            <p>Visualiza el estado de tus tickets</p>
-                            <button>Tickets</button>
-                        </div>
-                        <div class="card">
-                            <h2>Nuevo ticket</h2>
-                            <p>Crear nuevo ticket</p>
-                            <button>Tickets</button>
-                        </div>
-                        <div class="card">
-                            <h2>Busqueda</h2>
-                            <p>Busca la solución en nuestra base de conocimiento</p>
-                            <button>Tickets</button>
-                        </div>
-
-                    </section>
-
-
-                </div>
-            </div>
-
-            <div id="perfil" class="section" style="display: none;">
-                <div>
-                    <br />
-                    <br />
-                </div>
-                <h2 style="text-align: center;">Usuarios</h2>
-
-                <div class="form-container">
-                    <div class="form-group">
-                        <label for="txtNombre">Nombre:</label>
-                        <asp:TextBox ID="txtNombre" runat="server" CssClass="text-input"
-                            Placeholder="Ingresa tu nombre"></asp:TextBox>
+                    <div class="cerrar-sesion-btn-container">
+                        <asp:Button ID="btnCerrarSesion" runat="server" Text="Cerrar Sesión"
+                            CssClass="cerrar-sesion-btn" />
                     </div>
-                    <div class="form-group">
-                        <label for="txtApellido">Apellido:</label>
-                        <asp:TextBox ID="txtApellido" runat="server" CssClass="text-input"
-                            Placeholder="Ingresa tu apellido"></asp:TextBox>
-                    </div>
-                    <div class="form-group">
-                        <label for="txtCorreo">Correo:</label>
-                        <asp:TextBox ID="txtCorreo" runat="server" CssClass="text-input" Placeholder="Ingresa tu correo"
-                            TextMode="Email"></asp:TextBox>
-                    </div>
-                    <div class="form-group">
-                        <label for="txtCedula">Cédula:</label>
-                        <asp:TextBox ID="txtCedula" runat="server" CssClass="text-input"
-                            Placeholder="Ingresa tu cedula de identidad" TextMode="Number"></asp:TextBox>
-                    </div>
-                    <div class="form-group">
-                        <label for="txtApellido">Fecha De Nacimiento:</label>
-                        <asp:TextBox ID="txtFecha" runat="server" CssClass="text-input"
-                            Placeholder="Ingresa tu fecha de nacimiento" TextMode="Date"></asp:TextBox>
-                    </div>
-                    <div class="form-group">
-                        <label for="txtContrasenia">Contraseña:</label>
-                        <asp:TextBox ID="txtContrasenia" runat="server" CssClass="text-input"
-                            Placeholder="Ingresa una contraseña" TextMode="Password"></asp:TextBox>
-                    </div>
-                    <div class="form-group">
-                        <label for="txtContraseniaV">Verificar Contraseña:</label>
-                        <asp:TextBox ID="txtContraseniaV" runat="server" CssClass="text-input"
-                            Placeholder="verifica tu contraseña" TextMode="Password"></asp:TextBox>
-                    </div>
-                    <div class="mb-3 d-flex justify-content-between align-items-center">
-                        <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="chk_ver_contra" />
-                            <label class="form-check-label" for="chk_ver_contra">Ver contraseña</label>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="ddlCategoria">Perfil:</label>
-                        <asp:DropDownList ID="ddlPerfil" runat="server" CssClass="dropdown">
-                        </asp:DropDownList>
-                    </div>
-                    <asp:Button ID="btnEnviar" runat="server" Text="Enviar" CssClass="submit-button" />
+
                 </div>
 
 
+                <div class="main-content">
+                    <div id="inicio" class="section" style="display: block;">
 
-                <asp:GridView ID="gvUsuarios" runat="server" AutoGenerateColumns="False" CssClass="table"
-                    HeaderStyle-BackColor="#f2f2f2" HeaderStyle-ForeColor="Black" RowStyle-HorizontalAlign="Center"
-                    BorderWidth="1px" Width="100%" GridLines="Both">
-                    <Columns>
+                        <section class="welcome-section">
+                            <img src="img/Rectangle 39.jpg" alt="Fondo">
+                            <div class="welcome-text">Bienvenido Max</div>
+                        </section>
 
-                        <asp:BoundField DataField="usu_id" HeaderText="ID" />
+                        <section class="card-container">
+                            <div class="card">
+                                <h2>Tickets</h2>
+                                <p>Visualiza el estado de tus tickets</p>
+                                <button>Tickets</button>
+                            </div>
+                            <div class="card">
+                                <h2>Nuevo ticket</h2>
+                                <p>Crear nuevo ticket</p>
+                                <button>Tickets</button>
+                            </div>
+                            <div class="card">
+                                <h2>Busqueda</h2>
+                                <p>Busca la solución en nuestra base de conocimiento</p>
+                                <button>Tickets</button>
+                            </div>
+
+                        </section>
 
 
-                        <asp:BoundField DataField="usu_nombre" HeaderText="Nombre" />
-
-
-                        <asp:BoundField DataField="usu_apellido" HeaderText="Apellido" />
-
-
-                        <asp:BoundField DataField="usu_fecha_nacimiento" HeaderText="Fecha N." />
-
-
-                        <asp:BoundField DataField="usu_correo" HeaderText="Correo" />
-
-
-                        <asp:BoundField DataField="estado" HeaderText="Estado" />
-
-
-                        <asp:BoundField DataField="rol" HeaderText="Rol" />
-
-
-                        <asp:TemplateField HeaderText="Acciones">
-                            <ItemTemplate>
-                                <asp:Button ID="btnEditar_usuario" runat="server" Text="Editar" CommandName="Editar"
-                                    CommandArgument='<%# Eval("usu_id") %>' CssClass="mi-boton" />
-
-                                <asp:Button ID="btnEliminar_usuario" runat="server" Text="Eliminar"
-                                    CommandName="Eliminar" CommandArgument='<%# Eval("usu_id") %>'
-                                    CssClass="mi-boton-peligro" />
-
-                                <asp:Button ID="btnActivar_usuario" runat="server" Text="Activar" CommandName="Activar"
-                                    CommandArgument='<%# Eval("usu_id") %>' CssClass="mi-boton-exito" />
-
-                            </ItemTemplate>
-                        </asp:TemplateField>
-                    </Columns>
-                </asp:GridView>
-
-            </div>
-
-            <div id="editarperfil" class="section" style="display: none;">
-                <div>
-                    <br />
-                    <br />
-                </div>
-                <div class="Titulo">
-                    Mi Perfil
-            <hr />
-                </div>
-                <div class="editar_card">
-                    <h2>Detalles de la Incidencia</h2>
-                    <div class="form-group">
-                        <label for="txtNombre">Nombre:</label>
-                        <asp:TextBox ID="TextBox1" runat="server" CssClass="form-control" Text="Kevin" ReadOnly="true"></asp:TextBox>
                     </div>
-                    <div class="form-group">
-                        <label for="txtCorreo">Correo:</label>
-                        <asp:TextBox ID="TextBox2" runat="server" CssClass="form-control" Text="Kevin@gmail.com" ReadOnly="true"></asp:TextBox>
-                    </div>
-                    <div class="form-group">
-                        <label for="txtCedula">Cédula:</label>
-                        <asp:TextBox ID="TextBox3" runat="server" CssClass="form-control" Text="178*******7" ReadOnly="true"></asp:TextBox>
-                    </div>
-                    <div class="form-group">
-                        <label for="txtTelefono">Teléfono:</label>
-                        <asp:TextBox ID="txtTelefono" runat="server" CssClass="form-control" Text="0962724834"></asp:TextBox>
-                    </div>
-                    <div class="form-group">
-                        <label for="txtContrasena1">Contraseña:</label>
-                        <asp:TextBox ID="txtContrasena1" runat="server" CssClass="form-control" TextMode="Password" Text="********"></asp:TextBox>
-                    </div>
-                    <div class="form-group">
-                        <label for="txtContrasena2">Contraseña:</label>
-                        <asp:TextBox ID="txtContrasena2" runat="server" CssClass="form-control" TextMode="Password" Text="********"></asp:TextBox>
-                    </div>
-                    <asp:Button ID="btnActualizar" runat="server" CssClass="btn" Text="Actualizar" />
-                </div>
-            </div>
-
-
-
-            <div id="tickets" class="section" style="display: none;">
-                <div>
-                    <br />
-                    <br />
-                </div>
-                <section class="section-container">
-                    <h2>Mis tickets</h2>
-                    <div class="header-line"></div>
-                </section>
-                <div>
-
-                    <asp:HiddenField ID="iddc" runat="server" />
-                    <table class="tickets-table" align="center">
-                        <tr>
-
-                            <td class="grid">
-                                <asp:GridView ID="GridView1" AutoGenerateColumns="False" runat="server"
-                                    BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px"
-                                    CellPadding="4" CssClass="auto-style6" ForeColor="Black" CellSpacing="2">
-                                    <Columns>
-                                        <asp:BoundField DataField="ci_id" HeaderText="Id" />
-                                        <asp:BoundField DataField="ci_nombre" HeaderText="Nombre" />
-                                        <asp:BoundField DataField="ci_cedula" HeaderText="Cedula" />
-                                        <asp:BoundField DataField="ci_correo" HeaderText="Correo" />
-                                        <asp:BoundField DataField="ci_password" HeaderText="Contraseña" />
-                                        <asp:BoundField DataField="ci_direccion" HeaderText="Direccion" />
-                                        <asp:BoundField DataField="ci_bloqueado" HeaderText="Estado" />
-                                        <asp:TemplateField HeaderText="Imagen">
-                                            <ItemTemplate>
-                                                <asp:Image ID="Image2" runat="server"
-                                                    ImageUrl='<%# "data:image/png;base64," + Eval("ci_problema_base64") %>'
-                                                    Style="width: 100px; height: 100px;" />
-                                            </ItemTemplate>
-                                        </asp:TemplateField>
-                                        <asp:BoundField DataField="ci_ticket" HeaderText="Tipo" />
-                                        <asp:TemplateField>
-                                            <ItemTemplate>
-                                                <asp:Button ID="btnActualizar" CausesValidation="false" runat="server"
-                                                    Text="Actualizar" CommandArgument='<%# Eval("ci_id") %>'
-                                                    class="btn btn-dark" />
-                                                <asp:Button ID="Eliminar" CausesValidation="false" runat="server"
-                                                    Text="Eliminar" CommandArgument='<%# Eval("ci_id") %>'
-                                                    class="btn btn-dark" />
-                                            </ItemTemplate>
-                                        </asp:TemplateField>
-                                    </Columns>
-                                    <FooterStyle BackColor="#CCCCCC" />
-                                    <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
-                                    <PagerStyle BackColor="#CCCCCC" ForeColor="Black" HorizontalAlign="Left" />
-                                    <RowStyle BackColor="White" />
-                                    <SelectedRowStyle BackColor="#000099" Font-Bold="True" ForeColor="White" />
-                                    <SortedAscendingCellStyle BackColor="#F1F1F1" />
-                                    <SortedAscendingHeaderStyle BackColor="#808080" />
-                                    <SortedDescendingCellStyle BackColor="#CAC9C9" />
-                                    <SortedDescendingHeaderStyle BackColor="#383838" />
-                                </asp:GridView>
-                            </td>
-
-                        </tr>
-                    </table>
-
                 </div>
 
-            </div>
+                <div id="perfil" class="section" style="display: none;">
+                    <div>
+                        <br />
+                        <br />
+                    </div>
+                    <h2 style="text-align: center;">Usuarios</h2>
 
-            <div id="nuevo" class="section" style="display: none;">
-                <div>
-                    <br />
-                    <br />
-                </div>
-                <div class="nuevo-container">
-                    <section class="titulo-container">
-                        <h2>Registrar incidencias</h2>
-                        <div class="titulo-line"></div>
-                    </section>
-                    <form>
+                    <div class="form-container">
                         <div class="form-group">
-                            <label for="categoria">Categoría:</label>
-                            <select id="categoria" name="categoria">
-                                <option value="general">General</option>
-                                <option value="tecnica">Técnica</option>
-                                <option value="soporte">Soporte</option>
-                            </select>
+                            <label for="txtNombre">Nombre:</label>
+                            <asp:TextBox ID="txtNombre" runat="server" CssClass="text-input"
+                                Placeholder="Ingresa tu nombre"></asp:TextBox>
                         </div>
                         <div class="form-group">
-                            <label for="titulo">Título:</label>
-                            <input type="text" id="titulo" name="titulo" placeholder="Ingrese el título">
+                            <label for="txtApellido">Apellido:</label>
+                            <asp:TextBox ID="txtApellido" runat="server" CssClass="text-input"
+                                Placeholder="Ingresa tu apellido"></asp:TextBox>
                         </div>
                         <div class="form-group">
-                            <label for="descripcion">Descripción:</label>
-                            <textarea id="descripcion" name="descripcion"
-                                placeholder="Ingrese la descripción"></textarea>
+                            <label for="txtCorreo">Correo:</label>
+                            <asp:TextBox ID="txtCorreo" runat="server" CssClass="text-input"
+                                Placeholder="Ingresa tu correo" TextMode="Email"></asp:TextBox>
                         </div>
-                        <div class="image-section">
-                            <img src="placeholder.png" alt="Imagen seleccionada">
-                            <div>
+                        <div class="form-group">
+                            <label for="txtCedula">Cédula:</label>
+                            <asp:TextBox ID="txtCedula" runat="server" CssClass="text-input"
+                                Placeholder="Ingresa tu cedula de identidad" TextMode="Number"></asp:TextBox>
+                        </div>
+                        <div class="form-group">
+                            <label for="txtApellido">Fecha De Nacimiento:</label>
+                            <asp:TextBox ID="txtFecha" runat="server" CssClass="text-input"
+                                Placeholder="Ingresa tu fecha de nacimiento" TextMode="Date"></asp:TextBox>
+                        </div>
+                        <div class="form-group">
+                            <label for="txtContrasenia">Contraseña:</label>
+                            <asp:TextBox ID="txtContrasenia" runat="server" CssClass="text-input"
+                                Placeholder="Ingresa una contraseña" TextMode="Password"></asp:TextBox>
+                        </div>
+                        <div class="form-group">
+                            <label for="txtContraseniaV">Verificar Contraseña:</label>
+                            <asp:TextBox ID="txtContraseniaV" runat="server" CssClass="text-input"
+                                Placeholder="verifica tu contraseña" TextMode="Password"></asp:TextBox>
+                        </div>
+                        <div class="mb-3 d-flex justify-content-between align-items-center">
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="chk_ver_contra" />
+                                <label class="form-check-label" for="chk_ver_contra">Ver contraseña</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="ddlCategoria">Perfil:</label>
+                            <asp:DropDownList ID="ddlPerfil" runat="server" CssClass="dropdown">
+                            </asp:DropDownList>
+                        </div>
+                        <asp:Button ID="btnEnviar" runat="server" Text="Enviar" CssClass="submit-button" />
+                    </div>
+
+
+
+                    <asp:GridView ID="gvUsuarios" runat="server" AutoGenerateColumns="False" CssClass="table"
+                        HeaderStyle-BackColor="#f2f2f2" HeaderStyle-ForeColor="Black" RowStyle-HorizontalAlign="Center"
+                        BorderWidth="1px" Width="100%" GridLines="Both">
+                        <Columns>
+
+                            <asp:BoundField DataField="usu_id" HeaderText="ID" />
+
+
+                            <asp:BoundField DataField="usu_nombre" HeaderText="Nombre" />
+
+
+                            <asp:BoundField DataField="usu_apellido" HeaderText="Apellido" />
+
+
+                            <asp:BoundField DataField="usu_fecha_nacimiento" HeaderText="Fecha N." />
+
+
+                            <asp:BoundField DataField="usu_correo" HeaderText="Correo" />
+
+
+                            <asp:BoundField DataField="estado" HeaderText="Estado" />
+
+
+                            <asp:BoundField DataField="rol" HeaderText="Rol" />
+
+
+                            <asp:TemplateField HeaderText="Acciones">
+                                <ItemTemplate>
+                                    <asp:Button ID="btnEditar_usuario" runat="server" Text="Editar" CommandName="Editar"
+                                        CommandArgument='<%# Eval("usu_id") %>' CssClass="mi-boton" />
+
+                                    <asp:Button ID="btnEliminar_usuario" runat="server" Text="Eliminar"
+                                        CommandName="Eliminar" CommandArgument='<%# Eval("usu_id") %>'
+                                        CssClass="mi-boton-peligro" />
+
+                                    <asp:Button ID="btnActivar_usuario" runat="server" Text="Activar"
+                                        CommandName="Activar" CommandArgument='<%# Eval("usu_id") %>'
+                                        CssClass="mi-boton-exito" />
+
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                        </Columns>
+                    </asp:GridView>
+
+                </div>
+
+                <div id="editarperfil" class="section" style="display: none;">
+                    <div>
+                        <br />
+                        <br />
+                    </div>
+                    <div class="Titulo">
+                        Mi Perfil
+                        <hr />
+                    </div>
+                    <div class="editar_card">
+                        <h2>Detalles de la Incidencia</h2>
+                        <div class="form-group">
+                            <label for="txtNombre">Nombre:</label>
+                            <asp:TextBox ID="TextBox1" runat="server" CssClass="form-control" Text="Kevin"
+                                ReadOnly="true"></asp:TextBox>
+                        </div>
+                        <div class="form-group">
+                            <label for="txtCorreo">Correo:</label>
+                            <asp:TextBox ID="TextBox2" runat="server" CssClass="form-control" Text="Kevin@gmail.com"
+                                ReadOnly="true"></asp:TextBox>
+                        </div>
+                        <div class="form-group">
+                            <label for="txtCedula">Cédula:</label>
+                            <asp:TextBox ID="TextBox3" runat="server" CssClass="form-control" Text="178*******7"
+                                ReadOnly="true"></asp:TextBox>
+                        </div>
+                        <div class="form-group">
+                            <label for="txtTelefono">Teléfono:</label>
+                            <asp:TextBox ID="txtTelefono" runat="server" CssClass="form-control" Text="0962724834">
+                            </asp:TextBox>
+                        </div>
+                        <div class="form-group">
+                            <label for="txtContrasena1">Contraseña:</label>
+                            <asp:TextBox ID="txtContrasena1" runat="server" CssClass="form-control" TextMode="Password"
+                                Text="********"></asp:TextBox>
+                        </div>
+                        <div class="form-group">
+                            <label for="txtContrasena2">Contraseña:</label>
+                            <asp:TextBox ID="txtContrasena2" runat="server" CssClass="form-control" TextMode="Password"
+                                Text="********"></asp:TextBox>
+                        </div>
+                        <asp:Button ID="btnActualizar" runat="server" CssClass="btn" Text="Actualizar" />
+                    </div>
+                </div>
+
+
+
+                <div id="tickets" class="section" style="display: none;">
+                    <div>
+                        <br />
+                        <br />
+                    </div>
+                    <section class="section-container">
+                        <h2>Mis tickets</h2>
+                        <div class="header-line"></div>
+                    </section>
+                    <div>
+
+                        <asp:HiddenField ID="iddc" runat="server" />
+                        <table class="tickets-table" align="center">
+                            <tr>
+
+                                <td class="grid">
+                                    <asp:GridView ID="GridView1" AutoGenerateColumns="False" runat="server"
+                                        BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px"
+                                        CellPadding="4" CssClass="auto-style6" ForeColor="Black" CellSpacing="2">
+                                        <Columns>
+                                            <asp:BoundField DataField="ci_id" HeaderText="Id" />
+                                            <asp:BoundField DataField="ci_nombre" HeaderText="Nombre" />
+                                            <asp:BoundField DataField="ci_cedula" HeaderText="Cedula" />
+                                            <asp:BoundField DataField="ci_correo" HeaderText="Correo" />
+                                            <asp:BoundField DataField="ci_password" HeaderText="Contraseña" />
+                                            <asp:BoundField DataField="ci_direccion" HeaderText="Direccion" />
+                                            <asp:BoundField DataField="ci_bloqueado" HeaderText="Estado" />
+                                            <asp:TemplateField HeaderText="Imagen">
+                                                <ItemTemplate>
+                                                    <asp:Image ID="Image2" runat="server"
+                                                        ImageUrl='<%# "data:image/png;base64," + Eval("ci_problema_base64") %>'
+                                                        Style="width: 100px; height: 100px;" />
+                                                </ItemTemplate>
+                                            </asp:TemplateField>
+                                            <asp:BoundField DataField="ci_ticket" HeaderText="Tipo" />
+                                            <asp:TemplateField>
+                                                <ItemTemplate>
+                                                    <asp:Button ID="btnActualizar" CausesValidation="false"
+                                                        runat="server" Text="Actualizar"
+                                                        CommandArgument='<%# Eval("ci_id") %>' class="btn btn-dark" />
+                                                    <asp:Button ID="Eliminar" CausesValidation="false" runat="server"
+                                                        Text="Eliminar" CommandArgument='<%# Eval("ci_id") %>'
+                                                        class="btn btn-dark" />
+                                                </ItemTemplate>
+                                            </asp:TemplateField>
+                                        </Columns>
+                                        <FooterStyle BackColor="#CCCCCC" />
+                                        <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
+                                        <PagerStyle BackColor="#CCCCCC" ForeColor="Black" HorizontalAlign="Left" />
+                                        <RowStyle BackColor="White" />
+                                        <SelectedRowStyle BackColor="#000099" Font-Bold="True" ForeColor="White" />
+                                        <SortedAscendingCellStyle BackColor="#F1F1F1" />
+                                        <SortedAscendingHeaderStyle BackColor="#808080" />
+                                        <SortedDescendingCellStyle BackColor="#CAC9C9" />
+                                        <SortedDescendingHeaderStyle BackColor="#383838" />
+                                    </asp:GridView>
+                                </td>
+
+                            </tr>
+                        </table>
+
+                    </div>
+
+                </div>
+
+                <div id="nuevo" class="section" style="display: none;">
+                    <div>
+                        <br />
+                        <br />
+                    </div>
+                    <div class="nuevo-container">
+                        <section class="titulo-container">
+                            <h2>Registrar incidencias</h2>
+                            <div class="titulo-line"></div>
+                        </section>
+                        <form>
+                            <div class="form-group">
+                                <label for="categoria">Categoría:</label>
+                                <select id="categoria" name="categoria">
+                                    <option value="general">General</option>
+                                    <option value="tecnica">Técnica</option>
+                                    <option value="soporte">Soporte</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="titulo">Título:</label>
+                                <input type="text" id="titulo" name="titulo" placeholder="Ingrese el título">
+                            </div>
+                            <div class="form-group">
+                                <label for="descripcion">Descripción:</label>
+                                <textarea id="descripcion" name="descripcion"
+                                    placeholder="Ingrese la descripción"></textarea>
+                            </div>
+                            <div class="image-section">
+                                <img src="placeholder.png" alt="Imagen seleccionada">
+                                <div>
+                                    <button type="button">Seleccione</button>
+                                    <button type="button">Ver</button>
+                                </div>
+                            </div>
+                            <button type="submit" class="submit-btn">Enviar</button>
+                        </form>
+                    </div>
+
+
+                </div>
+
+                <div id="editar" class="section" style="display: none;">
+                    <div>
+                        <br />
+                        <br />
+                    </div>
+                    <div class="ticket-container">
+                        <div class="ticket-header">Editar ticket</div>
+                        <hr class="ticket-divider" />
+                        <div class="ticket-details">
+                            <div class="ticket-info">
+                                <p><strong>Categoría:</strong> Software</p>
+                                <p><strong>Fecha:</strong> 20-01-2025</p>
+                                <p><strong>Título:</strong> Visual</p>
+                                <p><strong>Descripción:</strong> No carga el visual</p>
+                            </div>
+                            <div class="ticket-image">
+                                <img src="https://via.placeholder.com/100" alt="Imagen de ticket" />
                                 <button type="button">Seleccione</button>
                                 <button type="button">Ver</button>
                             </div>
                         </div>
-                        <button type="submit" class="submit-btn">Enviar</button>
-                    </form>
-                </div>
-
-
-            </div>
-
-            <div id="editar" class="section" style="display: none;">
-                <div>
-                    <br />
-                    <br />
-                </div>
-                <div class="ticket-container">
-                    <div class="ticket-header">Editar ticket</div>
-                    <hr class="ticket-divider" />
-                    <div class="ticket-details">
-                        <div class="ticket-info">
-                            <p><strong>Categoría:</strong> Software</p>
-                            <p><strong>Fecha:</strong> 20-01-2025</p>
-                            <p><strong>Título:</strong> Visual</p>
-                            <p><strong>Descripción:</strong> No carga el visual</p>
-                        </div>
-                        <div class="ticket-image">
-                            <img src="https://via.placeholder.com/100" alt="Imagen de ticket" />
-                            <button type="button">Seleccione</button>
-                            <button type="button">Ver</button>
-                        </div>
-                    </div>
-                    <div class="ticket-form-section">
-                        <div class="ticket-form-group">
-                            <asp:TextBox ID="txtCategoria" runat="server" CssClass="form-control" placeholder="Categoría"></asp:TextBox>
-                            <asp:TextBox ID="TextBox4" runat="server" CssClass="form-control" placeholder="Fecha"></asp:TextBox>
-                        </div>
-                        <div class="ticket-form-group">
-                            <asp:TextBox ID="txtTitulo" runat="server" CssClass="form-control" placeholder="Título"></asp:TextBox>
-                            <asp:TextBox ID="txtDescripcion" runat="server" CssClass="form-control" TextMode="MultiLine" Rows="4" placeholder="Descripción"></asp:TextBox>
-                        </div>
-                        <asp:Button ID="Button1" runat="server" CssClass="ticket-btn-update" Text="Actualizar" />
-                    </div>
-                </div>
-            </div>
-
-            <div id="buscar" class="section" style="display: none;">
-                <div class="search-title">Buscar</div>
-                <hr class="separator" />
-                <div class="opciones">
-                    <asp:TextBox ID="txtBuscar" runat="server" Placeholder="Buscar..."></asp:TextBox>
-                    <asp:DropDownList ID="ddlCategoria" runat="server">
-                    </asp:DropDownList>
-                    <asp:DropDownList ID="ddlTipo" runat="server">
-                    </asp:DropDownList>
-                </div>
-                <div class="knowledge-base">
-                    <h1>Base de Conocimiento</h1>
-                    <div class="divider"></div>
-                    <div class="columns">
-                        <div class="column">
-                            <h2>Problemas comunes</h2>
-                            <ul>
-                                <li>Error: contraseña incorrecta.</li>
-                                <li>No tengo permisos para abrir un archivo.</li>
-                                <li>Problemas de rendimiento en la plataforma.</li>
-                                <li>Sin acceso a internet.</li>
-                            </ul>
-                        </div>
-                        <div class="column">
-                            <h2>Errores Técnicos</h2>
-                            <ul>
-                                <li>Detalles de error #98765.</li>
-                                <li>Error 500 en el servidor.</li>
-                                <li>Requisitos para el sistema X.</li>
-                            </ul>
-                        </div>
-                        <div class="column">
-                            <h2>Categorías o Áreas</h2>
-                            <ul>
-                                <li>Errores de aplicación en el sistema contable.</li>
-                                <li>Reparación de laptops.</li>
-                                <li>Corte de internet en oficinas.</li>
-                                <li>Error en correo corporativo.</li>
-                            </ul>
-                        </div>
-                        <div class="column">
-                            <h2>Soluciones</h2>
-                            <ul>
-                                <li>Cómo recuperar mi contraseña.</li>
-                                <li>Errores frecuentes en el sistema de facturación.</li>
-                                <li>Solución temporal para caídas de red.</li>
-                            </ul>
+                        <div class="ticket-form-section">
+                            <div class="ticket-form-group">
+                                <asp:TextBox ID="txtCategoria" runat="server" CssClass="form-control"
+                                    placeholder="Categoría"></asp:TextBox>
+                                <asp:TextBox ID="TextBox4" runat="server" CssClass="form-control" placeholder="Fecha">
+                                </asp:TextBox>
+                            </div>
+                            <div class="ticket-form-group">
+                                <asp:TextBox ID="txtTitulo" runat="server" CssClass="form-control" placeholder="Título">
+                                </asp:TextBox>
+                                <asp:TextBox ID="txtDescripcion" runat="server" CssClass="form-control"
+                                    TextMode="MultiLine" Rows="4" placeholder="Descripción"></asp:TextBox>
+                            </div>
+                            <asp:Button ID="Button1" runat="server" CssClass="ticket-btn-update" Text="Actualizar" />
                         </div>
                     </div>
                 </div>
-            </div>
+
+                <div id="buscar" class="section" style="display: none;">
+                    <div class="search-title">Buscar</div>
+                    <hr class="separator" />
+                    <div class="opciones">
+                        <asp:TextBox ID="txtBuscar" runat="server" Placeholder="Buscar..."></asp:TextBox>
+                        <asp:DropDownList ID="ddlCategoria" runat="server">
+                        </asp:DropDownList>
+                        <asp:DropDownList ID="ddlTipo" runat="server">
+                        </asp:DropDownList>
+                    </div>
+                    <div class="knowledge-base">
+                        <h1>Base de Conocimiento</h1>
+                        <div class="divider"></div>
+                        <div class="columns">
+                            <div class="column">
+                                <h2>Problemas comunes</h2>
+                                <ul>
+                                    <li>Error: contraseña incorrecta.</li>
+                                    <li>No tengo permisos para abrir un archivo.</li>
+                                    <li>Problemas de rendimiento en la plataforma.</li>
+                                    <li>Sin acceso a internet.</li>
+                                </ul>
+                            </div>
+                            <div class="column">
+                                <h2>Errores Técnicos</h2>
+                                <ul>
+                                    <li>Detalles de error #98765.</li>
+                                    <li>Error 500 en el servidor.</li>
+                                    <li>Requisitos para el sistema X.</li>
+                                </ul>
+                            </div>
+                            <div class="column">
+                                <h2>Categorías o Áreas</h2>
+                                <ul>
+                                    <li>Errores de aplicación en el sistema contable.</li>
+                                    <li>Reparación de laptops.</li>
+                                    <li>Corte de internet en oficinas.</li>
+                                    <li>Error en correo corporativo.</li>
+                                </ul>
+                            </div>
+                            <div class="column">
+                                <h2>Soluciones</h2>
+                                <ul>
+                                    <li>Cómo recuperar mi contraseña.</li>
+                                    <li>Errores frecuentes en el sistema de facturación.</li>
+                                    <li>Solución temporal para caídas de red.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
 
 
 
 
 
-            <div id="cerrar" class="section" style="display: none;">
-                <h2>Cerrar Sesión</h2>
-                <p>Gracias por usar el sistema. ¡Hasta luego!</p>
-            </div>
+                <div id="cerrar" class="section" style="display: none;">
+                    <h2>Cerrar Sesión</h2>
+                    <p>Gracias por usar el sistema. ¡Hasta luego!</p>
+                </div>
 
 
-            <script>
-                document.addEventListener("DOMContentLoaded", function () {
-                    const links = document.querySelectorAll(".sidebar a");
-                    const sections = document.querySelectorAll(".section");
+                <script>
+                    document.addEventListener("DOMContentLoaded", function () {
+                        const links = document.querySelectorAll(".sidebar a");
+                        const sections = document.querySelectorAll(".section");
 
-                    links.forEach(link => {
-                        link.addEventListener("click", function (e) {
-                            e.preventDefault();
+                        links.forEach(link => {
+                            link.addEventListener("click", function (e) {
+                                e.preventDefault();
 
-                            // Obtiene el atributo data-target para identificar la sección
-                            const target = this.getAttribute("data-target");
+                                // Obtiene el atributo data-target para identificar la sección
+                                const target = this.getAttribute("data-target");
 
-                            // Oculta todas las secciones
-                            sections.forEach(section => {
-                                section.style.display = "none";
+                                // Oculta todas las secciones
+                                sections.forEach(section => {
+                                    section.style.display = "none";
+                                });
+
+                                // Muestra la sección seleccionada
+                                const targetSection = document.getElementById(target);
+                                if (targetSection) {
+                                    targetSection.style.display = "block";
+                                } else {
+                                    alert("Sección no encontrada");
+                                }
                             });
-
-                            // Muestra la sección seleccionada
-                            const targetSection = document.getElementById(target);
-                            if (targetSection) {
-                                targetSection.style.display = "block";
-                            } else {
-                                alert("Sección no encontrada");
-                            }
                         });
                     });
-                });
 
-            </script>
-            <script>
-                function togglePassword() {
-                    // Obtén los elementos de los campos de contraseña
-                    const passwordField = document.getElementById('<%= txtContrasenia.ClientID %>');
-                    const confirmPasswordField = document.getElementById('<%= txtContraseniaV.ClientID %>');
+                </script>
+                <script>
+                    function togglePassword() {
+                        // Obtén los elementos de los campos de contraseña
+                        const passwordField = document.getElementById('<%= txtContrasenia.ClientID %>');
+                        const confirmPasswordField = document.getElementById('<%= txtContraseniaV.ClientID %>');
 
-                    // Alterna el tipo entre "password" y "text"
-                    if (passwordField.type === "password") {
-                        passwordField.type = "text";
-                        confirmPasswordField.type = "text";
-                    } else {
-                        passwordField.type = "password";
-                        confirmPasswordField.type = "password";
+                        // Alterna el tipo entre "password" y "text"
+                        if (passwordField.type === "password") {
+                            passwordField.type = "text";
+                            confirmPasswordField.type = "text";
+                        } else {
+                            passwordField.type = "password";
+                            confirmPasswordField.type = "password";
+                        }
                     }
-                }
-            </script>
-        </contenttemplate>
+                </script>
+            </contenttemplate>
+        </asp:UpdatePanel>
 
     </form>
 </body>
 
 </html>
+
