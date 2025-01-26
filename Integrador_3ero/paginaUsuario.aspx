@@ -866,7 +866,7 @@
 
 
                 <header>
-                    <img src="img/1.png" alt="Logo">
+                    <img src="Imagenes/1.png" alt="Logo">
                 </header>
                 <div class="sidebar">
                     <h4>Vista General</h4>
@@ -880,7 +880,7 @@
 
                     <div class="cerrar-sesion-btn-container">
                         <asp:Button ID="btnCerrarSesion" runat="server" Text="Cerrar Sesión"
-                            CssClass="cerrar-sesion-btn" />
+                            CssClass="cerrar-sesion-btn" OnClick="btnCerrarSesion_Click1" />
                     </div>
 
                 </div>
@@ -890,7 +890,7 @@
                     <div id="inicio" class="section" style="display: block;">
 
                         <section class="welcome-section">
-                            <img src="img/Rectangle 39.jpg" alt="Fondo">
+                            <img src="Imagenes/Rectangle 39.jpg" alt="Fondo">
                             <div class="welcome-text">Bienvenido Max</div>
                         </section>
 
@@ -898,7 +898,7 @@
                             <div class="card">
                                 <h2>Tickets</h2>
                                 <p>Visualiza el estado de tus tickets</p>
-                                <button>Tickets</button>
+                                <button>Tickets </button>
                             </div>
                             <div class="card">
                                 <h2>Nuevo ticket</h2>
@@ -971,54 +971,12 @@
                             <asp:DropDownList ID="ddlPerfil" runat="server" CssClass="dropdown">
                             </asp:DropDownList>
                         </div>
-                        <asp:Button ID="btnEnviar" runat="server" Text="Enviar" CssClass="submit-button" />
+                        <asp:Button ID="btnEnviar" runat="server" Text="Enviar" CssClass="submit-button" OnClick="btnEnviar_Click"/>
                     </div>
 
 
 
-                    <asp:GridView ID="gvUsuarios" runat="server" AutoGenerateColumns="False" CssClass="table"
-                        HeaderStyle-BackColor="#f2f2f2" HeaderStyle-ForeColor="Black" RowStyle-HorizontalAlign="Center"
-                        BorderWidth="1px" Width="100%" GridLines="Both">
-                        <Columns>
 
-                            <asp:BoundField DataField="usu_id" HeaderText="ID" />
-
-
-                            <asp:BoundField DataField="usu_nombre" HeaderText="Nombre" />
-
-
-                            <asp:BoundField DataField="usu_apellido" HeaderText="Apellido" />
-
-
-                            <asp:BoundField DataField="usu_fecha_nacimiento" HeaderText="Fecha N." />
-
-
-                            <asp:BoundField DataField="usu_correo" HeaderText="Correo" />
-
-
-                            <asp:BoundField DataField="estado" HeaderText="Estado" />
-
-
-                            <asp:BoundField DataField="rol" HeaderText="Rol" />
-
-
-                            <asp:TemplateField HeaderText="Acciones">
-                                <ItemTemplate>
-                                    <asp:Button ID="btnEditar_usuario" runat="server" Text="Editar" CommandName="Editar"
-                                        CommandArgument='<%# Eval("usu_id") %>' CssClass="mi-boton" />
-
-                                    <asp:Button ID="btnEliminar_usuario" runat="server" Text="Eliminar"
-                                        CommandName="Eliminar" CommandArgument='<%# Eval("usu_id") %>'
-                                        CssClass="mi-boton-peligro" />
-
-                                    <asp:Button ID="btnActivar_usuario" runat="server" Text="Activar"
-                                        CommandName="Activar" CommandArgument='<%# Eval("usu_id") %>'
-                                        CssClass="mi-boton-exito" />
-
-                                </ItemTemplate>
-                            </asp:TemplateField>
-                        </Columns>
-                    </asp:GridView>
 
                 </div>
 
@@ -1063,7 +1021,7 @@
                             <asp:TextBox ID="txtContrasena2" runat="server" CssClass="form-control" TextMode="Password"
                                 Text="********"></asp:TextBox>
                         </div>
-                        <asp:Button ID="btnActualizar" runat="server" CssClass="btn" Text="Actualizar" />
+                        <asp:Button ID="btnActualizar" runat="server" CssClass="btn" Text="Actualizar" OnClick="btnActualizar_Click"/>
                     </div>
                 </div>
 
@@ -1108,10 +1066,10 @@
                                                 <ItemTemplate>
                                                     <asp:Button ID="btnActualizar" CausesValidation="false"
                                                         runat="server" Text="Actualizar"
-                                                        CommandArgument='<%# Eval("ci_id") %>' class="btn btn-dark" />
+                                                        CommandArgument='<%# Eval("ci_id") %>' class="btn btn-dark" OnClick="btnActualizar_Click1" />
                                                     <asp:Button ID="Eliminar" CausesValidation="false" runat="server"
                                                         Text="Eliminar" CommandArgument='<%# Eval("ci_id") %>'
-                                                        class="btn btn-dark" />
+                                                        class="btn btn-dark" OnClick="Eliminar_Click" />
                                                 </ItemTemplate>
                                             </asp:TemplateField>
                                         </Columns>
@@ -1210,7 +1168,7 @@
                                 <asp:TextBox ID="txtDescripcion" runat="server" CssClass="form-control"
                                     TextMode="MultiLine" Rows="4" placeholder="Descripción"></asp:TextBox>
                             </div>
-                            <asp:Button ID="Button1" runat="server" CssClass="ticket-btn-update" Text="Actualizar" />
+                            <asp:Button ID="Button1" runat="server" CssClass="ticket-btn-update" Text="Actualizar" OnClick="Button1_Click"/>
                         </div>
                     </div>
                 </div>
