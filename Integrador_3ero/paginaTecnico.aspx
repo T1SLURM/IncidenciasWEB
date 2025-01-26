@@ -412,7 +412,7 @@
 
 
             <header>
-                <img src="Imagenes/Component 8.png" alt="Logo"/>
+                <img src="Imagenes/1.png" alt="Logo"/>
                 <div class="userinfo">
                     <i class="bi bi-person-circle"></i>
                     <span>Juan</span>
