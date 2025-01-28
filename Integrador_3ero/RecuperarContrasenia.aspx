@@ -1,5 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="RecuperarContrasenia.aspx.cs" Inherits="Integrador_3ero.RecuperarContrasenia" %>
 
+
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -66,6 +67,7 @@
 
         main {
             padding: 20px;
+            height: 656px;
         }
 
         footer {
@@ -134,10 +136,10 @@
                                 <asp:HyperLink ID="lnk_inicios" runat="server" NavigateUrl="~/Home.aspx" CssClass="custom-link">Inicio</asp:HyperLink>
                             </li>
                             <li>
-                                <asp:Button ID="btn_iniciarSesion" runat="server" Text="Inicio de Sesión" CssClass="btn custom-danger" OnClick="btn_iniciarSesion_Click" />
+                                <asp:Button ID="btn_iniciarSesion" runat="server" Text="Inicio de Sesión" CssClass="btn custom-danger" />
                             </li>
                             <li>
-                                <asp:Button ID="btn_registrar" runat="server" Text="Registrarse" CssClass="btn custom-danger" OnClick="btn_registrar_Click" />
+                                <asp:Button ID="btn_registrar" runat="server" Text="Registrarse" CssClass="btn custom-danger" />
                             </li>
                         </ul>
                     </nav>
@@ -157,31 +159,16 @@
                             <asp:Label ID="lbl_mensaje" runat="server" CssClass="form-text" ForeColor="Red"></asp:Label>
                         </div>
                         <div class="d-grid gap-2">
-                            <asp:Button ID="btn_enviar_codigo" runat="server" Text="Enviar Código" CssClass="btn custom-danger" OnClick="btn_enviar_codigo_Click" />
+                            <asp:Button ID="btn_enviar_codigo" runat="server" Text="Enviar Código" CssClass="btn custom-danger" />
                         </div>
                     </div>
                 </main>
-                <footer class="text-white py-4">
-                    <div class="container">
-                        <div class="decorative-line">
-                            <div class="dot"></div>
-                            <div class="line"></div>
-                        </div>
-                        <div class="social-media text-center mt-3">
-                            <a href="#">
-                                <img src="Imagenes/stash_social-facebook-light.png" alt="Facebook"></a>
-                            <a href="#">
-                                <img src="Imagenes/ion_social-whatsapp.png" alt="WhatsApp"></a>
-                            <a href="#">
-                                <img src="Imagenes/simple-line-icons_social-instagram.png" alt="Instagram"></a>
-                        </div>
-                        <p class="text-center">&copy; 2024 Gear Solutions</p>
-                    </div>
-                </footer>
-                <asp:Timer ID="Timer1" runat="server" OnTick="Timer1_Tick" Interval="3000" Enabled="false" />
+
+                <asp:Timer ID="Timer1" runat="server" Interval="3000" Enabled="false" />
             </ContentTemplate>
         </asp:UpdatePanel>
     </form>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
+

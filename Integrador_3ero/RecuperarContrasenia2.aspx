@@ -66,6 +66,7 @@
 
         main {
             padding: 20px;
+            height: 656px;
         }
 
         footer {
@@ -172,23 +173,7 @@
                         <asp:Timer ID="Timer1" runat="server" OnTick="Timer1_Tick" Interval="3000" Enabled="false" />
                     </div>
                 </main>
-                <footer class="text-white py-4">
-                    <div class="container">
-                        <div class="decorative-line">
-                            <div class="dot"></div>
-                            <div class="line"></div>
-                        </div>
-                        <div class="social-media text-center mt-3">
-                            <a href="#">
-                                <img src="Imagenes/stash_social-facebook-light.png" alt="Facebook"></a>
-                            <a href="#">
-                                <img src="Imagenes/ion_social-whatsapp.png" alt="WhatsApp"></a>
-                            <a href="#">
-                                <img src="Imagenes/simple-line-icons_social-instagram.png" alt="Instagram"></a>
-                        </div>
-                        <p class="text-center">&copy; 2024 Gear Solutions</p>
-                    </div>
-                </footer>
+
             </ContentTemplate>
         </asp:UpdatePanel>
     </form>
