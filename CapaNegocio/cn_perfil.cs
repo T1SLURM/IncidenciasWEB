@@ -40,5 +40,23 @@ namespace CapaNegocio
             dc.sp_agregar_perfil_usuario(nombre);
 
         }
+
+        public void editar_perfil(string nombre, int id)
+        {
+            dc.sp_editar_perfil_admin(nombre, id);
+        }
+
+        public List<tbl_perfil> buscar_perfil_admin(int id)
+        {
+            var query = dc.buscar_perfil_admin(id).ToList();
+            var perfiles = query.Select(r => new tbl_perfil
+            {
+                per_id = r.per_id,
+                per_nombre = r.per_nombre
+            }).ToList();
+
+            return perfiles;
+        }
+
     }
 }

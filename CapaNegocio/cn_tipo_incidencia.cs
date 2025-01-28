@@ -27,5 +27,22 @@ namespace CapaNegocio
         {
             dc.sp_agregar_tipo_incidencia(nombre);
         }
+
+        public List<tbl_tipo_incidencia> buscar_tipo_incidencia(int id)
+        {
+            var query = dc.sp_buscar_tipos_incidencia_admin(id).ToList();
+            var tipIncidencia = query.Select(r => new tbl_tipo_incidencia
+            {
+                tip_id = r.tip_id,
+                tip_nombre = r.tip_nombre
+            }).ToList();
+
+            return tipIncidencia;
+        }
+
+        public void editar_tipo_incidencia(string nombre, int id)
+        {
+            dc.sp_editar_tipos_incidencia_admin(nombre, id);
+        }
     }
 }

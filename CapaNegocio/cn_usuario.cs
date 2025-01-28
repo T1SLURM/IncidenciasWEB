@@ -46,9 +46,6 @@ namespace CapaNegocio
             return usuarios;
         }
 
-
-
-
         public void desbloquear_usuario(int usu_id)
         {
             // Busca el usuario con el ID especificado
@@ -322,7 +319,35 @@ namespace CapaNegocio
             dc.sp_eliminar_usuario(id);
         }
 
+        public void editar_usuario(int id, string nombre, string apellido, string correo, DateTime fecha, int perfil)
+        {
+            dc.sp_editar_usuario_admin(id, nombre, apellido, correo, fecha, perfil);
+        }
 
+        public List<tbl_usuario> buscar_usuario_admin(int id)
+        {
+            var resultado = dc.sp_buscar_usuario(id).ToList();
+            var usuarios = resultado.Select(r => new tbl_usuario
+            {
+                usu_id = r.usu_id,
+                usu_nombre = r.usu_nombre,
+                usu_apellido = r.usu_apellido,
+                usu_correo = r.usu_correo,
+                usu_contrasenia = r.usu_contrasenia,
+                usu_fecha_nacimiento = r.usu_fecha_nacimiento,
+                usu_cedula = r.usu_cedula,
+                usu_intento = r.usu_intento,
+                usu_codigo = r.usu_codigo,
+                est_id = r.est_id,
+                per_id = r.per_id
+            }).ToList();
 
+            return usuarios;
+        }
+
+        public void agregar_usuario_admin(string nombre, string apellido, string correo, DateTime fecha, string cedula, string pass, int perfil)
+        {
+            dc.sp_agregar_usuario_admin(nombre, apellido, correo, fecha, cedula, pass, perfil);
+        }
     }
 }

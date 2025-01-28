@@ -60,13 +60,13 @@ namespace Integrador_3ero
             {
                 btn_mantenimiento.CssClass = "mi-boton";
                 btn_mantenimiento.Text = "Activar Mantenimiento";
-                
+
             }
             else if (man == "A")
             {
                 btn_mantenimiento.CssClass = "mi-boton-exito";
                 btn_mantenimiento.Text = "Desactivar Mantenimiento";
-                
+
             }
         }
 
@@ -147,6 +147,7 @@ namespace Integrador_3ero
             ddlPerfil.DataBind();
             ddlPerfil.Items.Insert(0, new ListItem("Seleccione", "0"));
         }
+        
         public void cargar_usuarios()
         {
             cn_usuario cn_Usuario = new cn_usuario();
@@ -166,9 +167,259 @@ namespace Integrador_3ero
 
         }
 
-        protected void btnEnviar_Click(object sender, EventArgs e)
+        protected void btnEnviar_UsuarioClick(object sender, EventArgs e)
         {
+            cn_usuario cn_Usuario = new cn_usuario();
 
+            if (btnEnviar.Text == "Editar")
+            {
+                int id = Convert.ToInt32(id_usuario.Text);
+                string nombre = txtNombre.Text;
+                string apellido = txtApellido.Text;
+                string correo = txtCorreo.Text;
+                DateTime fecha = Convert.ToDateTime(txtFecha.Text.Trim());
+                int perfil = Convert.ToInt32(ddlPerfil.SelectedValue);
+
+                if (id <= 0)
+                {
+                    lbl_mensaje_usuario.Text = "No se ha seleccionado ningun usuario";
+                    return;
+                }
+                else if (nombre == "" || nombre == null)
+                {
+                    lbl_mensaje_usuario.Text = "El nombre esta vacio";
+                    return;
+                }
+                else if (nombre.Length > 50)
+                {
+                    lbl_mensaje_usuario.Text = "El nombre es muy largo, debe ser de máximo 50 caracteres.";
+                    return;
+
+                }
+                else if (apellido == "" || apellido == null)
+                {
+                    lbl_mensaje_usuario.Text = "El apellido esta vacio.";
+                    return;
+                }
+                else if (apellido.Length > 50)
+                {
+                    lbl_mensaje_usuario.Text = "El apellido es muy largo, debe ser de máximo 50 caracteres.";
+                    return;
+                }
+                else if (correo == "" || correo == null)
+                {
+                    lbl_mensaje_usuario.Text = "El correo esta vacio.";
+                    return;
+                }
+                else if (correo.Length > 50)
+                {
+                    lbl_mensaje_usuario.Text = "El correo es muy largo, debe ser de máximo 50 caracteres.";
+                    return;
+                }
+                else if (string.IsNullOrEmpty(txtFecha.Text))
+                {
+                    lbl_mensaje_usuario.Text = "La fecha esta vacia";
+                    return;
+                }
+                else if (perfil <= 0)
+                {
+                    lbl_mensaje_usuario.Text = "El perfil esta vacio esta vacia";
+                    return;
+                }
+                else
+                {
+                    cn_Usuario.editar_usuario(id, nombre, apellido, correo, fecha, perfil);
+                    lbl_mensaje.Text = "Se agrego el usuario correctamente";
+                    cargar_usuarios();
+                    id_usuario.Text = null;
+                    limpiar_usuarios();
+                }
+
+            }
+            else if (btnEnviar.Text == "Agregar")
+            {
+                string nombre = txtNombre.Text;
+                string apellido = txtApellido.Text;
+                string correo = txtCorreo.Text;
+                DateTime fecha = Convert.ToDateTime(txtFecha.Text.Trim());
+                string pass = txtContrasenia.Text;
+                string passV = txtContraseniaV.Text;
+                string cedula = txtCedula.Text;
+                int perfil = Convert.ToInt32(ddlPerfil.SelectedValue);
+
+
+                if (nombre == "" || nombre == null)
+                {
+                    lbl_mensaje_usuario.Text = "El nombre esta vacio";
+                    return;
+                }
+                else if (nombre.Length > 50)
+                {
+                    lbl_mensaje_usuario.Text = "El nombre es muy largo, debe ser de máximo 50 caracteres.";
+                    return;
+
+                }
+                else if (apellido == "" || apellido == null)
+                {
+                    lbl_mensaje_usuario.Text = "El apellido esta vacio.";
+                    return;
+                }
+                else if (apellido.Length > 50)
+                {
+                    lbl_mensaje_usuario.Text = "El apellido es muy largo, debe ser de máximo 50 caracteres.";
+                    return;
+                }
+                else if (correo == "" || correo == null)
+                {
+                    lbl_mensaje_usuario.Text = "El correo esta vacio.";
+                    return;
+                }
+                else if (correo.Length > 50)
+                {
+                    lbl_mensaje_usuario.Text = "El correo es muy largo, debe ser de máximo 50 caracteres.";
+                    return;
+                }
+                else if (string.IsNullOrEmpty(txtFecha.Text))
+                {
+                    lbl_mensaje_usuario.Text = "La fecha esta vacia";
+                    return;
+                }
+                else if (perfil <= 0)
+                {
+                    lbl_mensaje_usuario.Text = "El perfil esta vacio.";
+                    return;
+                }
+                else if (correo == "" || correo == null)
+                {
+                    lbl_mensaje_usuario.Text = "El correo no esta vacio.";
+                    return;
+                }
+                else if (correo_disponible(correo) == false)
+                {
+                    lbl_mensaje_usuario.Text = "El correo no esta disponible.";
+                    return;
+                }
+                else if (correo.Length > 50)
+                {
+                    lbl_mensaje_usuario.Text = "El correo es muy largo, debe ser de máximo 50 caracteres.";
+                    return;
+                }
+                else if (pass.Length > 50)
+                {
+                    lbl_mensaje_usuario.Text = "La contraseña es muy larga, debe ser de máximo 50 caracteres.";
+                    return;
+                }
+                else if (txtContrasenia.Text == "" || txtContrasenia == null)
+                {
+                    lbl_mensaje_usuario.Text = "La contraseña esta vacia.";
+                    return;
+                }
+                else if (passV.Length > 50)
+                {
+                    lbl_mensaje_usuario.Text = "La verificacion de la contraseña es muy larga, debe ser de máximo 50 caracteres.";
+                    return;
+                }
+                else if (txtContraseniaV.Text == "" || txtContraseniaV.Text == null)
+                {
+                    lbl_mensaje_usuario.Text = "La verificacion de la contraseña esta vacia.";
+                    return;
+                }
+                else if (pass != passV)
+                {
+                    lbl_mensaje_usuario.Text = "Las contraseñas no coinciden";
+                    return;
+                }
+                else if (cedula.Length >10)
+                {
+                    lbl_mensaje_usuario.Text = "La cédula esta erronea debe tener 10 digitos.";
+                    return;
+                }
+                else if (cedula_disponible(cedula) == false)
+                {
+                    lbl_mensaje_usuario.Text = "La cédula no está disponible";
+                    return;
+                }
+                else if (validar_cedula(cedula) == false)
+                {
+                    lbl_mensaje_usuario.Text = "La cédula esta erronea.";
+                    return;
+                }
+                else
+                {
+                    cn_Usuario.agregar_usuario_admin(nombre, apellido, correo, fecha, cedula, passV, perfil);
+                    lbl_mensaje_usuario.Text = "Se agrego correctamente el usuario";
+                    cargar_usuarios();
+                    limpiar_usuarios();
+                }
+            }
+        }
+
+        public bool validar_cedula(string cedula)
+        {
+            // Validar longitud de 10 dígitos
+            if (cedula.Length != 10 || !long.TryParse(cedula, out _))
+                return false;
+
+            // Obtener los dígitos de la cédula
+            int provincia = int.Parse(cedula.Substring(0, 2));
+            int digitoVerificador = int.Parse(cedula.Substring(9, 1));
+            int suma = 0;
+
+            // Verificar provincia válida (primer dígito 0-2 y segundo 0-4)
+            if (provincia < 0 || provincia > 24)
+                return false;
+
+            for (int i = 0; i < 9; i++)
+            {
+                int digito = int.Parse(cedula[i].ToString());
+
+                // Multiplicar por 2 o por 1 dependiendo de la posición
+                int resultado = (i % 2 == 0) ? digito * 2 : digito;
+
+                // Si el resultado es mayor que 9, restarle 9
+                if (resultado > 9)
+                    resultado -= 9;
+
+                // Acumular la suma
+                suma += resultado;
+            }
+
+            // Calcular el dígito verificador esperado
+            int digitoEsperado = (suma % 10 == 0) ? 0 : 10 - (suma % 10);
+
+            // Validar el dígito verificador
+            return digitoVerificador == digitoEsperado;
+        }
+
+        public bool correo_disponible(String correo)
+        {
+            cn_usuario cn_Usuarios = new cn_usuario();
+            List<string> correos = cn_Usuarios.cargar_correos();
+
+            foreach (string correoExistente in correos)
+            {
+                // Comprobamos si el correo existe en la lista
+                if (correoExistente.Equals(correo, StringComparison.OrdinalIgnoreCase))
+                {
+                    return false; // El correo ya está en la lista
+                }
+            }
+            return true;
+        }
+
+        public bool cedula_disponible(string cedula)
+        {
+            cn_usuario cn_Usuarios = new cn_usuario();
+            List<string> cedulas = cn_Usuarios.cargar_cedulas();
+            foreach (string cedulaExistente in cedulas)
+            {
+                // Comprobamos si la cedula existe en la lista
+                if (cedulaExistente.Equals(cedula, StringComparison.OrdinalIgnoreCase))
+                {
+                    return false; // la cedula ya está en la lista
+                }
+            }
+            return true;
         }
 
         protected void btn_Agregar_Tipo_Incidencia_Click(object sender, EventArgs e)
@@ -179,26 +430,62 @@ namespace Integrador_3ero
         protected void btn_Agregar_Perfil_Click(object sender, EventArgs e)
         {
             cn_perfil cn_Perfil = new cn_perfil();
-            lbl_mensajeP.Text = "";
-            if (txtNombrePerfil.Text.Length > 50)
+            lbl_mensajePerfil.Text = "";
+            if (btn_Agregar_Perfil.Text == "Agregar")
             {
-                lbl_mensajeP.ForeColor = System.Drawing.Color.Red;
-                lbl_mensajeP.Text = "El nombre es muy largo";
+                if (txtNombrePerfil.Text.Length > 50)
+                {
+                    lbl_mensajePerfil.ForeColor = System.Drawing.Color.Red;
+                    lbl_mensajePerfil.Text = "El nombre es muy largo";
+                    return;
+                }
+                else if (txtNombrePerfil.Text == null || txtNombrePerfil.Text == "")
+                {
+                    lbl_mensajePerfil.ForeColor = System.Drawing.Color.Red;
+                    lbl_mensajePerfil.Text = "El nombre esta vacio";
+                    return;
+                }
+                else
+                {
+                    cn_Perfil.agregar_perfil(txtNombrePerfil.Text);
+                    int id = Convert.ToInt32(Session["id"]);
+                    cn_Auditoria.registrar_accion_auditoria("Registro de Nuevo Perfil de Usuario", id);
+                    lbl_mensajePerfil.ForeColor = System.Drawing.Color.Green;
+                    lbl_mensajePerfil.Text = "Se registro correctamente el perfil para el usuario";
+                    txtNombrePerfil.Text = "";
+                    cargar_perfiles();
+                }
             }
-            else if (txtNombrePerfil.Text == null || txtNombrePerfil.Text == "")
+            else if (btn_Agregar_Perfil.Text == "Editar")
             {
-                lbl_mensajeP.ForeColor = System.Drawing.Color.Red;
-                lbl_mensajeP.Text = "El nombre esta vacio";
-            }
-            else
-            {
-                cn_Perfil.agregar_perfil(txtNombrePerfil.Text);
-                int id = Convert.ToInt32(Session["id"]);
-                cn_Auditoria.registrar_accion_auditoria("Registro de Nuevo Perfil de Usuario", id);
-                lbl_mensajeP.ForeColor = System.Drawing.Color.Green;
-                lbl_mensajeP.Text = "Se registro correctamente el perfil para el usuario";
-                txtNombrePerfil.Text = "";
-                cargar_perfiles();
+                if (txtNombrePerfil.Text.Length > 50)
+                {
+                    lbl_mensajePerfil.ForeColor = System.Drawing.Color.Red;
+                    lbl_mensajePerfil.Text = "El nombre es muy largo";
+                    return;
+                }
+                else if (txtNombrePerfil.Text == null || txtNombrePerfil.Text == "")
+                {
+                    lbl_mensajePerfil.ForeColor = System.Drawing.Color.Red;
+                    lbl_mensajePerfil.Text = "El nombre esta vacio";
+                    return;
+                }
+                else
+                {
+                    int id = Convert.ToInt32(Session["id"]);
+                    cn_Auditoria.registrar_accion_auditoria("Edición de Perfil de Usuario", id);
+
+
+                    int per_id = Convert.ToInt32(id_perfil.Text);
+
+                    cn_Perfil.editar_perfil(txtNombrePerfil.Text, per_id);
+                    lbl_mensajePerfil.ForeColor = System.Drawing.Color.Green;
+                    lbl_mensajePerfil.Text = "Se editó correctamente el perfil para el usuario";
+                    txtNombrePerfil.Text = null;
+                    id_perfil.Text = null;
+                    btnLimpiarPerfil.Enabled = false;
+                    cargar_perfiles();
+                }
             }
         }
 
@@ -206,25 +493,62 @@ namespace Integrador_3ero
         {
             cn_estado_usuario cn_Estado_Usuario = new cn_estado_usuario();
             lbl_mensaje.Text = "";
-            if (txtNombreEstado.Text.Length > 50)
+            if (btn_agregar_estado_usuario.Text == "Agregar")
             {
-                lbl_mensaje.ForeColor = System.Drawing.Color.Red;
-                lbl_mensaje.Text = "El nombre es muy largo";
+                if (txtNombreEstado.Text.Length > 50)
+                {
+                    lbl_mensaje.ForeColor = System.Drawing.Color.Red;
+                    lbl_mensaje.Text = "El nombre es muy largo";
+                    return;
+                }
+                else if (txtNombreEstado.Text == null || txtNombreEstado.Text == "")
+                {
+                    lbl_mensaje.ForeColor = System.Drawing.Color.Red;
+                    lbl_mensaje.Text = "El nombre esta vacio";
+                    return;
+                }
+                else
+                {
+                    cn_Estado_Usuario.agregar_estado_usuario(txtNombreEstado.Text);
+                    int id = Convert.ToInt32(Session["id"]);
+                    cn_Auditoria.registrar_accion_auditoria("Registro de Nuevo Estado de Usuario", id);
+                    lbl_mensaje.ForeColor = System.Drawing.Color.Green;
+                    lbl_mensaje.Text = "Se registro correctamente el estado para el usuario";
+                    txtNombreEstado.Text = "";
+                    cargar_estados();
+                }
             }
-            else if (txtNombreEstado.Text == null || txtNombreEstado.Text == "")
+            else if (btn_agregar_estado_usuario.Text == "Editar")
             {
-                lbl_mensaje.ForeColor = System.Drawing.Color.Red;
-                lbl_mensaje.Text = "El nombre esta vacio";
-            }
-            else
-            {
-                cn_Estado_Usuario.agregar_estado_usuario(txtNombreEstado.Text);
-                int id = Convert.ToInt32(Session["id"]);
-                cn_Auditoria.registrar_accion_auditoria("Registro de Nuevo Estado de Usuario", id);
-                lbl_mensaje.ForeColor = System.Drawing.Color.Green;
-                lbl_mensaje.Text = "Se registro correctamente el estado para el usuario";
-                txtNombreEstado.Text = "";
-                cargar_estados();
+                if (txtNombreEstado.Text.Length > 50)
+                {
+                    lbl_mensaje.ForeColor = System.Drawing.Color.Red;
+                    lbl_mensaje.Text = "El nombre es muy largo";
+                    return;
+                }
+                else if (txtNombreEstado.Text == null || txtNombreEstado.Text == "")
+                {
+                    lbl_mensaje.ForeColor = System.Drawing.Color.Red;
+                    lbl_mensaje.Text = "El nombre esta vacio";
+                    return;
+                }
+                else
+                {
+                    int id = Convert.ToInt32(Session["id"]);
+                    cn_Auditoria.registrar_accion_auditoria("Edición de Estado de Usuario", id);
+
+                    int est_id = Convert.ToInt32(id_estado.Text);
+                    string nombre = txtNombreEstado.Text;
+
+                    cn_Estado_Usuario.editar_estado_usuario(nombre, est_id);
+                    cargar_estados();
+                    lbl_mensaje.ForeColor = System.Drawing.Color.Green;
+                    lbl_mensaje.Text = "Se editó correctamente el estado para el usuario";
+                    txtNombreEstado.Text = null;
+                    id_estado.Text = null;
+                    btn_limpiarEstado.Enabled = false;
+                    btn_agregar_estado_usuario.Text = "Agregar";
+                }
             }
         }
 
@@ -232,25 +556,62 @@ namespace Integrador_3ero
         {
             cn_tipo_incidencia cn_Tipo_Incidencia = new cn_tipo_incidencia();
             lbl_mensajeTI.Text = "";
-            if (txtTipodeIncidencia.Text.Length > 50)
+            if (btn_agregar_tipo_incidencia.Text == "Agregar")
             {
-                lbl_mensajeTI.ForeColor = System.Drawing.Color.Red;
-                lbl_mensajeTI.Text = "El nombre es muy largo";
+                if (txtTipodeIncidencia.Text.Length > 50)
+                {
+                    lbl_mensajeTI.ForeColor = System.Drawing.Color.Red;
+                    lbl_mensajeTI.Text = "El nombre es muy largo";
+                    return;
+                }
+                else if (txtTipodeIncidencia.Text == null || txtTipodeIncidencia.Text == "")
+                {
+                    lbl_mensajeTI.ForeColor = System.Drawing.Color.Red;
+                    lbl_mensajeTI.Text = "El nombre esta vacio";
+                    return;
+                }
+                else
+                {
+                    cn_Tipo_Incidencia.agregar_tipo_incidencia(txtTipodeIncidencia.Text);
+                    int id = Convert.ToInt32(Session["id"]);
+                    cn_Auditoria.registrar_accion_auditoria("Registro de Nueva Incidencia", id);
+                    lbl_mensajeTI.ForeColor = System.Drawing.Color.Green;
+                    lbl_mensajeTI.Text = "Se registro correctamente el tipo de incidente";
+                    txtTipodeIncidencia.Text = "";
+                    cargar_tipos_incidencia();
+                }
             }
-            else if (txtTipodeIncidencia.Text == null || txtTipodeIncidencia.Text == "")
+            else if (btn_agregar_tipo_incidencia.Text == "Editar")
             {
-                lbl_mensajeTI.ForeColor = System.Drawing.Color.Red;
-                lbl_mensajeTI.Text = "El nombre esta vacio";
-            }
-            else
-            {
-                cn_Tipo_Incidencia.agregar_tipo_incidencia(txtTipodeIncidencia.Text);
-                int id = Convert.ToInt32(Session["id"]);
-                cn_Auditoria.registrar_accion_auditoria("Registro de Nueva Incidencia", id);
-                lbl_mensajeTI.ForeColor = System.Drawing.Color.Green;
-                lbl_mensajeTI.Text = "Se registro correctamente el tipo de incidente";
-                txtTipodeIncidencia.Text = "";
-                cargar_tipos_incidencia();
+                if (txtTipodeIncidencia.Text.Length > 50)
+                {
+                    lbl_mensajeTI.ForeColor = System.Drawing.Color.Red;
+                    lbl_mensajeTI.Text = "El nombre es muy largo";
+                    return;
+                }
+                else if (txtTipodeIncidencia.Text == null || txtTipodeIncidencia.Text == "")
+                {
+                    lbl_mensajeTI.ForeColor = System.Drawing.Color.Red;
+                    lbl_mensajeTI.Text = "El nombre esta vacio";
+                    return;
+                }
+                else
+                {
+                    int id = Convert.ToInt32(Session["id"]);
+                    cn_Auditoria.registrar_accion_auditoria("Edición de una Incidencia", id);
+
+                    int tip_id = Convert.ToInt32(id_tipo_incidencia.Text);
+                    string nombre = txtTipodeIncidencia.Text;
+                    cn_Tipo_Incidencia.editar_tipo_incidencia(nombre, tip_id);
+                    cargar_tipos_incidencia();
+                    lbl_mensajeTI.ForeColor = System.Drawing.Color.Green;
+                    lbl_mensajeTI.Text = "Se editó correctamente el tipo de incidente";
+                    txtTipodeIncidencia.Text = null;
+                    id_tipo_incidencia.Text = null;
+                    btnLimpiar_tipos_incidencias.Enabled = false;
+                    btn_agregar_tipo_incidencia.Text = "Agregar";
+
+                }
             }
         }
 
@@ -259,25 +620,60 @@ namespace Integrador_3ero
             cn_equipo cn_Equipo = new cn_equipo();
             lbl_mensajeE.Text = "";
 
-            if (txtNombreEquipo.Text.Length > 50)
+            if (btn_agregar_equipo.Text == "Agregar")
             {
-                lbl_mensajeE.ForeColor = System.Drawing.Color.Red;
-                lbl_mensajeE.Text = "El nombre es muy largo";
+                if (txtNombreEquipo.Text.Length > 50)
+                {
+                    lbl_mensajeE.ForeColor = System.Drawing.Color.Red;
+                    lbl_mensajeE.Text = "El nombre es muy largo";
+                    return;
+                }
+                else if (txtNombreEquipo.Text == null || txtNombreEquipo.Text == "")
+                {
+                    lbl_mensajeE.ForeColor = System.Drawing.Color.Red;
+                    lbl_mensajeE.Text = "El nombre esta vacio";
+                    return;
+                }
+                else
+                {
+                    cn_Equipo.agregar_equipo(txtNombreEquipo.Text);
+                    int id = Convert.ToInt32(Session["id"]);
+                    cn_Auditoria.registrar_accion_auditoria("Se agregó un nuevo equipo", id);
+                    lbl_mensajeE.ForeColor = System.Drawing.Color.Green;
+                    lbl_mensajeE.Text = "Se registro correctamente el equipo";
+                    txtNombreEquipo.Text = "";
+                    cargar_equipos();
+                }
             }
-            else if (txtNombreEquipo.Text == null || txtNombreEquipo.Text == "")
+            else if (btn_agregar_equipo.Text == "Editar")
             {
-                lbl_mensajeE.ForeColor = System.Drawing.Color.Red;
-                lbl_mensajeE.Text = "El nombre esta vacio";
-            }
-            else
-            {
-                cn_Equipo.agregar_equipo(txtNombreEquipo.Text);
-                int id = Convert.ToInt32(Session["id"]);
-                cn_Auditoria.registrar_accion_auditoria("Registro de Nuevo Equipo", id);
-                lbl_mensajeE.ForeColor = System.Drawing.Color.Green;
-                lbl_mensajeE.Text = "Se registro correctamente el equipo";
-                txtNombreEquipo.Text = "";
-                cargar_equipos();
+                if (txtNombreEquipo.Text.Length > 50)
+                {
+                    lbl_mensajeE.ForeColor = System.Drawing.Color.Red;
+                    lbl_mensajeE.Text = "El nombre es muy largo";
+                    return;
+                }
+                else if (txtNombreEquipo.Text == null || txtNombreEquipo.Text == "")
+                {
+                    lbl_mensajeE.ForeColor = System.Drawing.Color.Red;
+                    lbl_mensajeE.Text = "El nombre esta vacio";
+                    return;
+                }
+                else
+                {
+                    int id = Convert.ToInt32(Session["id"]);
+                    cn_Auditoria.registrar_accion_auditoria("Edición de un equipo", id);
+                    int equ_id = Convert.ToInt32(id_equipo.Text);
+                    string nombre = txtNombreEquipo.Text;
+                    cn_Equipo.editar_equipo(nombre, equ_id);
+                    cargar_equipos();
+                    lbl_mensajeE.ForeColor = System.Drawing.Color.Green;
+                    lbl_mensajeE.Text = "Se editó correctamente el equipo";
+                    txtNombreEquipo.Text = null;
+                    id_equipo.Text = null;
+                    btn_limpiar_equipo.Enabled = false;
+                    btn_agregar_equipo.Text = "Agregar";
+                }
             }
 
         }
@@ -286,25 +682,63 @@ namespace Integrador_3ero
         {
             cn_categoria_incidencia cn_Categoria_Incidencia = new cn_categoria_incidencia();
             lbl_mensajeCI.Text = "";
-            if (txtNombreCatInci.Text.Length > 50)
+            if (btn_agregar_catInci.Text == "Agregar")
             {
-                lbl_mensajeCI.ForeColor = System.Drawing.Color.Red;
-                lbl_mensajeCI.Text = "El nombre es muy largo";
+                if (txtNombreCatInci.Text.Length > 50)
+                {
+                    lbl_mensajeCI.ForeColor = System.Drawing.Color.Red;
+                    lbl_mensajeCI.Text = "El nombre es muy largo";
+                    return;
+                }
+                else if (txtNombreCatInci.Text == null || txtNombreCatInci.Text == "")
+                {
+                    lbl_mensajeCI.ForeColor = System.Drawing.Color.Red;
+                    lbl_mensajeCI.Text = "El nombre esta vacio";
+                    return;
+                }
+                else
+                {
+                    cn_Categoria_Incidencia.agregar_categoria_incidencia(txtNombreCatInci.Text);
+                    int id = Convert.ToInt32(Session["id"]);
+                    cn_Auditoria.registrar_accion_auditoria("Registro de Nueva Categoria de Incidentes", id);
+                    lbl_mensajeCI.ForeColor = System.Drawing.Color.Green;
+                    lbl_mensajeCI.Text = "Se registro correctamente la categoria de la incidencia";
+                    txtNombreCatInci.Text = "";
+                    cargar_categorias_incidencias();
+                }
             }
-            else if (txtNombreCatInci.Text == null || txtNombreCatInci.Text == "")
+            else if (btn_agregar_catInci.Text == "Editar")
             {
-                lbl_mensajeCI.ForeColor = System.Drawing.Color.Red;
-                lbl_mensajeCI.Text = "El nombre esta vacio";
-            }
-            else
-            {
-                cn_Categoria_Incidencia.agregar_categoria_incidencia(txtNombreCatInci.Text);
-                int id = Convert.ToInt32(Session["id"]);
-                cn_Auditoria.registrar_accion_auditoria("Registro de Nueva Categoria de Incidentes", id);
-                lbl_mensajeCI.ForeColor = System.Drawing.Color.Green;
-                lbl_mensajeCI.Text = "Se registro correctamente la categoria de la incidencia";
-                txtNombreCatInci.Text = "";
-                cargar_categorias_incidencias();
+                if (txtNombreCatInci.Text.Length > 50)
+                {
+                    lbl_mensajeCI.ForeColor = System.Drawing.Color.Red;
+                    lbl_mensajeCI.Text = "El nombre es muy largo";
+                    return;
+                }
+                else if (txtNombreCatInci.Text == null || txtNombreCatInci.Text == "")
+                {
+                    lbl_mensajeCI.ForeColor = System.Drawing.Color.Red;
+                    lbl_mensajeCI.Text = "El nombre esta vacio";
+                    return;
+                }
+                else
+                {
+                    int id = Convert.ToInt32(Session["id"]);
+                    cn_Auditoria.registrar_accion_auditoria("Edición de Categoria de Incidentes", id);
+
+                    int cat_id = Convert.ToInt32(id_categoria_inci.Text);
+                    string nombre = txtNombreCatInci.Text;
+                    cn_Categoria_Incidencia.editar_categoria_incidencia(nombre, cat_id);
+                    cargar_categorias_incidencias();
+                    lbl_mensajeCI.ForeColor = System.Drawing.Color.Green;
+                    lbl_mensajeCI.Text = "Se editó correctamente la categoria de la incidencia";
+                    txtNombreCatInci.Text = null;
+                    id_categoria_inci.Text = null;
+                    btnLimpiar_categoria_incidencia.Enabled = false;
+                    btn_agregar_catInci.Text = "Agregar";
+
+
+                }
             }
         }
 
@@ -312,25 +746,62 @@ namespace Integrador_3ero
         {
             cn_estado_incidencia cn_Estado_Incidencia = new cn_estado_incidencia();
             lbl_mensajeEI.Text = "";
-            if (txtNombreEstInci.Text.Length > 50)
+            if (btn_agregar_estadoInci.Text == "Agregar")
             {
-                lbl_mensajeEI.ForeColor = System.Drawing.Color.Red;
-                lbl_mensajeEI.Text = "El nombre es muy largo";
+                if (txtNombreEstInci.Text.Length > 50)
+                {
+                    lbl_mensajeEI.ForeColor = System.Drawing.Color.Red;
+                    lbl_mensajeEI.Text = "El nombre es muy largo";
+                    return;
+                }
+                else if (txtNombreEstInci.Text == null || txtNombreEstInci.Text == "")
+                {
+                    lbl_mensajeEI.ForeColor = System.Drawing.Color.Red;
+                    lbl_mensajeEI.Text = "El nombre esta vacio";
+                    return;
+                }
+                else
+                {
+                    cn_Estado_Incidencia.agregar_estado_incidencia(txtNombreEstInci.Text);
+                    int id = Convert.ToInt32(Session["id"]);
+                    cn_Auditoria.registrar_accion_auditoria("Registro de Nuevo Estado de Incidencias", id);
+                    lbl_mensajeEI.ForeColor = System.Drawing.Color.Green;
+                    lbl_mensajeEI.Text = "Se registro correctamente el estado de la incidencia";
+                    txtNombreEstInci.Text = "";
+                    cargar_estados_incidencia();
+                }
             }
-            else if (txtNombreEstInci.Text == null || txtNombreEstInci.Text == "")
+            else if (btn_agregar_estadoInci.Text == "Editar")
             {
-                lbl_mensajeEI.ForeColor = System.Drawing.Color.Red;
-                lbl_mensajeEI.Text = "El nombre esta vacio";
-            }
-            else
-            {
-                cn_Estado_Incidencia.agregar_estado_incidencia(txtNombreEstInci.Text);
-                int id = Convert.ToInt32(Session["id"]);
-                cn_Auditoria.registrar_accion_auditoria("Registro de Nuevo Estado de Incidencias", id);
-                lbl_mensajeEI.ForeColor = System.Drawing.Color.Green;
-                lbl_mensajeEI.Text = "Se registro correctamente el estado de la incidencia";
-                txtNombreEstInci.Text = "";
-                cargar_estados_incidencia();
+                if (txtNombreEstInci.Text.Length > 50)
+                {
+                    lbl_mensajeEI.ForeColor = System.Drawing.Color.Red;
+                    lbl_mensajeEI.Text = "El nombre es muy largo";
+                    return;
+                }
+                else if (txtNombreEstInci.Text == null || txtNombreEstInci.Text == "")
+                {
+                    lbl_mensajeEI.ForeColor = System.Drawing.Color.Red;
+                    lbl_mensajeEI.Text = "El nombre esta vacio";
+                    return;
+                }
+                else
+                {
+                    int id = Convert.ToInt32(Session["id"]);
+                    cn_Auditoria.registrar_accion_auditoria("Edición de Estado de Incidencias", id);
+                    int id_estado_incidencia = Convert.ToInt32(id_est_inci.Text);
+                    string nombre = txtNombreEstInci.Text;
+                    cn_Estado_Incidencia.editar_estado_incidencia(nombre, id_estado_incidencia);
+                    cargar_estados_incidencia();
+                    lbl_mensajeEI.ForeColor = System.Drawing.Color.Green;
+                    lbl_mensajeEI.Text = "Se editó correctamente el estado de la incidencia";
+                    txtNombreEstInci.Text = null;
+                    id_est_inci.Text = null;
+                    btnLimpiar_estados_inci.Enabled = false;
+                    btn_agregar_estadoInci.Text = "Agregar";
+
+
+                }
             }
         }
 
@@ -384,7 +855,7 @@ namespace Integrador_3ero
                 string estado = DataBinder.Eval(e.Row.DataItem, "estado").ToString();
 
                 // Encuentra los botones en la fila actual
-                Button btnEditar = (Button)e.Row.FindControl("btnEditar_usuario");
+                Button btnEditar = (Button)e.Row.FindControl("btnSeleccionar_usuario");
                 Button btnEliminar = (Button)e.Row.FindControl("btnEliminar_usuario");
                 Button btnActivar = (Button)e.Row.FindControl("btnActivar_usuario");
 
@@ -448,6 +919,231 @@ namespace Integrador_3ero
 
                 throw;
             }
+        }
+
+        protected void btnSeleccionar_usuario_Click(object sender, EventArgs e)
+        {
+
+            txtNombre.Text = null;
+            txtApellido.Text = null;
+            txtCorreo.Text = null;
+            txtFecha.Text = null;
+            txtCedula.Text = null;
+            txtContrasenia.Text = null;
+            txtContraseniaV.Text = null;
+            ddlPerfil.SelectedValue = "0";
+            cn_usuario cn_Usuario = new cn_usuario();
+            Button btn = (Button)sender;
+            string usu_id = btn.CommandArgument;
+            int id = Convert.ToInt32(usu_id);
+            var usuarios = cn_Usuario.buscar_usuario_admin(id);
+            List<tbl_usuario> usu = new List<tbl_usuario>();
+            usu = usuarios;
+
+            id_usuario.Text = usu[0].usu_id.ToString();
+            txtNombre.Text = usu[0].usu_nombre.ToString();
+            txtApellido.Text = usu[0].usu_apellido.ToString();
+            txtCorreo.Text = usu[0].usu_correo.ToString();
+            txtFecha.Text = usu[0].usu_fecha_nacimiento.ToString();
+            if (usu[0].usu_fecha_nacimiento.HasValue)
+            {
+                // Asigna la fecha en el formato correcto (yyyy-MM-dd)
+                txtFecha.Text = usu[0].usu_fecha_nacimiento.Value.ToString("yyyy-MM-dd");
+            }
+            else
+            {
+                // Si la fecha es nula, puedes dejar el campo vacío o asignar un valor por defecto
+                txtFecha.Text = string.Empty;  // O asigna una fecha predeterminada si lo prefieres
+            }
+            ddlPerfil.SelectedValue = usu[0].per_id.ToString();
+            btnEnviar.Text = "Editar";
+            txtContrasenia.Enabled = false;
+            txtContraseniaV.Enabled = false;
+            txtCedula.Enabled = false;
+            btnLimpiar_usuario.Enabled = true;
+        }
+
+        protected void btnLimpiar_usuario_Click(object sender, EventArgs e)
+        {
+            txtNombre.Text = null;
+            txtNombre.Enabled = true;
+
+            txtApellido.Text = null;
+            txtApellido.Enabled = true;
+
+            txtCorreo.Text = null;
+            txtCorreo.Enabled = true;
+
+            txtFecha.Text = null;
+            txtFecha.Enabled = true;
+
+            txtCedula.Text = null;
+            txtCedula.Enabled = true;
+
+            txtContrasenia.Text = null;
+            txtContrasenia.Enabled = true;
+
+            txtContraseniaV.Text = null;
+            txtContraseniaV.Enabled = true;
+
+            id_usuario.Text = null;
+
+            ddlPerfil.SelectedValue = "0";
+            btnEnviar.Text = "Agregar";
+            btnLimpiar_usuario.Enabled = false;
+        }
+
+        public void limpiar_usuarios()
+        {
+            txtNombre.Text = txtApellido.Text = txtCedula.Text = txtCorreo.Text = txtFecha.Text = txtContrasenia.Text = txtContraseniaV.Text = null;
+        }
+
+        protected void btnEditarPerfil_Click(object sender, EventArgs e)
+        {
+            cn_perfil cn_Perfil = new cn_perfil();
+            txtNombrePerfil.Text = null;
+            btn_Agregar_Perfil.Text = "Editar";
+            Button btn = (Button)sender;
+            string usu_id = btn.CommandArgument;
+            int id = Convert.ToInt32(usu_id);
+            var perfiles = cn_Perfil.buscar_perfil_admin(id);
+            List<tbl_perfil> per = new List<tbl_perfil>();
+            per = perfiles;
+            id_perfil.Text = per[0].per_id.ToString();
+            txtNombrePerfil.Text = per[0].per_nombre.ToString();
+            btnLimpiarPerfil.Enabled = true;
+        }
+
+        protected void btnLimpiarPerfil_Click(object sender, EventArgs e)
+        {
+            txtNombrePerfil.Text = null;
+            btn_Agregar_Perfil.Text = "Agregar";
+            id_perfil.Text = null;
+            btnLimpiarPerfil.Enabled = false;
+        }
+
+        protected void btn_limpiarEstado_Click(object sender, EventArgs e)
+        {
+            txtNombreEstado.Text = null;
+            btn_agregar_estado_usuario.Text = "Agregar";
+            id_estado.Text = null;
+            btn_limpiarEstado.Enabled = false;
+        }
+
+        protected void btnEditarEstado_Click(object sender, EventArgs e)
+        {
+            cn_estado_usuario cn_Estado_Usuario = new cn_estado_usuario();
+            txtNombreEstado.Text = null;
+            btn_agregar_estado_usuario.Text = "Editar";
+            Button btn = (Button)sender;
+            string id = btn.CommandArgument;
+            int est_id = Convert.ToInt32(id);
+            var estados = cn_Estado_Usuario.buscar_estado_usuario(est_id);
+            List<tbl_estado> est = new List<tbl_estado>();
+            est = estados;
+            id_estado.Text = est[0].est_id.ToString();
+            txtNombreEstado.Text = est[0].est_nombre.ToString();
+            btn_limpiarEstado.Enabled = true;
+
+
+        }
+
+        protected void btnLimpiar_tipos_incidencias_Click(object sender, EventArgs e)
+        {
+            txtTipodeIncidencia.Text = null;
+            btn_agregar_tipo_incidencia.Text = "Aagregar";
+            id_tipo_incidencia.Text = null;
+            btnLimpiar_tipos_incidencias.Enabled = false;
+        }
+
+        protected void btnEditarTipoIncidencia_Click(object sender, EventArgs e)
+        {
+            cn_tipo_incidencia cn_Tipo_Incidencia = new cn_tipo_incidencia();
+            txtTipodeIncidencia.Text = null;
+            btn_agregar_tipo_incidencia.Text = "Editar";
+            Button btn = (Button)sender;
+            string id = btn.CommandArgument;
+            int tip_id = Convert.ToInt32(id);
+            var tipos = cn_Tipo_Incidencia.buscar_tipo_incidencia(tip_id);
+            List<tbl_tipo_incidencia> tip = new List<tbl_tipo_incidencia>();
+            tip = tipos;
+            id_tipo_incidencia.Text = tip[0].tip_id.ToString();
+            txtTipodeIncidencia.Text = tip[0].tip_nombre.ToString();
+            btnLimpiar_tipos_incidencias.Enabled = true;
+
+        }
+
+        protected void btn_limpiar_equipo_Click(object sender, EventArgs e)
+        {
+            txtNombreEquipo.Text = null;
+            btn_agregar_equipo.Text = "Agregar";
+            id_equipo.Text = null;
+            btn_limpiar_equipo.Enabled = false;
+        }
+
+        protected void btnEditarEquipo_Click(object sender, EventArgs e)
+        {
+            cn_equipo cn_Equipo = new cn_equipo();
+            txtNombreEquipo.Text = null;
+            btn_agregar_equipo.Text = "Editar";
+            Button btn = (Button)sender;
+            string id = btn.CommandArgument;
+            int equ_id = Convert.ToInt32(id);
+            var equipos = cn_Equipo.buscar_equipo(equ_id);
+            List<tbl_equipo> equ = new List<tbl_equipo>();
+            equ = equipos;
+            id_equipo.Text = equ[0].equ_id.ToString();
+            txtNombreEquipo.Text = equ[0].equ_nombre.ToString();
+            btn_limpiar_equipo.Enabled = true;
+
+        }
+
+        protected void btnEditarCatInci_Click(object sender, EventArgs e)
+        {
+            cn_categoria_incidencia cn_Categoria_Incidencia = new cn_categoria_incidencia();
+            txtNombreCatInci.Text = null;
+            btn_agregar_catInci.Text = "Editar";
+            Button btn = (Button)sender;
+            string id = btn.CommandArgument;
+            int cat_id = Convert.ToInt32(id);
+            var categorias = cn_Categoria_Incidencia.buscar_categoria_incidencia(cat_id);
+            List<tbl_categoria_incidencia> cat = new List<tbl_categoria_incidencia>();
+            cat = categorias;
+            id_categoria_inci.Text = cat[0].cat_id.ToString();
+            txtNombreCatInci.Text = cat[0].cat_nombre.ToString();
+            btnLimpiar_categoria_incidencia.Enabled = true;
+        }
+
+        protected void btnLimpiar_categoria_incidencia_Click(object sender, EventArgs e)
+        {
+            txtNombreCatInci.Text = null;
+            btn_agregar_catInci.Text = "Agregar";
+            id_categoria_inci.Text = null;
+            btnLimpiar_categoria_incidencia.Enabled = false;
+        }
+
+        protected void btnLimpiar_estados_inci_Click(object sender, EventArgs e)
+        {
+            txtNombreEstInci.Text = null;
+            btn_agregar_estadoInci.Text = "Agregar";
+            id_est_inci.Text = null;
+            btnLimpiar_estados_inci.Enabled = false;
+        }
+
+        protected void btnEditarEstInci_Click(object sender, EventArgs e)
+        {
+            cn_estado_incidencia cn_Estado_Incidencia = new cn_estado_incidencia();
+            txtNombreEstInci.Text = null;
+            btn_agregar_estadoInci.Text = "Editar";
+            Button btn = (Button)sender;
+            string id = btn.CommandArgument;
+            int est_id = Convert.ToInt32(id);
+            var estados = cn_Estado_Incidencia.buscar_estado_incidencia(est_id);
+            List<tbl_estado_incidencia> est = new List<tbl_estado_incidencia>();
+            est = estados;
+            id_est_inci.Text = est[0].esi_id.ToString();
+            txtNombreEstInci.Text = est[0].esi_nombre.ToString();
+            btnLimpiar_estados_inci.Enabled = true;
         }
     }
 }

@@ -27,5 +27,22 @@ namespace CapaNegocio
         {
             dc.sp_agregar_estado_usuario(nombre);
         }
+
+        public List<tbl_estado> buscar_estado_usuario(int id)
+        {
+            var query = dc.sp_buscar_estado_usuario_admin(id).ToList();
+            var estados = query.Select(r => new tbl_estado
+            {
+                est_id = r.est_id,
+                est_nombre = r.est_nombre
+            }).ToList();
+
+            return estados;
+        }
+
+        public void editar_estado_usuario(string nombre, int id)
+        {
+            dc.sp_editar_estado_usuario_admin(nombre, id);
+        }
     }
 }

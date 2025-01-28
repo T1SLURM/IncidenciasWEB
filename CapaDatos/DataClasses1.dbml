@@ -366,4 +366,111 @@
     <Parameter Name="usuario" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
   </Function>
+  <Function Name="dbo.sp_editar_usuario_admin" Method="sp_editar_usuario_admin">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="nombre" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="apellido" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="correo" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="fecha" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="perfil" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_buscar_usuario" Method="sp_buscar_usuario">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_buscar_usuarioResult">
+      <Column Name="usu_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="usu_nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="usu_apellido" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="usu_correo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="usu_contrasenia" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" />
+      <Column Name="usu_fecha_nacimiento" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="usu_cedula" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="usu_intento" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="usu_codigo" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="est_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="per_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_agregar_usuario_admin" Method="sp_agregar_usuario_admin">
+    <Parameter Name="nombre" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="apellido" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="correo" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="fecha" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="cedula" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="pass" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="perfil" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_editar_perfil_admin" Method="sp_editar_perfil_admin">
+    <Parameter Name="nombre" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.buscar_perfil_admin" Method="buscar_perfil_admin">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <ElementType Name="buscar_perfil_adminResult">
+      <Column Name="per_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="per_nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_buscar_estado_usuario_admin" Method="sp_buscar_estado_usuario_admin">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_buscar_estado_usuario_adminResult">
+      <Column Name="est_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="est_nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_editar_estado_usuario_admin" Method="sp_editar_estado_usuario_admin">
+    <Parameter Name="nombre" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_buscar_tipos_incidencia_admin" Method="sp_buscar_tipos_incidencia_admin">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_buscar_tipos_incidencia_adminResult">
+      <Column Name="tip_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="tip_nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_editar_tipos_incidencia_admin" Method="sp_editar_tipos_incidencia_admin">
+    <Parameter Name="nombre" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_buscar_equipo_admin" Method="sp_buscar_equipo_admin">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_buscar_equipo_adminResult">
+      <Column Name="equ_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="equ_nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_editar_equipo_admin" Method="sp_editar_equipo_admin">
+    <Parameter Name="nombre" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_buscar_categoria_incidencias_admin" Method="sp_buscar_categoria_incidencias_admin">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_buscar_categoria_incidencias_adminResult">
+      <Column Name="cat_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="cat_nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_editar_categoria_incidencias_admin" Method="sp_editar_categoria_incidencias_admin">
+    <Parameter Name="nombre" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_buscar_estados_incidencias_admin" Method="sp_buscar_estados_incidencias_admin">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_buscar_estados_incidencias_adminResult">
+      <Column Name="esi_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="esi_nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_editar_estados_incidencias_admin" Method="sp_editar_estados_incidencias_admin">
+    <Parameter Name="nombre" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
 </Database>

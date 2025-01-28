@@ -28,5 +28,22 @@ namespace CapaNegocio
         {
             dc.sp_agregar_estado_incidencia(nombre);
         }
+
+        public List<tbl_estado_incidencia> buscar_estado_incidencia(int id)
+        {
+            var query = dc.sp_buscar_estados_incidencias_admin(id).ToList();
+            var estInci = query.Select(r => new tbl_estado_incidencia
+            {
+                esi_id = r.esi_id,
+                esi_nombre = r.esi_nombre
+            }).ToList();
+
+            return estInci;
+        }
+
+        public void editar_estado_incidencia(string nombre, int id)
+        {
+            dc.sp_editar_estados_incidencias_admin(nombre, id);
+        }
     }
 }

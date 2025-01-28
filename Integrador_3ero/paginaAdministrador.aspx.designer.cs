@@ -33,15 +33,6 @@ namespace Integrador_3ero
         protected global::System.Web.UI.ScriptManager ScriptManager1;
 
         /// <summary>
-        /// Control UpdatePanel1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.UpdatePanel UpdatePanel1;
-
-        /// <summary>
         /// Control btnCerrarSesion.
         /// </summary>
         /// <remarks>
@@ -105,6 +96,24 @@ namespace Integrador_3ero
         protected global::System.Web.UI.WebControls.Button btn_mantenimiento;
 
         /// <summary>
+        /// Control UpdatePanelUsuarios.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdatePanelUsuarios;
+
+        /// <summary>
+        /// Control id_usuario.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox id_usuario;
+
+        /// <summary>
         /// Control txtNombre.
         /// </summary>
         /// <remarks>
@@ -132,15 +141,6 @@ namespace Integrador_3ero
         protected global::System.Web.UI.WebControls.TextBox txtCorreo;
 
         /// <summary>
-        /// Control txtCedula.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCedula;
-
-        /// <summary>
         /// Control txtFecha.
         /// </summary>
         /// <remarks>
@@ -148,6 +148,15 @@ namespace Integrador_3ero
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtFecha;
+
+        /// <summary>
+        /// Control txtCedula.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtCedula;
 
         /// <summary>
         /// Control txtContrasenia.
@@ -177,6 +186,15 @@ namespace Integrador_3ero
         protected global::System.Web.UI.WebControls.DropDownList ddlPerfil;
 
         /// <summary>
+        /// Control lbl_mensaje_usuario.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_mensaje_usuario;
+
+        /// <summary>
         /// Control btnEnviar.
         /// </summary>
         /// <remarks>
@@ -184,6 +202,15 @@ namespace Integrador_3ero
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnEnviar;
+
+        /// <summary>
+        /// Control btnLimpiar_usuario.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnLimpiar_usuario;
 
         /// <summary>
         /// Control gvUsuarios.
@@ -195,6 +222,24 @@ namespace Integrador_3ero
         protected global::System.Web.UI.WebControls.GridView gvUsuarios;
 
         /// <summary>
+        /// Control UpdatePanelPerfiles.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdatePanelPerfiles;
+
+        /// <summary>
+        /// Control id_perfil.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox id_perfil;
+
+        /// <summary>
         /// Control txtNombrePerfil.
         /// </summary>
         /// <remarks>
@@ -204,13 +249,13 @@ namespace Integrador_3ero
         protected global::System.Web.UI.WebControls.TextBox txtNombrePerfil;
 
         /// <summary>
-        /// Control lbl_mensajeP.
+        /// Control lbl_mensajePerfil.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_mensajeP;
+        protected global::System.Web.UI.WebControls.Label lbl_mensajePerfil;
 
         /// <summary>
         /// Control btn_Agregar_Perfil.
@@ -222,6 +267,15 @@ namespace Integrador_3ero
         protected global::System.Web.UI.WebControls.Button btn_Agregar_Perfil;
 
         /// <summary>
+        /// Control btnLimpiarPerfil.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnLimpiarPerfil;
+
+        /// <summary>
         /// Control grvPerfiles.
         /// </summary>
         /// <remarks>
@@ -229,6 +283,24 @@ namespace Integrador_3ero
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView grvPerfiles;
+
+        /// <summary>
+        /// Control UpdatePanelEstado.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdatePanelEstado;
+
+        /// <summary>
+        /// Control id_estado.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox id_estado;
 
         /// <summary>
         /// Control txtNombreEstado.
@@ -258,6 +330,15 @@ namespace Integrador_3ero
         protected global::System.Web.UI.WebControls.Button btn_agregar_estado_usuario;
 
         /// <summary>
+        /// Control btn_limpiarEstado.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_limpiarEstado;
+
+        /// <summary>
         /// Control grvEstadosUsuarios.
         /// </summary>
         /// <remarks>
@@ -265,6 +346,24 @@ namespace Integrador_3ero
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView grvEstadosUsuarios;
+
+        /// <summary>
+        /// Control UpdatePanelTiposIncidencias.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdatePanelTiposIncidencias;
+
+        /// <summary>
+        /// Control id_tipo_incidencia.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox id_tipo_incidencia;
 
         /// <summary>
         /// Control txtTipodeIncidencia.
@@ -276,15 +375,6 @@ namespace Integrador_3ero
         protected global::System.Web.UI.WebControls.TextBox txtTipodeIncidencia;
 
         /// <summary>
-        /// Control btn_agregar_tipo_incidencia.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_agregar_tipo_incidencia;
-
-        /// <summary>
         /// Control lbl_mensajeTI.
         /// </summary>
         /// <remarks>
@@ -294,6 +384,24 @@ namespace Integrador_3ero
         protected global::System.Web.UI.WebControls.Label lbl_mensajeTI;
 
         /// <summary>
+        /// Control btn_agregar_tipo_incidencia.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_agregar_tipo_incidencia;
+
+        /// <summary>
+        /// Control btnLimpiar_tipos_incidencias.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnLimpiar_tipos_incidencias;
+
+        /// <summary>
         /// Control grvTipoIncidencia.
         /// </summary>
         /// <remarks>
@@ -301,6 +409,24 @@ namespace Integrador_3ero
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView grvTipoIncidencia;
+
+        /// <summary>
+        /// Control UpdatePanelEquipos.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdatePanelEquipos;
+
+        /// <summary>
+        /// Control id_equipo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox id_equipo;
 
         /// <summary>
         /// Control txtNombreEquipo.
@@ -330,6 +456,15 @@ namespace Integrador_3ero
         protected global::System.Web.UI.WebControls.Button btn_agregar_equipo;
 
         /// <summary>
+        /// Control btn_limpiar_equipo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_limpiar_equipo;
+
+        /// <summary>
         /// Control grvEquipos.
         /// </summary>
         /// <remarks>
@@ -337,6 +472,24 @@ namespace Integrador_3ero
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView grvEquipos;
+
+        /// <summary>
+        /// Control UpdatePanelCategoriasInci.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdatePanelCategoriasInci;
+
+        /// <summary>
+        /// Control id_categoria_inci.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox id_categoria_inci;
 
         /// <summary>
         /// Control txtNombreCatInci.
@@ -366,6 +519,15 @@ namespace Integrador_3ero
         protected global::System.Web.UI.WebControls.Button btn_agregar_catInci;
 
         /// <summary>
+        /// Control btnLimpiar_categoria_incidencia.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnLimpiar_categoria_incidencia;
+
+        /// <summary>
         /// Control grvCatInci.
         /// </summary>
         /// <remarks>
@@ -373,6 +535,24 @@ namespace Integrador_3ero
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView grvCatInci;
+
+        /// <summary>
+        /// Control UpdatePanelEstadosInci.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdatePanelEstadosInci;
+
+        /// <summary>
+        /// Control id_est_inci.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox id_est_inci;
 
         /// <summary>
         /// Control txtNombreEstInci.
@@ -402,6 +582,15 @@ namespace Integrador_3ero
         protected global::System.Web.UI.WebControls.Button btn_agregar_estadoInci;
 
         /// <summary>
+        /// Control btnLimpiar_estados_inci.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnLimpiar_estados_inci;
+
+        /// <summary>
         /// Control grvEstInci.
         /// </summary>
         /// <remarks>
@@ -409,6 +598,15 @@ namespace Integrador_3ero
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView grvEstInci;
+
+        /// <summary>
+        /// Control UpdatePanelIncidencias.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdatePanelIncidencias;
 
         /// <summary>
         /// Control UpdatePanel2.

@@ -419,6 +419,111 @@ namespace CapaDatos
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), accion, usuario);
 			return ((int)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_editar_usuario_admin")]
+		public int sp_editar_usuario_admin([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string nombre, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string apellido, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string correo, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Date")] System.Nullable<System.DateTime> fecha, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> perfil)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id, nombre, apellido, correo, fecha, perfil);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_buscar_usuario")]
+		public ISingleResult<sp_buscar_usuarioResult> sp_buscar_usuario([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id);
+			return ((ISingleResult<sp_buscar_usuarioResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_agregar_usuario_admin")]
+		public int sp_agregar_usuario_admin([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string nombre, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string apellido, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string correo, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Date")] System.Nullable<System.DateTime> fecha, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string cedula, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string pass, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> perfil)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), nombre, apellido, correo, fecha, cedula, pass, perfil);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_editar_perfil_admin")]
+		public int sp_editar_perfil_admin([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string nombre, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), nombre, id);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.buscar_perfil_admin")]
+		public ISingleResult<buscar_perfil_adminResult> buscar_perfil_admin([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id);
+			return ((ISingleResult<buscar_perfil_adminResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_buscar_estado_usuario_admin")]
+		public ISingleResult<sp_buscar_estado_usuario_adminResult> sp_buscar_estado_usuario_admin([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id);
+			return ((ISingleResult<sp_buscar_estado_usuario_adminResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_editar_estado_usuario_admin")]
+		public int sp_editar_estado_usuario_admin([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string nombre, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), nombre, id);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_buscar_tipos_incidencia_admin")]
+		public ISingleResult<sp_buscar_tipos_incidencia_adminResult> sp_buscar_tipos_incidencia_admin([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id);
+			return ((ISingleResult<sp_buscar_tipos_incidencia_adminResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_editar_tipos_incidencia_admin")]
+		public int sp_editar_tipos_incidencia_admin([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string nombre, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), nombre, id);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_buscar_equipo_admin")]
+		public ISingleResult<sp_buscar_equipo_adminResult> sp_buscar_equipo_admin([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id);
+			return ((ISingleResult<sp_buscar_equipo_adminResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_editar_equipo_admin")]
+		public int sp_editar_equipo_admin([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string nombre, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), nombre, id);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_buscar_categoria_incidencias_admin")]
+		public ISingleResult<sp_buscar_categoria_incidencias_adminResult> sp_buscar_categoria_incidencias_admin([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id);
+			return ((ISingleResult<sp_buscar_categoria_incidencias_adminResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_editar_categoria_incidencias_admin")]
+		public int sp_editar_categoria_incidencias_admin([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string nombre, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), nombre, id);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_buscar_estados_incidencias_admin")]
+		public ISingleResult<sp_buscar_estados_incidencias_adminResult> sp_buscar_estados_incidencias_admin([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id);
+			return ((ISingleResult<sp_buscar_estados_incidencias_adminResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_editar_estados_incidencias_admin")]
+		public int sp_editar_estados_incidencias_admin([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string nombre, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), nombre, id);
+			return ((int)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbl_usuario")]
@@ -571,7 +676,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_contrasenia", DbType="VarBinary(MAX)", CanBeNull=true, UpdateCheck=UpdateCheck.Never)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_contrasenia", DbType="VarBinary(MAX)", UpdateCheck=UpdateCheck.Never)]
 		public System.Data.Linq.Binary usu_contrasenia
 		{
 			get
@@ -1271,7 +1376,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inc_imagen", DbType="Image", CanBeNull=true, UpdateCheck=UpdateCheck.Never)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inc_imagen", DbType="Image", UpdateCheck=UpdateCheck.Never)]
 		public System.Data.Linq.Binary inc_imagen
 		{
 			get
@@ -2523,7 +2628,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_contrasenia", DbType="VarBinary(MAX)", CanBeNull=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_contrasenia", DbType="VarBinary(MAX)")]
 		public System.Data.Linq.Binary usu_contrasenia
 		{
 			get
@@ -2729,7 +2834,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_contrasenia", DbType="VarBinary(MAX)", CanBeNull=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_contrasenia", DbType="VarBinary(MAX)")]
 		public System.Data.Linq.Binary usu_contrasenia
 		{
 			get
@@ -2935,7 +3040,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_contrasenia", DbType="VarBinary(MAX)", CanBeNull=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_contrasenia", DbType="VarBinary(MAX)")]
 		public System.Data.Linq.Binary usu_contrasenia
 		{
 			get
@@ -3145,7 +3250,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_contrasenia", DbType="VarBinary(MAX)", CanBeNull=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_contrasenia", DbType="VarBinary(MAX)")]
 		public System.Data.Linq.Binary usu_contrasenia
 		{
 			get
@@ -3675,7 +3780,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inc_imagen", DbType="Image", CanBeNull=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inc_imagen", DbType="Image")]
 		public System.Data.Linq.Binary inc_imagen
 		{
 			get
@@ -4043,7 +4148,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_contrasenia", DbType="VarBinary(MAX)", CanBeNull=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_contrasenia", DbType="VarBinary(MAX)")]
 		public System.Data.Linq.Binary usu_contrasenia
 		{
 			get
@@ -4249,7 +4354,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_contrasenia", DbType="VarBinary(MAX)", CanBeNull=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_contrasenia", DbType="VarBinary(MAX)")]
 		public System.Data.Linq.Binary usu_contrasenia
 		{
 			get
@@ -4505,6 +4610,476 @@ namespace CapaDatos
 				if ((this._man_tipo != value))
 				{
 					this._man_tipo = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_buscar_usuarioResult
+	{
+		
+		private int _usu_id;
+		
+		private string _usu_nombre;
+		
+		private string _usu_apellido;
+		
+		private string _usu_correo;
+		
+		private System.Data.Linq.Binary _usu_contrasenia;
+		
+		private System.Nullable<System.DateTime> _usu_fecha_nacimiento;
+		
+		private string _usu_cedula;
+		
+		private System.Nullable<int> _usu_intento;
+		
+		private string _usu_codigo;
+		
+		private System.Nullable<int> _est_id;
+		
+		private System.Nullable<int> _per_id;
+		
+		public sp_buscar_usuarioResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_id", DbType="Int NOT NULL")]
+		public int usu_id
+		{
+			get
+			{
+				return this._usu_id;
+			}
+			set
+			{
+				if ((this._usu_id != value))
+				{
+					this._usu_id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_nombre", DbType="VarChar(50)")]
+		public string usu_nombre
+		{
+			get
+			{
+				return this._usu_nombre;
+			}
+			set
+			{
+				if ((this._usu_nombre != value))
+				{
+					this._usu_nombre = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_apellido", DbType="VarChar(50)")]
+		public string usu_apellido
+		{
+			get
+			{
+				return this._usu_apellido;
+			}
+			set
+			{
+				if ((this._usu_apellido != value))
+				{
+					this._usu_apellido = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_correo", DbType="VarChar(50)")]
+		public string usu_correo
+		{
+			get
+			{
+				return this._usu_correo;
+			}
+			set
+			{
+				if ((this._usu_correo != value))
+				{
+					this._usu_correo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_contrasenia", DbType="VarBinary(MAX)")]
+		public System.Data.Linq.Binary usu_contrasenia
+		{
+			get
+			{
+				return this._usu_contrasenia;
+			}
+			set
+			{
+				if ((this._usu_contrasenia != value))
+				{
+					this._usu_contrasenia = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_fecha_nacimiento", DbType="Date")]
+		public System.Nullable<System.DateTime> usu_fecha_nacimiento
+		{
+			get
+			{
+				return this._usu_fecha_nacimiento;
+			}
+			set
+			{
+				if ((this._usu_fecha_nacimiento != value))
+				{
+					this._usu_fecha_nacimiento = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_cedula", DbType="VarChar(10)")]
+		public string usu_cedula
+		{
+			get
+			{
+				return this._usu_cedula;
+			}
+			set
+			{
+				if ((this._usu_cedula != value))
+				{
+					this._usu_cedula = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_intento", DbType="Int")]
+		public System.Nullable<int> usu_intento
+		{
+			get
+			{
+				return this._usu_intento;
+			}
+			set
+			{
+				if ((this._usu_intento != value))
+				{
+					this._usu_intento = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_codigo", DbType="VarChar(5)")]
+		public string usu_codigo
+		{
+			get
+			{
+				return this._usu_codigo;
+			}
+			set
+			{
+				if ((this._usu_codigo != value))
+				{
+					this._usu_codigo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_est_id", DbType="Int")]
+		public System.Nullable<int> est_id
+		{
+			get
+			{
+				return this._est_id;
+			}
+			set
+			{
+				if ((this._est_id != value))
+				{
+					this._est_id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_per_id", DbType="Int")]
+		public System.Nullable<int> per_id
+		{
+			get
+			{
+				return this._per_id;
+			}
+			set
+			{
+				if ((this._per_id != value))
+				{
+					this._per_id = value;
+				}
+			}
+		}
+	}
+	
+	public partial class buscar_perfil_adminResult
+	{
+		
+		private int _per_id;
+		
+		private string _per_nombre;
+		
+		public buscar_perfil_adminResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_per_id", DbType="Int NOT NULL")]
+		public int per_id
+		{
+			get
+			{
+				return this._per_id;
+			}
+			set
+			{
+				if ((this._per_id != value))
+				{
+					this._per_id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_per_nombre", DbType="VarChar(50)")]
+		public string per_nombre
+		{
+			get
+			{
+				return this._per_nombre;
+			}
+			set
+			{
+				if ((this._per_nombre != value))
+				{
+					this._per_nombre = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_buscar_estado_usuario_adminResult
+	{
+		
+		private int _est_id;
+		
+		private string _est_nombre;
+		
+		public sp_buscar_estado_usuario_adminResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_est_id", DbType="Int NOT NULL")]
+		public int est_id
+		{
+			get
+			{
+				return this._est_id;
+			}
+			set
+			{
+				if ((this._est_id != value))
+				{
+					this._est_id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_est_nombre", DbType="VarChar(50)")]
+		public string est_nombre
+		{
+			get
+			{
+				return this._est_nombre;
+			}
+			set
+			{
+				if ((this._est_nombre != value))
+				{
+					this._est_nombre = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_buscar_tipos_incidencia_adminResult
+	{
+		
+		private int _tip_id;
+		
+		private string _tip_nombre;
+		
+		public sp_buscar_tipos_incidencia_adminResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tip_id", DbType="Int NOT NULL")]
+		public int tip_id
+		{
+			get
+			{
+				return this._tip_id;
+			}
+			set
+			{
+				if ((this._tip_id != value))
+				{
+					this._tip_id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tip_nombre", DbType="VarChar(50)")]
+		public string tip_nombre
+		{
+			get
+			{
+				return this._tip_nombre;
+			}
+			set
+			{
+				if ((this._tip_nombre != value))
+				{
+					this._tip_nombre = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_buscar_equipo_adminResult
+	{
+		
+		private int _equ_id;
+		
+		private string _equ_nombre;
+		
+		public sp_buscar_equipo_adminResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_equ_id", DbType="Int NOT NULL")]
+		public int equ_id
+		{
+			get
+			{
+				return this._equ_id;
+			}
+			set
+			{
+				if ((this._equ_id != value))
+				{
+					this._equ_id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_equ_nombre", DbType="VarChar(50)")]
+		public string equ_nombre
+		{
+			get
+			{
+				return this._equ_nombre;
+			}
+			set
+			{
+				if ((this._equ_nombre != value))
+				{
+					this._equ_nombre = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_buscar_categoria_incidencias_adminResult
+	{
+		
+		private int _cat_id;
+		
+		private string _cat_nombre;
+		
+		public sp_buscar_categoria_incidencias_adminResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_cat_id", DbType="Int NOT NULL")]
+		public int cat_id
+		{
+			get
+			{
+				return this._cat_id;
+			}
+			set
+			{
+				if ((this._cat_id != value))
+				{
+					this._cat_id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_cat_nombre", DbType="VarChar(50)")]
+		public string cat_nombre
+		{
+			get
+			{
+				return this._cat_nombre;
+			}
+			set
+			{
+				if ((this._cat_nombre != value))
+				{
+					this._cat_nombre = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_buscar_estados_incidencias_adminResult
+	{
+		
+		private int _esi_id;
+		
+		private string _esi_nombre;
+		
+		public sp_buscar_estados_incidencias_adminResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_esi_id", DbType="Int NOT NULL")]
+		public int esi_id
+		{
+			get
+			{
+				return this._esi_id;
+			}
+			set
+			{
+				if ((this._esi_id != value))
+				{
+					this._esi_id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_esi_nombre", DbType="VarChar(50)")]
+		public string esi_nombre
+		{
+			get
+			{
+				return this._esi_nombre;
+			}
+			set
+			{
+				if ((this._esi_nombre != value))
+				{
+					this._esi_nombre = value;
 				}
 			}
 		}

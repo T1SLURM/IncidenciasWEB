@@ -27,5 +27,22 @@ namespace CapaNegocio
         {
             dc.sp_agregar_equipo(nombre);
         }
+
+        public List<tbl_equipo> buscar_equipo(int id)
+        {
+            var query = dc.sp_buscar_equipo_admin(id).ToList();
+            var equipo = query.Select(r => new tbl_equipo
+            {
+                equ_id = r.equ_id,
+                equ_nombre = r.equ_nombre
+            }).ToList();
+
+            return equipo;
+        }
+
+        public void editar_equipo(string nombre, int id)
+        {
+            dc.sp_editar_equipo_admin(nombre, id);
+        }
     }
 }

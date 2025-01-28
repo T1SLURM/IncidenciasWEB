@@ -11,7 +11,7 @@ namespace Integrador_3ero
 {
 
 
-    public partial class paginaAdministrador
+    public partial class paginaTecnico
     {
 
         /// <summary>
@@ -166,24 +166,6 @@ namespace Integrador_3ero
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnActualizar;
-
-        /// <summary>
-        /// Control grvEstadosUsuarios.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView grvEstadosUsuarios;
-
-        /// <summary>
-        /// Control btnSolucionar.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSolucionar;
 
         /// <summary>
         /// Control txtTitulo.

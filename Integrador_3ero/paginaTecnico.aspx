@@ -1,15 +1,12 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="paginaTecnico.aspx.cs" Inherits="Integrador_3ero.paginaTecnico" %>
 
-<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="paginaAdministrador.aspx.cs"
-    Inherits="Integrador_3ero.paginaAdministrador" %>
-
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Página Administrador</title>
+    <title>Página Técnico</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet"/>
@@ -599,26 +596,6 @@
                 </div>
 
                 <div id="tickets" class="section" style="display: none;">
-                    <div class="tickets-header">Tickets</div>
-                    <hr class="tickets-divider" />
-                    <asp:GridView ID="grvEstadosUsuarios" runat="server" AutoGenerateColumns="False"
-                        CssClass="table" HeaderStyle-BackColor="#f2f2f2" HeaderStyle-ForeColor="Black"
-                        RowStyle-HorizontalAlign="Center" BorderWidth="1px" Width="100%" GridLines="Both">
-                        <asp:TemplateField>
-                            <columns>
-                                <asp:BoundField DataField="Codigo" HeaderText="Código" />
-                                <asp:BoundField DataField="Titulo" HeaderText="Título" />
-                                <asp:BoundField DataField="Descripcion" HeaderText="Descripción" />
-                                <asp:BoundField DataField="Fecha" HeaderText="Fecha" />
-                                <asp:BoundField DataField="Estado" HeaderText="Estado" />
-                                <itemtemplate>
-                                    <asp:Button ID="btnSolucionar" runat="server" Text="Solucionar"
-                                        CommandName="Solucionar" CommandArgument='<%# Eval("est_id") %>'
-                                        CssClass="mi-boton" Onclick="CL_btnSolucionar"/>
-                                </itemtemplate>
-                            </columns>
-                        </asp:TemplateField>
-                    </asp:GridView>
                 </div>
 
                 <div id="Solucionar" class="section" style="display: none;">
@@ -684,22 +661,6 @@
                 });
 
             </script>
-            <%--<script>
-                    function togglePassword() {
-                        // Obtén los elementos de los campos de contraseña
-                        const passwordField = document.getElementById('<%= txtContrasenia.ClientID %>');
-                        const confirmPasswordField = document.getElementById('<%= txtContraseniaV.ClientID %>');
-
-                        // Alterna el tipo entre "password" y "text"
-                        if (passwordField.type === "password") {
-                            passwordField.type = "text";
-                            confirmPasswordField.type = "text";
-                        } else {
-                            passwordField.type = "password";
-                            confirmPasswordField.type = "password";
-                        }
-                    }
-                </script>--%>
         </contenttemplate>
 
     </form>
