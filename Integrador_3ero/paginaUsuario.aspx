@@ -1192,6 +1192,17 @@
                     });
 
                 </script>
+                <script>
+                    // Función para reproducir el mensaje de TTS
+                    const addMessage = () => {
+                        const message = new SpeechSynthesisUtterance("Se encuentra en la pagina de IUsuario");
+                        message.lang = 'es-ES'; // Configura el idioma (español)
+                        speechSynthesis.speak(message);
+                    }
+
+                    // Ejecuta la función cuando la página termina de cargar
+                    window.addEventListener("load", () => addMessage());
+                </script>
                 <%--<script>
                     function togglePassword() {
                         // Obtén los elementos de los campos de contraseña

@@ -349,5 +349,48 @@ namespace CapaNegocio
         {
             dc.sp_agregar_usuario_admin(nombre, apellido, correo, fecha, cedula, pass, perfil);
         }
+
+        public List<tbl_usuario> cargar_tecnicos()
+        {
+            var resultado = dc.sp_cargar_tecnicos_admin().ToList();
+            var usuarios = resultado.Select(r => new tbl_usuario
+            {
+                usu_id = r.usu_id,
+                usu_nombre = r.usu_nombre,
+                usu_apellido = r.usu_apellido,
+                usu_correo = r.usu_correo,
+                usu_contrasenia = r.usu_contrasenia,
+                usu_fecha_nacimiento = r.usu_fecha_nacimiento,
+                usu_cedula = r.usu_cedula,
+                usu_intento = r.usu_intento,
+                usu_codigo = r.usu_codigo,
+                est_id = r.est_id,
+                per_id = r.per_id
+            }).ToList();
+
+            return usuarios;
+        }
+
+        public List<tbl_usuario> cargar_usuarios_incidencias()
+        {
+            var resultado = dc.sp_cargar_usuarios_incidencia_admin().ToList();
+            var usuarios = resultado.Select(r => new tbl_usuario
+            {
+                usu_id = r.usu_id,
+                usu_nombre = r.usu_nombre,
+                usu_apellido = r.usu_apellido,
+                usu_correo = r.usu_correo,
+                usu_contrasenia = r.usu_contrasenia,
+                usu_fecha_nacimiento = r.usu_fecha_nacimiento,
+                usu_cedula = r.usu_cedula,
+                usu_intento = r.usu_intento,
+                usu_codigo = r.usu_codigo,
+                est_id = r.est_id,
+                per_id = r.per_id
+            }).ToList();
+
+            return usuarios;
+        }
+
     }
 }

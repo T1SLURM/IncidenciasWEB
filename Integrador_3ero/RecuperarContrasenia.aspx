@@ -136,10 +136,10 @@
                                 <asp:HyperLink ID="lnk_inicios" runat="server" NavigateUrl="~/Home.aspx" CssClass="custom-link">Inicio</asp:HyperLink>
                             </li>
                             <li>
-                                <asp:Button ID="btn_iniciarSesion" runat="server" Text="Inicio de Sesión" CssClass="btn custom-danger" />
+                                <asp:Button ID="btn_iniciarSesion" runat="server" Text="Inicio de Sesión" CssClass="btn custom-danger" OnClick="btn_iniciarSesion_Click"/>
                             </li>
                             <li>
-                                <asp:Button ID="btn_registrar" runat="server" Text="Registrarse" CssClass="btn custom-danger" />
+                                <asp:Button ID="btn_registrar" runat="server" Text="Registrarse" CssClass="btn custom-danger" OnClick="btn_registrar_Click"/>
                             </li>
                         </ul>
                     </nav>
@@ -168,7 +168,19 @@
             </ContentTemplate>
         </asp:UpdatePanel>
     </form>
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script>
+    // Función para reproducir el mensaje de TTS
+    const addMessage = () => {
+        const message = new SpeechSynthesisUtterance("Se encuentra en la pagina de Recuperar Contraseña");
+        message.lang = 'es-ES'; // Configura el idioma (español)
+        speechSynthesis.speak(message);
+    }
+
+    // Ejecuta la función cuando la página termina de cargar
+    window.addEventListener("load", () => addMessage());
+    </script>
 </body>
 </html>
 

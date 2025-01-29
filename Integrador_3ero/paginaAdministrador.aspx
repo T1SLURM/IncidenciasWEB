@@ -7,9 +7,16 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Página Administrador</title>
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/StyleSheet1.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/StyleSheet1.css" />
+
+    <!-- Incluir el CDN de SweetAlert2 -->
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.5.1/dist/sweetalert2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.5.1/dist/sweetalert2.all.min.js"></script>
+
+
+
     <style>
         .cerrar-sesion-btn {
             margin-top: auto;
@@ -231,7 +238,21 @@
 
 
         <header>
-            <img src="Imagenes/Component 8.png" alt="Logo">
+            <img src="Imagenes/Component 8.png" alt="Logo" />
+            <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                <ContentTemplate>
+                    <div id="toastDiv" runat="server" class="toast align-items-center text-bg-primary border-0 position-fixed"
+                        role="alert" aria-live="assertive" aria-atomic="true" data-bs-autohide="true" data-bs-delay="2000"
+                        style="display: none; z-index: 2000;">
+                        <div class="d-flex">
+                            <div class="toast-body">
+                                <asp:Label ID="lbl_toast_mensaje" runat="server" Text=""></asp:Label>
+                            </div>
+                            <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+                        </div>
+                    </div>
+                </ContentTemplate>
+            </asp:UpdatePanel>
         </header>
         <div class="sidebar">
             <h4>Vista General</h4>
@@ -255,7 +276,7 @@
         <div class="main-content">
             <div id="inicio" class="section" style="display: block;">
                 <div class="welcome-banner">
-                    <img src="Imagenes/Rectangle 39.jpg" alt="Banner de Bienvenida" class="banner-image">
+                    <img src="Imagenes/Rectangle 39.jpg" alt="Banner de Bienvenida" class="banner-image" />
                     <asp:Label ID="lblBienvenido" runat="server" CssClass="banner-text" Text="Bienvenido Max"></asp:Label>
                 </div>
 
@@ -392,7 +413,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="ddlCategoria">Perfil:</label>
+                                <label for="ddlPerfil">Perfil:</label>
                                 <asp:DropDownList ID="ddlPerfil" runat="server" CssClass="dropdown">
                                 </asp:DropDownList>
                             </div>
@@ -404,7 +425,7 @@
                                 <asp:Button ID="btnLimpiar_usuario" runat="server" Text="Limpiar Selección" CssClass="btn btn-warning" OnClick="btnLimpiar_usuario_Click" Enabled="false" />
                             </div>
                         </div>
-                        <asp:GridView ID="gvUsuarios" runat="server" AutoGenerateColumns="False"
+                        <asp:GridView ID="gvUsuarios" runat="server" AllowPaging="true" PageSize="4" OnPageIndexChanging="gvUsuarios_PageIndexChanging" AutoGenerateColumns="False"
                             CssClass="table" HeaderStyle-BackColor="#f2f2f2"
                             HeaderStyle-ForeColor="Black" RowStyle-HorizontalAlign="Center" BorderWidth="1px"
                             Width="100%" GridLines="Both" OnRowDataBound="gvUsuarios_RowDataBound">
@@ -696,7 +717,7 @@
                                 <asp:BoundField DataField="esi_nombre" HeaderText="Nombre" />
                                 <asp:TemplateField HeaderText="Acciones">
                                     <ItemTemplate>
-                                        <asp:Button ID="btnEditarEstInci" runat="server" Text="Editar" CommandName="Editar" CommandArgument='<%# Eval("esi_id") %>' CssClass="mi-boton" OnClick="btnEditarEstInci_Click"/>
+                                        <asp:Button ID="btnEditarEstInci" runat="server" Text="Editar" CommandName="Editar" CommandArgument='<%# Eval("esi_id") %>' CssClass="mi-boton" OnClick="btnEditarEstInci_Click" />
                                         <asp:Button ID="btnEliminarEstInci" runat="server" Text="Eliminar" CommandName="Eliminar" CommandArgument='<%# Eval("esi_id") %>' CssClass="mi-boton-peligro" Enabled="false" />
                                     </ItemTemplate>
                                 </asp:TemplateField>
@@ -712,34 +733,141 @@
             <div id="Incidencias" class="section" style="display: none;">
                 <asp:UpdatePanel ID="UpdatePanelIncidencias" runat="server">
                     <ContentTemplate>
-
-
                         <div>
                             <br />
                             <br />
                         </div>
-
-                        <asp:UpdatePanel ID="UpdatePanel2" runat="server" UpdateMode="Conditional">
-                            <ContentTemplate>
-                                <!-- Button trigger modal -->
-                                <asp:Button ID="btnAgregarInci" runat="server" Text="Agregar nueva Incidencia" CommandName="Agregar" CssClass="mi-boton-exito" OnClick="btnAgregarInci_Click" AutoPostBack="false" />
-                            </ContentTemplate>
-                            <Triggers>
-                                <asp:AsyncPostBackTrigger ControlID="btnAgregarInci" EventName="Click" />
-                            </Triggers>
-                        </asp:UpdatePanel>
-
-
-
                         <h2 style="text-align: center;">Incidencias</h2>
-                        <div class="form-container">
-                            <div class="form-group">
-                                <label for="txtTituloIncidencia">Título:</label>
-                                <asp:TextBox ID="txtTituloIncidencia" runat="server" CssClass="text-input" Placeholder="Ingresa el título"></asp:TextBox>
+                        <!-- Button trigger modal -->
+                        <asp:Button ID="btnAgregarInci" runat="server" Text="Agregar nueva Incidencia" CommandName="Agregar" CssClass="mi-boton-exito" OnClick="btnAgregarInci_Click" AutoPostBack="false" Enabled="true" />
+
+                        <!-- Modal Agregar-->
+                        <div class="modal fade" id="ModalAgregar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div>
+                                <br />
+                                <br />
                             </div>
-                            <asp:Button ID="btn_agregar_incidencia" runat="server" Text="Enviar" CssClass="submit-button" OnClick="btn_agregar_incidencia_Click" />
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Nueva Incidencia</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <!-- Aquí puedes poner tu formulario o los campos necesarios -->
+                                        <form>
+                                            <div class="form-group">
+                                                <label for="txtTituloIncidencia" class="col-form-label">Título:</label>
+                                                <asp:TextBox ID="txtTituloIncidencia" runat="server" CssClass="form-control" Placeholder="Ingresa el título" />
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="txtDescripcionIncidencia" class="col-form-label">Descripción:</label>
+                                                <asp:TextBox ID="txtDescripcionIncidencia" runat="server" CssClass="form-control" TextMode="MultiLine" Placeholder="Describe la incidencia"></asp:TextBox>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="ddlCategoriaIncidencia" class="col-form-label">Categoría:</label>
+                                                <asp:DropDownList ID="ddlCategoriaIncidencia" runat="server" CssClass="form-control">
+                                                </asp:DropDownList>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="ddlEquipoIncidencia" class="col-form-label">Equipo:</label>
+                                                <asp:DropDownList ID="ddlEquipoIncidencia" runat="server" CssClass="form-control">
+                                                </asp:DropDownList>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="ddlTipoIncidencia" class="col-form-label">Tipo:</label>
+                                                <asp:DropDownList ID="ddlTipoIncidencia" runat="server" CssClass="form-control">
+                                                </asp:DropDownList>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="ddlUsuarioIncidencia" class="col-form-label">Usuario:</label>
+                                                <asp:DropDownList ID="ddlUsuarioIncidencia" runat="server" CssClass="form-control">
+                                                </asp:DropDownList>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                        <asp:Button ID="btnAgregarIncidencia" runat="server" Text="Agregar" CssClass="btn btn-success" OnClick="btnAgregarIncidencia_Click" OnClientClick="closeModalAgregar(); return true;" />
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
+
+                        <!-- Modal Asignar -->
+                        <div class="modal fade" id="ModalAsignar" tabindex="-1" aria-labelledby="ModalAsignarLabel" aria-hidden="true" data-bs-backdrop="static">
+                            <div>
+                                <br />
+                                <br />
+                            </div>
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="ModalAsignarLabel">Asignar Técnico</h5>
+                                        <!-- Eliminar el data-bs-dismiss="modal" para que no cierre el modal automáticamente -->
+                                        <button type="button" class="btn-close" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <asp:TextBox ID="id_asignar_inci" runat="server" Visible="false"></asp:TextBox>
+                                        <asp:Label ID="lbl_nombre_inci_asignar" runat="server" Text="Label"></asp:Label>
+                                        <!-- Aquí puedes poner tu formulario o los campos necesarios -->
+                                        <div class="form-group">
+                                            <label for="ddlTecnicos">Técnicos:</label>
+                                            <asp:DropDownList ID="ddlTecnicos" runat="server" CssClass="dropdown">
+                                            </asp:DropDownList>
+                                        </div>
+                                        <div class="text-center mb-3">
+                                            <asp:Label ID="lbl_mensaje_incidencia_asignar" runat="server" CssClass="form-text" ForeColor="Red" Text=""></asp:Label>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <!-- Eliminar data-bs-dismiss en el botón cerrar -->
+                                        <button type="button" class="btn btn-secondary" onclick="closeModal()">Cerrar</button>
+                                        <asp:Button ID="btnAsignarTecnicoIncidencia" runat="server" Text="Asignar" CssClass="mi-boton-exito" OnClick="btnAsignarTecnicoIncidencia_Click" OnClientClick="closeModal(); return true;" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!-- Modal Resolver-->
+                        <div class="modal fade" id="ModalResolver" tabindex="-1" aria-labelledby="ModalResolver" aria-hidden="true">
+                            <div>
+                                <br />
+                                <br />
+                            </div>
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Dar Respuesta Incidencia</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <!-- Aquí puedes poner tu formulario o los campos necesarios -->
+                                        <form>
+                                            <asp:TextBox ID="id_inci_res" runat="server" Visible="false"></asp:TextBox>
+                                            <div class="form-group">
+                                                <label for="respuesta_incidencia" class="col-form-label">Respuesta:</label>
+                                                <asp:TextBox ID="respuesta_incidencia" runat="server" CssClass="form-control" Placeholder="Describe la respuesta de la incidencia"></asp:TextBox>
+                                                <asp:TextBox ID="txt1" runat="server"></asp:TextBox>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                        <asp:Button ID="btnResolverIncidencia" runat="server" Text="Resolver" CssClass="btn btn-success" OnClick="btnResolverIncidencia_Click" OnClientClick="closeModalResolver(); return true;" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+
+                        <!-- Incidencias no asignadas -->
+                        <h3 style="text-align: left;">Incidencias No Asignadas</h3>
                         <asp:Repeater ID="rptIncidencias" runat="server">
                             <ItemTemplate>
                                 <div class="card mb-3" style="max-width: 540px;">
@@ -767,7 +895,7 @@
                                                 <p class="card-text"><small class="text-body-secondary"><strong>F. Creación:</strong> <%# Eval("inc_fecha_creacion") %></small></p>
                                                 <p class="card-text"><small class="text-body-secondary"><strong>F. Asignación:</strong> <%# Eval("inc_fecha_asignacion") %></small></p>
                                                 <p class="card-text"><small class="text-body-secondary"><strong>F. Cierre:</strong> <%# Eval("inc_fecha_cierre") %></small></p>
-                                                <asp:Button ID="btnVerInci" runat="server" Text="Ver" CommandName="Ver" CommandArgument='<%# Eval("inc_id") %>' CssClass="mi-boton-exito" />
+                                                <asp:Button ID="btnAsignarInci" runat="server" Text="Asignar" CommandArgument='<%# Eval("inc_id") %>' CssClass="mi-boton-exito" OnClick="btnAsignarInci_Click" />
                                                 <asp:Button ID="btnEditarInci" runat="server" Text="Editar" CommandName="Editar" CommandArgument='<%# Eval("inc_id") %>' CssClass="mi-boton" />
                                                 <asp:Button ID="btnEliminarInci" runat="server" Text="Eliminar" CommandName="Eliminar" CommandArgument='<%# Eval("inc_id") %>' CssClass="mi-boton-peligro" />
                                             </div>
@@ -777,9 +905,90 @@
                             </ItemTemplate>
                         </asp:Repeater>
 
+                        <!-- Incidencias asignadas -->
+                        <h3 style="text-align: left;">Incidencias Asignadas</h3>
+                        <asp:Repeater ID="rptIncidenciasAsignadas" runat="server">
+                            <ItemTemplate>
+                                <div class="card mb-3" style="max-width: 540px;">
+                                    <div class="row g-0">
+                                        <div class="col-md-4">
+                                            <div class="row g-1">
+                                                <div class="col-6">
+                                                    <img src="Imagenes/sin_imagen.png" class="img-fluid rounded-start" alt="Imagen de Incidencia 1">
+                                                </div>
+                                                <div class="col-6">
+                                                    <img src="Imagenes/sin_imagen.png" class="img-fluid rounded-start" alt="Imagen de Incidencia 2">
+                                                </div>
+                                                <div class="col-6">
+                                                    <img src="Imagenes/sin_imagen.png" class="img-fluid rounded-start" alt="Imagen de Incidencia 3">
+                                                </div>
+                                                <div class="col-6">
+                                                    <img src="Imagenes/sin_imagen.png" class="img-fluid rounded-start" alt="Imagen de Incidencia 4">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="card-body">
+                                                <h1 class="card-title"><%# Eval("inc_titulo") %></h1>
+                                                <h5 class="card-text"><%# Eval("inc_descripcion") %></h5>
+                                                <p class="card-text"><small class="text-body-secondary"><strong>F. Creación:</strong> <%# Eval("inc_fecha_creacion") %></small></p>
+                                                <p class="card-text"><small class="text-body-secondary"><strong>F. Asignación:</strong> <%# Eval("inc_fecha_asignacion") %></small></p>
+                                                <p class="card-text"><small class="text-body-secondary"><strong>F. Cierre:</strong> <%# Eval("inc_fecha_cierre") %></small></p>
+                                                <p class="card-text"><small class="text-body-secondary"><strong>Técnico</strong> <%# Eval("tec_id") %></small></p>
+                                                <asp:Button ID="btnResolver" runat="server" Text="Resolver" CommandArgument='<%# Eval("inc_id") %>' CssClass="mi-boton-exito" OnClick="btnResolver_Click" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </ItemTemplate>
+                        </asp:Repeater>
+
+                        <!-- Incidencias resueltas -->
+                        <h3 style="text-align: left;">Incidencias Resueltas</h3>
+                        <asp:Repeater ID="rptIncidenciasResueltas" runat="server">
+                            <ItemTemplate>
+                                <div class="card mb-3" style="max-width: 540px;">
+                                    <div class="row g-0">
+                                        <div class="col-md-4">
+                                            <div class="row g-1">
+                                                <div class="col-6">
+                                                    <img src="Imagenes/sin_imagen.png" class="img-fluid rounded-start" alt="Imagen de Incidencia 1">
+                                                </div>
+                                                <div class="col-6">
+                                                    <img src="Imagenes/sin_imagen.png" class="img-fluid rounded-start" alt="Imagen de Incidencia 2">
+                                                </div>
+                                                <div class="col-6">
+                                                    <img src="Imagenes/sin_imagen.png" class="img-fluid rounded-start" alt="Imagen de Incidencia 3">
+                                                </div>
+                                                <div class="col-6">
+                                                    <img src="Imagenes/sin_imagen.png" class="img-fluid rounded-start" alt="Imagen de Incidencia 4">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="card-body">
+                                                <h1 class="card-title"><%# Eval("inc_titulo") %></h1>
+                                                <h5 class="card-text"><%# Eval("inc_descripcion") %></h5>
+                                                <p class="card-text"><small class="text-body-secondary"><strong>F. Creación:</strong> <%# Eval("inc_fecha_creacion") %></small></p>
+                                                <p class="card-text"><small class="text-body-secondary"><strong>F. Asignación:</strong> <%# Eval("inc_fecha_asignacion") %></small></p>
+                                                <p class="card-text"><small class="text-body-secondary"><strong>F. Cierre:</strong> <%# Eval("inc_fecha_cierre") %></small></p>
+                                                <p class="card-text"><small class="text-body-secondary"><strong>Técnico:</strong> <%# Eval("tec_id") %></small></p>
+                                                <p class="card-text"><small class="text-body-secondary"><strong>Respuesta:</strong> <%# Eval("inc_respuesta") %></small></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </ItemTemplate>
+                        </asp:Repeater>
+
+
+
+
                     </ContentTemplate>
                 </asp:UpdatePanel>
             </div>
+
+
 
 
 
@@ -903,6 +1112,17 @@
 
         </div>
         <script>
+            // Función para reproducir el mensaje de TTS
+            const addMessage = (mensaje) => {
+                const message = new SpeechSynthesisUtterance(mensaje);
+                message.lang = 'es-ES'; // Configura el idioma (español)
+                speechSynthesis.speak(message);
+            }
+
+            window.addEventListener("load", () => {
+                addMessage("Se encuentra en la página de Administrador");
+            });
+
             document.addEventListener("DOMContentLoaded", function () {
                 const links = document.querySelectorAll(".sidebar a");
                 const sections = document.querySelectorAll(".section");
@@ -923,14 +1143,20 @@
                         const targetSection = document.getElementById(target);
                         if (targetSection) {
                             targetSection.style.display = "block";
+
+                            // Obtiene el nombre de la sección (o cualquier texto relevante)
+                            const sectionName = targetSection.getAttribute("data-section-name") || targetSection.id;
+
+                            // Reproduce el mensaje con el nombre de la sección
+                            addMessage(`Estás en la sección: ${sectionName}`);
                         } else {
                             alert("Sección no encontrada");
                         }
                     });
                 });
             });
-
         </script>
+
         <script>
             function togglePassword() {
                 // Obtén los elementos de los campos de contraseña
@@ -947,7 +1173,82 @@
                 }
             }
         </script>
+        <script type="text/javascript">
+            // Función JavaScript para cerrar el modal
+            function closeModal() {
+                $('#ModalAsignar').modal('hide'); // Cierra el modal
+            }
+
+
+
+            // Función para cerrar el modal
+            function closeModalAgregar() {
+                $('#ModalAgregar').modal('hide'); // Cierra el modal
+            }
+
+            // Función para cerrar el modal
+            function closeModalResolver() {
+                $('#ModalResolver').modal('hide'); // Cierra el modal
+            }
+
+
+
+
+        </script>
+
+        <script>
+            function showToast(type) {
+                const toastElement = document.getElementById('<%= toastDiv.ClientID %>');
+
+                // Establecer el color dependiendo del tipo
+                if (type === 'success') {
+                    toastElement.classList.remove('text-bg-primary');
+                    toastElement.classList.add('text-bg-success'); // Color verde
+                } else if (type === 'danger') {
+                    toastElement.classList.remove('text-bg-primary');
+                    toastElement.classList.add('text-bg-danger'); // Color rojo
+                }
+
+                // Mostrar el toast
+                const toast = new bootstrap.Toast(toastElement);
+
+                // Posicionar el toast en el centro superior con z-index alto
+                toastElement.style.visibility = 'visible';
+                toastElement.style.position = 'fixed';
+                toastElement.style.top = '10px'; // Ajuste para centrar en la parte superior
+                toastElement.style.left = '50%';  // Centrado horizontalmente
+                toastElement.style.transform = 'translateX(-50%)';  // Centrado con respecto al 50%
+                toastElement.style.zIndex = '1050'; // Asegura que el toast se muestre encima de otros elementos
+                toastElement.style.display = 'block'; // Mostrar el toast
+                toast.show(); // Mostrar el toast
+
+                // Cerrar manualmente después de 2 segundos
+                setTimeout(() => {
+                    toast.hide();  // Ocultar el toast
+                    toastElement.style.visibility = 'hidden';  // Ocultarlo visualmente
+                    toastElement.style.position = 'absolute';  // Cambiar la posición para que no bloquee la UI
+                    toastElement.style.display = 'none';  // Asegurarnos de que no ocupe espacio
+                }, 3000);
+            }
+        </script>
+
+
+
+
+
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+
+        <!-- jQuery -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+        <!-- Bootstrap JS y Popper.js -->
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+
     </form>
 </body>
 </html>

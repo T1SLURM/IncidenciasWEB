@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
+using System.Web.Services.Description;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using CapaDatos;
@@ -29,6 +31,10 @@ namespace Integrador_3ero
                 cargar_incidencias();
                 cargar_estados_incidencia();
                 mantenimiento();
+                cargar_tecnicos();
+                cargar_incidencias_asignadas();
+                cargar_incidencias_resueltas();
+                cargar_usuarios_incidencias_ddl();
             }
             cargar_con_inc_registradas();
             cargar_con_inc_asignada();
@@ -42,6 +48,22 @@ namespace Integrador_3ero
             var incidencias = cn_Incidencia.cargar_incidencias();
             rptIncidencias.DataSource = incidencias; // Cambia a rptIncidencias
             rptIncidencias.DataBind(); // Enlaza los datos al Repeater
+        }
+
+        public void cargar_incidencias_asignadas()
+        {
+            cn_Incidencia cn_Incidencia = new cn_Incidencia();
+            var incidencias_asignadas = cn_Incidencia.cargar_incidencias_asignadas_admin();
+            rptIncidenciasAsignadas.DataSource = incidencias_asignadas;
+            rptIncidenciasAsignadas.DataBind();
+        }
+
+        public void cargar_incidencias_resueltas()
+        {
+            cn_Incidencia cn_Incidencia = new cn_Incidencia();
+            var incidencias_asignadas = cn_Incidencia.cargar_incidencias_resueltas_admin();
+            rptIncidenciasResueltas.DataSource = incidencias_asignadas;
+            rptIncidenciasResueltas.DataBind();
         }
 
 
@@ -103,6 +125,12 @@ namespace Integrador_3ero
             var catInci = cn_Categoria_Incidencia.cargar_categorias();
             grvCatInci.DataSource = catInci;
             grvCatInci.DataBind();
+
+            ddlCategoriaIncidencia.DataSource = cn_Categoria_Incidencia.cargar_categorias();
+            ddlCategoriaIncidencia.DataTextField = "cat_nombre";
+            ddlCategoriaIncidencia.DataValueField = "cat_id";
+            ddlCategoriaIncidencia.DataBind();
+            ddlCategoriaIncidencia.Items.Insert(0, new ListItem("Seleccione", "0"));
         }
 
         public void cargar_equipos()
@@ -111,6 +139,12 @@ namespace Integrador_3ero
             var equipos = cn_Equipo.cargar_equipos();
             grvEquipos.DataSource = equipos;
             grvEquipos.DataBind();
+
+            ddlEquipoIncidencia.DataSource = cn_Equipo.cargar_equipos();
+            ddlEquipoIncidencia.DataTextField = "equ_nombre";
+            ddlEquipoIncidencia.DataValueField = "equ_id";
+            ddlEquipoIncidencia.DataBind();
+            ddlEquipoIncidencia.Items.Insert(0, new ListItem("Seleccione", "0"));
         }
 
         public void cargar_tipos_incidencia()
@@ -119,6 +153,12 @@ namespace Integrador_3ero
             var tipos_inc = cn_Tipo_Incidencia.cargar_tipos_incdencias();
             grvTipoIncidencia.DataSource = tipos_inc;
             grvTipoIncidencia.DataBind();
+
+            ddlTipoIncidencia.DataSource = cn_Tipo_Incidencia.cargar_tipos_incdencias();
+            ddlTipoIncidencia.DataTextField = "tip_nombre";
+            ddlTipoIncidencia.DataValueField = "tip_id";
+            ddlTipoIncidencia.DataBind();
+            ddlTipoIncidencia.Items.Insert(0, new ListItem("Seleccione", "0"));
         }
 
         public void cargar_estados()
@@ -147,7 +187,7 @@ namespace Integrador_3ero
             ddlPerfil.DataBind();
             ddlPerfil.Items.Insert(0, new ListItem("Seleccione", "0"));
         }
-        
+
         public void cargar_usuarios()
         {
             cn_usuario cn_Usuario = new cn_usuario();
@@ -155,6 +195,28 @@ namespace Integrador_3ero
 
             gvUsuarios.DataSource = usuarios;
             gvUsuarios.DataBind();
+        }
+
+        public void cargar_usuarios_incidencias_ddl()
+        {
+
+            cn_usuario cn_Usuario = new cn_usuario();
+            ddlUsuarioIncidencia.DataSource = cn_Usuario.cargar_usuarios_incidencias();
+            ddlUsuarioIncidencia.DataTextField = "usu_nombre";
+            ddlUsuarioIncidencia.DataValueField = "usu_id";
+            ddlUsuarioIncidencia.DataBind();
+            ddlUsuarioIncidencia.Items.Insert(0, new ListItem("Seleccione", "0"));
+        }
+
+        public void cargar_tecnicos()
+        {
+            cn_usuario cn_Usuario = new cn_usuario();
+            var tecnicos = cn_Usuario.cargar_tecnicos();
+            ddlTecnicos.DataSource = tecnicos;
+            ddlTecnicos.DataTextField = "usu_nombre";
+            ddlTecnicos.DataValueField = "usu_id";
+            ddlTecnicos.DataBind();
+            ddlTecnicos.Items.Insert(0, new ListItem("Seleccione", "0"));
         }
 
         protected void btnSeleccionar_Click(object sender, EventArgs e)
@@ -329,7 +391,7 @@ namespace Integrador_3ero
                     lbl_mensaje_usuario.Text = "Las contraseñas no coinciden";
                     return;
                 }
-                else if (cedula.Length >10)
+                else if (cedula.Length > 10)
                 {
                     lbl_mensaje_usuario.Text = "La cédula esta erronea debe tener 10 digitos.";
                     return;
@@ -898,7 +960,7 @@ namespace Integrador_3ero
 
         protected void btnAgregarInci_Click(object sender, EventArgs e)
         {
-            ScriptManager.RegisterStartupScript(this, this.GetType(), "showModal", "$('#exampleModal').modal('show');", true);
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "showModal", "$('#ModalAgregar').modal('show');", true);
         }
 
         protected void btnActivar_usuario_Click(object sender, EventArgs e)
@@ -1144,6 +1206,197 @@ namespace Integrador_3ero
             id_est_inci.Text = est[0].esi_id.ToString();
             txtNombreEstInci.Text = est[0].esi_nombre.ToString();
             btnLimpiar_estados_inci.Enabled = true;
+        }
+
+        protected void btnAsignarInci_Click(object sender, EventArgs e)
+        {
+            cn_Incidencia cn_Incidencia = new cn_Incidencia();
+            id_asignar_inci.Text = null;
+            Button btn = (Button)sender;
+            string id = btn.CommandArgument;
+            int inc_id = Convert.ToInt32(id);
+            var incidencia = cn_Incidencia.buscar_incidencia_admin(inc_id);
+            List<cn_Incidencia.incidencia_vista> inci = new List<cn_Incidencia.incidencia_vista>();
+            inci = incidencia;
+            id_asignar_inci.Text = inci[0].inc_id.ToString();
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "showModal", "$('#ModalAsignar').modal('show');", true);
+        }
+
+        protected void gvUsuarios_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            gvUsuarios.PageIndex = e.NewPageIndex;
+            cargar_usuarios();
+        }
+
+        protected void btnAsignarTecnicoIncidencia_Click(object sender, EventArgs e)
+        {
+            cn_Incidencia cn_Incidencia = new cn_Incidencia();
+
+            int id_inci = Convert.ToInt32(id_asignar_inci.Text);
+            int id_tec = Convert.ToInt32(ddlTecnicos.SelectedValue);
+            if (id_inci <= 0)
+            {
+                lbl_mensaje_incidencia_asignar.ForeColor = System.Drawing.Color.Red;
+                lbl_mensaje_incidencia_asignar.Text = "Incidencia Vacia";
+                return;
+
+            }
+            else if (id_tec <= 0)
+            {
+                lbl_mensaje_incidencia_asignar.ForeColor = System.Drawing.Color.Red;
+                lbl_mensaje_incidencia_asignar.Text = "Técnico Vacio";
+                return;
+            }
+            else
+            {
+                cn_Incidencia.asignar_tecnico_incidencias(id_inci, id_tec);
+                ddlTecnicos.SelectedValue = "0";
+                id_asignar_inci.Text = null;
+                cargar_incidencias();
+                cargar_incidencias_asignadas();
+
+                string mensaje = "Se agregó correctamente la incidencia.";
+                lbl_toast_mensaje.Text = mensaje;
+
+                // Asegúrate de pasar el mensaje a la función JavaScript
+                string mensajeScript = mensaje.Replace("'", "\\'");  // Escapar comillas simples en el mensaje
+
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "showToast",
+                    $"showToast('success', '{mensajeScript}');", true);
+            }
+        }
+
+        protected void btnAgregarIncidencia_Click(object sender, EventArgs e)
+        {
+            cn_Incidencia cn_Incidencia = new cn_Incidencia();
+            string mensaje = "";
+            string titulo = txtTituloIncidencia.Text;
+            string descripcion = txtDescripcionIncidencia.Text;
+            int categoria = Convert.ToInt32(ddlCategoriaIncidencia.SelectedValue);
+            int equipo = Convert.ToInt32(ddlEquipoIncidencia.SelectedValue);
+            int tipo = Convert.ToInt32(ddlTipoIncidencia.SelectedValue);
+            int usuario = Convert.ToInt32(ddlUsuarioIncidencia.SelectedValue);
+
+            if (titulo == null || titulo == "")
+            {
+                mensaje = "El titulo esta vacio";
+                lbl_toast_mensaje.Text = mensaje;
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "showToast", "showToast('danger');", true);
+                return;
+            }
+            else if (titulo.Length > 100)
+            {
+                mensaje = "El titulo es muy largo, máximo 100 caracteres";
+                lbl_toast_mensaje.Text = mensaje;
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "showToast", "showToast('danger');", true);
+                return;
+            }
+            else if (descripcion == null || descripcion == "")
+            {
+                mensaje = "La descripción esta vacio";
+                lbl_toast_mensaje.Text = mensaje;
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "showToast", "showToast('danger');", true);
+                return;
+            }
+            else if (descripcion.Length > 300)
+            {
+                mensaje = "La descripción es muy larga, máximo 100 caracteres";
+                lbl_toast_mensaje.Text = mensaje;
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "showToast", "showToast('danger');", true);
+                return;
+            }
+            else if (categoria <= 0)
+            {
+                mensaje = "La categoria no ha sido seleccionada";
+                lbl_toast_mensaje.Text = mensaje;
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "showToast", "showToast('danger');", true);
+                return;
+            }
+            else if (equipo <= 0)
+            {
+                mensaje = "El equipo no ha sido seleccionada";
+                lbl_toast_mensaje.Text = mensaje;
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "showToast", "showToast('danger');", true);
+                return;
+            }
+            else if (tipo <= 0)
+            {
+                mensaje = "El tipo no ha sido seleccionada";
+                lbl_toast_mensaje.Text = mensaje;
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "showToast", "showToast('danger');", true);
+                return;
+            }
+            else if (usuario <= 0)
+            {
+                mensaje = "El usuario no ha sido seleccionada";
+                lbl_toast_mensaje.Text = mensaje;
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "showToast", "showToast('danger');", true);
+                return;
+            }
+            else
+            {
+                cn_Incidencia.agregar_incidencia_admin(titulo, descripcion, usuario, categoria, equipo, tipo);
+                mensaje = "Se agregó correctamente la incidencia.";
+                lbl_toast_mensaje.Text = mensaje;
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "showToast", "showToast('success');", true);
+                cargar_incidencias();
+                cargar_incidencias_asignadas();
+                cargar_incidencias_resueltas();
+
+            }
+        }
+
+        protected void btnResolver_Click(object sender, EventArgs e)
+        {
+            cn_Incidencia cn_Incidencia = new cn_Incidencia();
+            id_asignar_inci.Text = null;
+            Button btn = (Button)sender;
+            string id = btn.CommandArgument;
+            int inc_id = Convert.ToInt32(id);
+            id_inci_res.Text = inc_id.ToString();
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "showModal", "$('#ModalResolver').modal('show');", true);
+        }
+
+        protected void btnResolverIncidencia_Click(object sender, EventArgs e)
+        {
+            cn_Incidencia cn_Incidencia = new cn_Incidencia();
+
+            int id = Convert.ToInt32(id_inci_res.Text);
+            string mensaje = "";
+            string respuest = respuesta_incidencia.Text.ToString();
+            string dsdsds = txt1.Text.ToString();
+
+            if (id <= 0)
+            {
+                mensaje = "No se selecciono la incidencia adecuadamente.";
+                lbl_toast_mensaje.Text = mensaje;
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "showToast", "showToast('danger');", true);
+                return;
+            }
+            else if (respuest == null || respuest == "")
+            {
+                mensaje = "La respuesta esta vacia";
+                lbl_toast_mensaje.Text = mensaje;
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "showToast", "showToast('danger');", true);
+                return;
+            }
+            else if (respuest.Length > 300)
+            {
+                mensaje = "La respuesta es muy larga, máximo 300 caracteres";
+                lbl_toast_mensaje.Text = mensaje;
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "showToast", "showToast('danger');", true);
+                return;
+            }
+            else
+            {
+                cn_Incidencia.resolver_incidencia_admin(respuest, id);
+                mensaje = "Se agregó correctamente la respuestsa a la incidencia.";
+                lbl_toast_mensaje.Text = mensaje;
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "showToast", "showToast('success');", true);
+                cargar_incidencias();
+                cargar_incidencias_asignadas();
+                cargar_incidencias_resueltas();
+            }
         }
     }
 }

@@ -626,11 +626,6 @@
                     </div>
                 </div>
 
-                <div id="cerrar" class="section" style="display: none;">
-                    <h2>Cerrar Sesión</h2>
-                    <p>Gracias por usar el sistema. ¡Hasta luego!</p>
-                </div>
-
             </div>
             <script>
                 document.addEventListener("DOMContentLoaded", function () {
@@ -660,6 +655,17 @@
                     });
                 });
 
+            </script>
+            <script>
+                // Función para reproducir el mensaje de TTS
+                const addMessage = () => {
+                    const message = new SpeechSynthesisUtterance("Se encuentra en la pagina de Técnico");
+                    message.lang = 'es-ES'; // Configura el idioma (español)
+                    speechSynthesis.speak(message);
+                }
+
+                // Ejecuta la función cuando la página termina de cargar
+                window.addEventListener("load", () => addMessage());
             </script>
         </contenttemplate>
 

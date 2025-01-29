@@ -45,5 +45,10 @@ namespace CapaNegocio
         {
             dc.sp_editar_estados_incidencias_admin(nombre, id);
         }
+
+        public void asignar_tecnico_incidencia_admin(int id_inc, int id_tec)
+        {
+            dc.sp_asignar_tecnico_incidencia_admin(id_inc, id_tec);
+        }
     }
 }

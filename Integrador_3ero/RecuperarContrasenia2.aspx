@@ -193,6 +193,17 @@
             }
         }
     </script>
+    <script>
+        // Función para reproducir el mensaje de TTS
+        const addMessage = () => {
+            const message = new SpeechSynthesisUtterance("Se encuentra en la pagina de Cambiar su contraseña");
+            message.lang = 'es-ES'; // Configura el idioma (español)
+            speechSynthesis.speak(message);
+        }
+
+        // Ejecuta la función cuando la página termina de cargar
+        window.addEventListener("load", () => addMessage());
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
