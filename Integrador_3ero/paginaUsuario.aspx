@@ -1708,11 +1708,11 @@
                     <a href="#" data-target="nuevo"><i class="bi bi-check-circle-fill icon"></i>Nuevo ticket</a>
                     <a href="#" data-target="editar"><i class="bi bi-tags-fill icon"></i>Editar ticket</a>
                     <a href="#" data-target="buscar"><i class="bi bi-laptop-fill icon"></i>Buscar ticket</a>
-                    <a href="#" data-target="verincidencias"><i class="bi bi-laptop-fill icon"></i>Ver ticket</a>
-                    <a href="#" data-target="calificar"><i class="bi bi-laptop-fill icon"></i>Calificar</a>
+                    <a href="#" data-target="verincidencias"><i class="bi bi-eye"></i>Ver ticket</a>
+                    <a href="#" data-target="calificar"><i class="bi bi-star"></i>Calificar</a>
 
                     <div class="cerrar-sesion-btn-container">
-                        <asp:Button ID="btnCerrarSesion" runat="server" Text="Cerrar Sesión"
+                        <asp:Button ID="btnCerrarSesion" runat="server" Text="Cerrar Sesión" class="bi bi-box-arrow-right"
                             CssClass="cerrar-sesion-btn" OnClick="btnCerrarSesion_Click" />
                     </div>
 
