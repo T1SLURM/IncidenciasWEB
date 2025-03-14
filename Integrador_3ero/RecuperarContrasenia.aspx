@@ -159,7 +159,7 @@
                             <asp:Label ID="lbl_mensaje" runat="server" CssClass="form-text" ForeColor="Red"></asp:Label>
                         </div>
                         <div class="d-grid gap-2">
-                            <asp:Button ID="btn_enviar_codigo" runat="server" Text="Enviar Código" CssClass="btn custom-danger" />
+                            <asp:Button ID="btn_enviar_codigo" runat="server" Text="Enviar Código" CssClass="btn custom-danger" OnClick="btn_enviar_codigo_Click"/>
                         </div>
                     </div>
                 </main>

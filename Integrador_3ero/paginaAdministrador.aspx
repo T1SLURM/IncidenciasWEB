@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="paginaAdministrador.aspx.cs" Inherits="Integrador_3ero.paginaAdministrador" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="paginaAdministrador.aspx.cs" Inherits="Integrador_3ero.paginaAdministrador" EnableEventValidation="false" %>
 
 <!DOCTYPE html>
 
@@ -11,7 +11,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
     <link rel="stylesheet" href="css/StyleSheet1.css" />
 
-    <!-- Incluir el CDN de SweetAlert2 -->
+    <!-- Incluir el CDN de SweetAlert2fdfdfdf -->
     <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.5.1/dist/sweetalert2.min.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.5.1/dist/sweetalert2.all.min.js"></script>
 
@@ -238,7 +238,7 @@
 
 
         <header>
-            <img src="Imagenes/Component 8.png" alt="Logo" />
+            <img src="Imagenes/1.png" alt="Logo"/>
             <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                 <ContentTemplate>
                     <div id="toastDiv" runat="server" class="toast align-items-center text-bg-primary border-0 position-fixed"
@@ -281,6 +281,7 @@
                 </div>
 
                 <div class="d-flex justify-content-between align-items-start flex-wrap">
+                    
                     <!-- Contenedor de las tarjetas principales -->
                     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4" style="max-width: 50%; margin: 0 auto;">
                         <div class="col">
@@ -845,14 +846,12 @@
                                     </div>
                                     <div class="modal-body">
                                         <!-- Aquí puedes poner tu formulario o los campos necesarios -->
-                                        <form>
-                                            <asp:TextBox ID="id_inci_res" runat="server" Visible="false"></asp:TextBox>
-                                            <div class="form-group">
-                                                <label for="respuesta_incidencia" class="col-form-label">Respuesta:</label>
-                                                <asp:TextBox ID="respuesta_incidencia" runat="server" CssClass="form-control" Placeholder="Describe la respuesta de la incidencia"></asp:TextBox>
-                                                <asp:TextBox ID="txt1" runat="server"></asp:TextBox>
-                                            </div>
-                                        </form>
+                                        <asp:TextBox ID="id_inci_res" runat="server" Visible="false"></asp:TextBox>
+                                        <div class="form-group">
+                                            <label for="respuesta_incidencia" class="col-form-label">Respuesta:</label>
+                                            <asp:TextBox ID="respuesta_incidencia" runat="server" CssClass="form-control" Placeholder="Describe la respuesta de la incidencia"></asp:TextBox>
+                                            <asp:TextBox ID="txt1" runat="server"></asp:TextBox>
+                                        </div>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>

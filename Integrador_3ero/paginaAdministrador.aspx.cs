@@ -1363,7 +1363,6 @@ namespace Integrador_3ero
 
             int id = Convert.ToInt32(id_inci_res.Text);
             string mensaje = "";
-            string respuest = respuesta_incidencia.Text.ToString();
             string dsdsds = txt1.Text.ToString();
 
             if (id <= 0)
@@ -1373,14 +1372,14 @@ namespace Integrador_3ero
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "showToast", "showToast('danger');", true);
                 return;
             }
-            else if (respuest == null || respuest == "")
+            else if (respuesta_incidencia.Text == null || respuesta_incidencia.Text == "")
             {
                 mensaje = "La respuesta esta vacia";
                 lbl_toast_mensaje.Text = mensaje;
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "showToast", "showToast('danger');", true);
                 return;
             }
-            else if (respuest.Length > 300)
+            else if (respuesta_incidencia.Text.Length > 300)
             {
                 mensaje = "La respuesta es muy larga, máximo 300 caracteres";
                 lbl_toast_mensaje.Text = mensaje;
@@ -1389,13 +1388,19 @@ namespace Integrador_3ero
             }
             else
             {
-                cn_Incidencia.resolver_incidencia_admin(respuest, id);
+                cn_Incidencia.resolver_incidencia_admin(respuesta_incidencia.Text, id);
                 mensaje = "Se agregó correctamente la respuestsa a la incidencia.";
                 lbl_toast_mensaje.Text = mensaje;
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "showToast", "showToast('success');", true);
                 cargar_incidencias();
                 cargar_incidencias_asignadas();
                 cargar_incidencias_resueltas();
+
+
+                cargar_con_inc_registradas();
+                cargar_con_inc_asignada();
+                cargar_con_inc_proceso();
+                cargar_con_inc_finalizada();
             }
         }
     }
