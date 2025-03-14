@@ -30,6 +30,7 @@ namespace Integrador_3ero
             Response.Redirect("~/Home.aspx");
         }
 
+
         protected void btnActualizar_Click(object sender, EventArgs e)
         {
 

@@ -862,8 +862,8 @@
         }
 
         .section {
-            margin-left: 260px; 
-            margin-top: 40px; 
+            margin-left: 260px;
+            margin-top: 40px;
         }
 
         /*Estilo ver inicdencia*/
@@ -1712,9 +1712,12 @@
                     <a href="#" data-target="calificar"><i class="bi bi-star-fill fs-3"></i>Calificar</a>
 
                     <div class="cerrar-sesion-btn-container">
-                        <asp:Button ID="btnCerrarSesion" runat="server" Text="Cerrar Sesión" class="bi bi-box-arrow-right"
+                        <i class="bi bi-box-arrow-right icon"></i>
+                        <asp:Button ID="btnCerrarSesion" runat="server" Text="Cerrar Sesión"
                             CssClass="cerrar-sesion-btn" OnClick="btnCerrarSesion_Click" />
                     </div>
+
+
 
                 </div>
 
@@ -2073,8 +2076,7 @@
                             <div class="buttons-container">
                                 <asp:Button ID="Button1" runat="server" Text="Cancelar" CssClass="btn btn-cancel"
                                     OnClick="btnCancelar_Click" CausesValidation="false" />
-                                <asp:Button ID="Button3" runat="server" Text="Guardar Cambios" CssClass="btn btn-save"
-                                     />
+                                <asp:Button ID="Button3" runat="server" Text="Guardar Cambios" CssClass="btn btn-save" />
                             </div>
                         </div>
                     </div>
@@ -2223,7 +2225,7 @@
                             </div>
 
                             <div class="button-group">
-                                <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" CssClass="btn btn-secondary"  />
+                                <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" CssClass="btn btn-secondary" />
                                 <asp:Button ID="btnEnviar" runat="server" Text="Enviar" CssClass="btn btn-primary" />
                             </div>
                         </div>
@@ -2232,67 +2234,67 @@
                 </div>
 
 
-                <script>
-                    document.addEventListener("DOMContentLoaded", function () {
-                        const links = document.querySelectorAll(".sidebar a");
-                        const sections = document.querySelectorAll(".section");
-
-                        links.forEach(link => {
-                            link.addEventListener("click", function (e) {
-                                e.preventDefault();
-
-                                // Obtiene el atributo data-target para identificar la sección
-                                const target = this.getAttribute("data-target");
-
-                                // Oculta todas las secciones
-                                sections.forEach(section => {
-                                    section.style.display = "none";
-                                });
-
-                                // Muestra la sección seleccionada
-                                const targetSection = document.getElementById(target);
-                                if (targetSection) {
-                                    targetSection.style.display = "block";
-                                } else {
-                                    alert("Sección no encontrada");
-                                }
-                            });
-                        });
-                    });
-
-                </script>
-                <script>
-                    // Función para reproducir el mensaje de TTS
-                    const addMessage = () => {
-                        const message = new SpeechSynthesisUtterance("Se encuentra en la pagina de IUsuario");
-                        message.lang = 'es-ES'; // Configura el idioma (español)
-                        speechSynthesis.speak(message);
-                    }
-
-                    // Ejecuta la función cuando la página termina de cargar
-                    window.addEventListener("load", () => addMessage());
-                </script>
-                <%--<script>
-                    function togglePassword() {
-                        // Obtén los elementos de los campos de contraseña
-                        const passwordField = document.getElementById('<%= txtContrasenia.ClientID %>');
-                        const confirmPasswordField = document.getElementById('<%= txtContraseniaV.ClientID %>');
-
-                        // Alterna el tipo entre "password" y "text"
-                        if (passwordField.type === "password") {
-                            passwordField.type = "text";
-                            confirmPasswordField.type = "text";
-                        } else {
-                            passwordField.type = "password";
-                            confirmPasswordField.type = "password";
-                        }
-                    }
-                </script>--%>
+                
             </ContentTemplate>
         </asp:UpdatePanel>
 
     </form>
 </body>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const links = document.querySelectorAll(".sidebar a");
+            const sections = document.querySelectorAll(".section");
 
+            links.forEach(link => {
+                link.addEventListener("click", function (e) {
+                    e.preventDefault();
+
+                    // Obtiene el atributo data-target para identificar la sección
+                    const target = this.getAttribute("data-target");
+
+                    // Oculta todas las secciones
+                    sections.forEach(section => {
+                        section.style.display = "none";
+                    });
+
+                    // Muestra la sección seleccionada
+                    const targetSection = document.getElementById(target);
+                    if (targetSection) {
+                        targetSection.style.display = "block";
+                    } else {
+                        alert("Sección no encontrada");
+                    }
+                });
+            });
+        });
+
+    </script>
+<script>
+    // Función para reproducir el mensaje de TTS
+    const addMessage = () => {
+        const message = new SpeechSynthesisUtterance("Se encuentra en la pagina de IUsuario");
+        message.lang = 'es-ES'; // Configura el idioma (español)
+        speechSynthesis.speak(message);
+    }
+
+    // Ejecuta la función cuando la página termina de cargar
+    window.addEventListener("load", () => addMessage());
+</script>
+<%--<script>
+    function togglePassword() {
+        // Obtén los elementos de los campos de contraseña
+        const passwordField = document.getElementById('<%= txtContrasenia.ClientID %>');
+        const confirmPasswordField = document.getElementById('<%= txtContraseniaV.ClientID %>');
+
+        // Alterna el tipo entre "password" y "text"
+        if (passwordField.type === "password") {
+            passwordField.type = "text";
+            confirmPasswordField.type = "text";
+        } else {
+            passwordField.type = "password";
+            confirmPasswordField.type = "password";
+        }
+    }
+</script>--%>
 </html>
 

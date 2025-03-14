@@ -127,7 +127,7 @@
         <asp:UpdatePanel ID="UpdatePanel1" runat="server">
             <ContentTemplate>
                 <header class="d-flex justify-content-between align-items-center">
-                    <img src="Imagenes/Component 8.png" alt="Logo">
+                    <img src="Imagenes/eqweqwe 1.png" alt="Logo">
                     <nav>
                         <ul>
                             <li>
