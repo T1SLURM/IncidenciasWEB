@@ -1703,13 +1703,13 @@
                     <h4>Vista General</h4>
                     <a href="#" data-target="inicio"><i class="bi bi-house-door-fill icon"></i>Inicio</a>
                     <a href="#" data-target="perfil"><i class="bi bi-people-fill icon"></i>Mi perfil</a>
-                    <a href="#" data-target="editarperfil"><i class="bi bi-people-fill icon"></i>Editar mi perfil</a>
+                    <a href="#" data-target="editarperfil"><i class="bi bi-pencil-fill fs-5"></i></i>Editar mi perfil</a>
                     <a href="#" data-target="tickets"><i class="bi bi-person-badge-fill icon"></i>Mis tickets</a>
                     <a href="#" data-target="nuevo"><i class="bi bi-check-circle-fill icon"></i>Nuevo ticket</a>
                     <a href="#" data-target="editar"><i class="bi bi-tags-fill icon"></i>Editar ticket</a>
                     <a href="#" data-target="buscar"><i class="bi bi-laptop-fill icon"></i>Buscar ticket</a>
-                    <a href="#" data-target="verincidencias"><i class="bi bi-eye"></i>Ver ticket</a>
-                    <a href="#" data-target="calificar"><i class="bi bi-star"></i>Calificar</a>
+                    <a href="#" data-target="verincidencias"><i class="bi bi-eye-fill fs-3"></i>Ver ticket</a>
+                    <a href="#" data-target="calificar"><i class="bi bi-star-fill fs-3"></i>Calificar</a>
 
                     <div class="cerrar-sesion-btn-container">
                         <asp:Button ID="btnCerrarSesion" runat="server" Text="Cerrar Sesión" class="bi bi-box-arrow-right"
