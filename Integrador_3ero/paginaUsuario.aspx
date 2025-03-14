@@ -8,21 +8,21 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Página Administrador</title>
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet"/>
-    <link rel="stylesheet" href="css/StyleSheet1.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/StyleSheet1.css" />
     <style>
-        .cerrar-sesion-btn {
-            margin-top: auto;
-            display: inline-flex;
-            align-items: center;
-            color: inherit;
-            text-decoration: none;
-            background: none;
-            border: none;
-            font-size: inherit;
-            cursor: pointer;
-        }
+    .cerrar-sesion-btn {
+        margin-top: auto;
+        display: inline-flex;
+        align-items: center;
+        color: inherit;
+        text-decoration: none;
+        background: none;
+        border: none;
+        font-size: inherit;
+        cursor: pointer;
+    }
 
         .cerrar-sesion-btn i {
             margin-right: 8px;
@@ -36,24 +36,24 @@
 
 
 
-        /*boton de editar*/
-        .mi-boton {
-            color: #000000;
-            background-color: #ffc107;
-            border-color: #ffc107;
-            display: inline-block;
-            font-weight: 400;
-            text-align: center;
-            white-space: nowrap;
-            vertical-align: middle;
-            user-select: none;
-            border: 1px solid transparent;
-            padding: 0.375rem 0.75rem;
-            font-size: 1rem;
-            line-height: 1.5;
-            border-radius: 0.375rem;
-            transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-        }
+    /*boton de editar*/
+    .mi-boton {
+        color: #000000;
+        background-color: #ffc107;
+        border-color: #ffc107;
+        display: inline-block;
+        font-weight: 400;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: middle;
+        user-select: none;
+        border: 1px solid transparent;
+        padding: 0.375rem 0.75rem;
+        font-size: 1rem;
+        line-height: 1.5;
+        border-radius: 0.375rem;
+        transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    }
 
         .mi-boton:hover {
             color: #000000;
@@ -79,39 +79,39 @@
 
         .mi-boton:not(:disabled):not(.disabled):active,
         .mi-boton:not(:disabled):not(.disabled).active,
-        .show>.mi-boton.dropdown-toggle {
+        .show > .mi-boton.dropdown-toggle {
             color: #000000;
             background-color: #d39e00;
             border-color: #c69500;
         }
 
-        .mi-boton:not(:disabled):not(.disabled):active:focus,
-        .mi-boton:not(:disabled):not(.disabled).active:focus,
-        .show>.mi-boton.dropdown-toggle:focus {
-            box-shadow: 0 0 0 0.2rem rgba(255, 193, 7, 0.5);
-        }
+            .mi-boton:not(:disabled):not(.disabled):active:focus,
+            .mi-boton:not(:disabled):not(.disabled).active:focus,
+            .show > .mi-boton.dropdown-toggle:focus {
+                box-shadow: 0 0 0 0.2rem rgba(255, 193, 7, 0.5);
+            }
 
 
 
-        /*boton de activar*/
-        .mi-boton-exito {
-            color: #000;
-            /* Color de letra negra */
-            background-color: #28a745;
-            border-color: #28a745;
-            display: inline-block;
-            font-weight: 400;
-            text-align: center;
-            white-space: nowrap;
-            vertical-align: middle;
-            user-select: none;
-            border: 1px solid transparent;
-            padding: 0.375rem 0.75rem;
-            font-size: 1rem;
-            line-height: 1.5;
-            border-radius: 0.375rem;
-            transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-        }
+    /*boton de activar*/
+    .mi-boton-exito {
+        color: #000;
+        /* Color de letra negra */
+        background-color: #28a745;
+        border-color: #28a745;
+        display: inline-block;
+        font-weight: 400;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: middle;
+        user-select: none;
+        border: 1px solid transparent;
+        padding: 0.375rem 0.75rem;
+        font-size: 1rem;
+        line-height: 1.5;
+        border-radius: 0.375rem;
+        transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    }
 
         .mi-boton-exito:hover {
             color: #000;
@@ -140,40 +140,40 @@
 
         .mi-boton-exito:not(:disabled):not(.disabled):active,
         .mi-boton-exito:not(:disabled):not(.disabled).active,
-        .show>.mi-boton-exito.dropdown-toggle {
+        .show > .mi-boton-exito.dropdown-toggle {
             color: #000;
             /* Mantener letra negra */
             background-color: #1e7e34;
             border-color: #1c7430;
         }
 
-        .mi-boton-exito:not(:disabled):not(.disabled):active:focus,
-        .mi-boton-exito:not(:disabled):not(.disabled).active:focus,
-        .show>.mi-boton-exito.dropdown-toggle:focus {
-            box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.5);
-        }
+            .mi-boton-exito:not(:disabled):not(.disabled):active:focus,
+            .mi-boton-exito:not(:disabled):not(.disabled).active:focus,
+            .show > .mi-boton-exito.dropdown-toggle:focus {
+                box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.5);
+            }
 
 
 
-        /*boton de eliminar*/
-        .mi-boton-peligro {
-            color: #000;
-            /* Color de letra negra */
-            background-color: #dc3545;
-            border-color: #dc3545;
-            display: inline-block;
-            font-weight: 400;
-            text-align: center;
-            white-space: nowrap;
-            vertical-align: middle;
-            user-select: none;
-            border: 1px solid transparent;
-            padding: 0.375rem 0.75rem;
-            font-size: 1rem;
-            line-height: 1.5;
-            border-radius: 0.375rem;
-            transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-        }
+    /*boton de eliminar*/
+    .mi-boton-peligro {
+        color: #000;
+        /* Color de letra negra */
+        background-color: #dc3545;
+        border-color: #dc3545;
+        display: inline-block;
+        font-weight: 400;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: middle;
+        user-select: none;
+        border: 1px solid transparent;
+        padding: 0.375rem 0.75rem;
+        font-size: 1rem;
+        line-height: 1.5;
+        border-radius: 0.375rem;
+        transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    }
 
         .mi-boton-peligro:hover {
             color: #000;
@@ -202,33 +202,33 @@
 
         .mi-boton-peligro:not(:disabled):not(.disabled):active,
         .mi-boton-peligro:not(:disabled):not(.disabled).active,
-        .show>.mi-boton-peligro.dropdown-toggle {
+        .show > .mi-boton-peligro.dropdown-toggle {
             color: #000;
             /* Mantener letra negra */
             background-color: #bd2130;
             border-color: #b21f2d;
         }
 
-        .mi-boton-peligro:not(:disabled):not(.disabled):active:focus,
-        .mi-boton-peligro:not(:disabled):not(.disabled).active:focus,
-        .show>.mi-boton-peligro.dropdown-toggle:focus {
-            box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.5);
-        }
+            .mi-boton-peligro:not(:disabled):not(.disabled):active:focus,
+            .mi-boton-peligro:not(:disabled):not(.disabled).active:focus,
+            .show > .mi-boton-peligro.dropdown-toggle:focus {
+                box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.5);
+            }
 
 
-        /* Main Content */
-        .content {
-            width: 80%;
-            padding: 20px;
-            background-color: #f4f4f4;
-        }
+    /* Main Content */
+    .content {
+        width: 80%;
+        padding: 20px;
+        background-color: #f4f4f4;
+    }
 
-        .welcome-section {
-            text-align: center;
-            margin-bottom: 20px;
-            position: relative;
-            color: white;
-        }
+    .welcome-section {
+        text-align: center;
+        margin-bottom: 20px;
+        position: relative;
+        color: white;
+    }
 
         .welcome-section img {
             width: 100%;
@@ -248,25 +248,25 @@
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
         }
 
-        .card-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 30px;
-            padding: 20px;
-        }
+    .card-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 30px;
+        padding: 20px;
+    }
 
-        .card {
-            background-color: white;
-            padding: 30px;
-            text-align: center;
-            border-radius: 10px;
-            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
-            width: 300px;
-            /* Ancho fijo */
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
+    .card {
+        background-color: white;
+        padding: 30px;
+        text-align: center;
+        border-radius: 10px;
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+        width: 250px;
+        /* Ancho fijo */
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
 
         .card:hover {
             transform: translateY(-10px);
@@ -296,52 +296,52 @@
             transition: background-color 0.3s;
         }
 
-        .card button:hover {
-            background-color: #007b8a;
-        }
+            .card button:hover {
+                background-color: #007b8a;
+            }
 
-        /*carta incidencias*/
-        .card {
-            margin: 10px auto;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            font-size: 0.9rem;
-        }
+    /*carta incidencias*/
+    .card {
+        margin: 10px auto;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        font-size: 0.9rem;
+    }
 
-        .card-title {
-            font-size: 2rem;
-            font-weight: bold;
-        }
+    .card-title {
+        font-size: 2rem;
+        font-weight: bold;
+    }
 
-        .card-text {
-            font-size: 1.2rem;
-            margin: 5px 0;
-        }
+    .card-text {
+        font-size: 1.2rem;
+        margin: 5px 0;
+    }
 
-        .card img {
-            border-radius: 5px;
-            object-fit: cover;
-            height: 100px;
-            width: 100%;
-        }
+    .card img {
+        border-radius: 5px;
+        object-fit: cover;
+        height: 100px;
+        width: 100%;
+    }
 
-        .text-body-secondary {
-            color: #6c757d;
-            font-size: 0.85rem;
-        }
+    .text-body-secondary {
+        color: #6c757d;
+        font-size: 0.85rem;
+    }
 
-        .tickets-section {
-            background-color: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
+    .tickets-section {
+        background-color: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
 
-        .filters {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 20px;
-        }
+    .filters {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
 
         .filters input,
         .filters select {
@@ -350,9 +350,9 @@
             border-radius: 4px;
         }
 
-        .tickets-table {
-            border-collapse: collapse;
-        }
+    .tickets-table {
+        border-collapse: collapse;
+    }
 
         .tickets-table thead {
             background-color: #005b6e;
@@ -381,73 +381,73 @@
             cursor: pointer;
         }
 
-        .tickets-table td button.view {
-            background-color: #007bff;
-            color: white;
-        }
+            .tickets-table td button.view {
+                background-color: #007bff;
+                color: white;
+            }
 
-        .tickets-table td button.edit {
-            background-color: #ffc107;
-            color: white;
-        }
+            .tickets-table td button.edit {
+                background-color: #ffc107;
+                color: white;
+            }
 
-        .tickets-table td button.delete {
-            background-color: #dc3545;
-            color: white;
-        }
+            .tickets-table td button.delete {
+                background-color: #dc3545;
+                color: white;
+            }
 
-        .busqu-container {
-            display: flex;
-            flex: 1;
-            margin-left: 500px;
-            /* Ajusta el valor según sea necesario */
-        }
-
-
+    .busqu-container {
+        display: flex;
+        flex: 1;
+        margin-left: 500px;
+        /* Ajusta el valor según sea necesario */
+    }
 
 
-        header img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            height: 100%;
-        }
 
-        .section-container {
-            width: 80%;
-            /* Ajusta el ancho de la sección contenedora */
-            margin: 0 auto;
-            /* Centra la sección en la página */
-            position: relative;
-            left: 130px;
-        }
 
-        .header-line {
-            border-bottom: 2px solid #000;
-            /* Ajusta el color y grosor según tus necesidades */
-            position: relative;
-            width: 100%;
-            /* La línea se ajusta al ancho de la sección */
-            left: 4px;
-        }
+    header img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+    }
 
-        .nuevo-container {
-            background: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            width: 1000px;
-            position: relative;
-            left: 375px;
-        }
+    .section-container {
+        width: 80%;
+        /* Ajusta el ancho de la sección contenedora */
+        margin: 0 auto;
+        /* Centra la sección en la página */
+        position: relative;
+        left: 130px;
+    }
+
+    .header-line {
+        border-bottom: 2px solid #000;
+        /* Ajusta el color y grosor según tus necesidades */
+        position: relative;
+        width: 100%;
+        /* La línea se ajusta al ancho de la sección */
+        left: 4px;
+    }
+
+    .nuevo-container {
+        background: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        width: 1000px;
+        position: relative;
+        left: 375px;
+    }
 
         .nuevo-container h2 {
             margin-bottom: 0px;
         }
 
-        .form-group {
-            margin-bottom: 15px;
-        }
+    .form-group {
+        margin-bottom: 15px;
+    }
 
         .form-group label {
             display: block;
@@ -469,12 +469,12 @@
             height: 80px;
         }
 
-        .image-section {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 15px;
-        }
+    .image-section {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 15px;
+    }
 
         .image-section img {
             max-width: 60px;
@@ -492,49 +492,49 @@
             cursor: pointer;
         }
 
-        .image-section button:hover {
-            background-color: #00509e;
-        }
+            .image-section button:hover {
+                background-color: #00509e;
+            }
 
-        .submit-btn {
-            display: block;
-            width: 100%;
-            padding: 10px;
-            background-color: #00264d;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            cursor: pointer;
-        }
+    .submit-btn {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        background-color: #00264d;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+    }
 
         .submit-btn:hover {
             background-color: #00509e;
         }
 
-        .titulo-line {
-            border-bottom: 2px solid #000;
-            margin-bottom: 50px;
-            margin: 0 auto;
-            width: 100%;
-        }
+    .titulo-line {
+        border-bottom: 2px solid #000;
+        margin-bottom: 50px;
+        margin: 0 auto;
+        width: 100%;
+    }
 
 
-        .busqu-container {
-            width: 80%;
-            background: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
+    .busqu-container {
+        width: 80%;
+        background: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
 
-        .search-bar {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: 20px;
-            gap: 10px;
-        }
+    .search-bar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+        gap: 10px;
+    }
 
         .search-bar input[type="text"],
         .search-bar select {
@@ -548,10 +548,10 @@
             color: #aaa;
         }
 
-        .knowledge-base {
-            border-top: 2px solid #ffa500;
-            padding-top: 20px;
-        }
+    .knowledge-base {
+        border-top: 2px solid #ffa500;
+        padding-top: 20px;
+    }
 
         .knowledge-base h3 {
             margin-bottom: 20px;
@@ -574,20 +574,20 @@
             padding: 0;
         }
 
-        .knowledge-base ul li {
-            margin-bottom: 10px;
-            color: #555;
-        }
+            .knowledge-base ul li {
+                margin-bottom: 10px;
+                color: #555;
+            }
 
-        .knowledge-base ul li:hover {
-            text-decoration: underline;
-            cursor: pointer;
-        }
+                .knowledge-base ul li:hover {
+                    text-decoration: underline;
+                    cursor: pointer;
+                }
 
-        .search-container {
-            display: flex;
-            align-items: center;
-        }
+    .search-container {
+        display: flex;
+        align-items: center;
+    }
 
         .search-container input,
         .search-container select {
@@ -597,37 +597,37 @@
             border: 1px solid #ccc;
         }
 
-        .search-title {
-            font-size: 18px;
-            font-weight: bold;
-            margin-bottom: 10px;
-            position: relative;
-            left: 360px;
-        }
+    .search-title {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 10px;
+        position: relative;
+        left: 360px;
+    }
 
-        .opciones {
-            position: relative;
-            left: 360px;
-        }
+    .opciones {
+        position: relative;
+        left: 360px;
+    }
 
-        .separator {
-            border: none;
-            border-top: 2px solid black;
-            margin: 10px 0;
-            width: 55%;
-            position: relative;
-            left: 360px;
-        }
+    .separator {
+        border: none;
+        border-top: 2px solid black;
+        margin: 10px 0;
+        width: 55%;
+        position: relative;
+        left: 360px;
+    }
 
-        .knowledge-base {
-            border: 1px solid #ccc;
-            border-radius: 10px;
-            background-color: #fff;
-            padding: 20px;
-            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
-            max-width: 800px;
-            margin: auto;
-        }
+    .knowledge-base {
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        background-color: #fff;
+        padding: 20px;
+        box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+        max-width: 800px;
+        margin: auto;
+    }
 
         .knowledge-base h1 {
             font-size: 20px;
@@ -635,23 +635,23 @@
             color: #333;
         }
 
-        .divider {
-            height: 3px;
-            background-color: orange;
-            margin: 10px 0 20px 0;
-            border-radius: 5px;
-        }
+    .divider {
+        height: 3px;
+        background-color: orange;
+        margin: 10px 0 20px 0;
+        border-radius: 5px;
+    }
 
-        .columns {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-        }
+    .columns {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+    }
 
-        .column {
-            font-size: 14px;
-            color: #333;
-        }
+    .column {
+        font-size: 14px;
+        color: #333;
+    }
 
         .column h2 {
             font-size: 16px;
@@ -666,20 +666,20 @@
             margin: 0;
         }
 
-        .column ul li {
-            margin-bottom: 5px;
-            line-height: 1.5;
-        }
+            .column ul li {
+                margin-bottom: 5px;
+                line-height: 1.5;
+            }
 
-        .editar_card {
-            max-width: 500px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #007baf;
-            border-radius: 10px;
-            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-            color: white;
-        }
+    .editar_card {
+        max-width: 500px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #007baf;
+        border-radius: 10px;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+        color: white;
+    }
 
         .editar_card h2 {
             font-size: 20px;
@@ -687,9 +687,9 @@
             margin-bottom: 20px;
         }
 
-        .form-group {
-            margin-bottom: 15px;
-        }
+    .form-group {
+        margin-bottom: 15px;
+    }
 
         .form-group label {
             display: block;
@@ -706,87 +706,87 @@
             box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.2);
         }
 
-        .form-group input[readonly] {
-            background-color: #e0e0e0;
-        }
+            .form-group input[readonly] {
+                background-color: #e0e0e0;
+            }
 
-        .form-group input[type="password"] {
-            background-color: white;
-        }
+            .form-group input[type="password"] {
+                background-color: white;
+            }
 
-        .btn {
-            display: block;
-            width: 100%;
-            padding: 10px;
-            font-size: 16px;
-            font-weight: bold;
-            color: white;
-            background-color: #005f85;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            text-align: center;
-            margin-top: 10px;
-            transition: background-color 0.3s;
-        }
+    .btn {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        font-weight: bold;
+        color: white;
+        background-color: #005f85;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        text-align: center;
+        margin-top: 10px;
+        transition: background-color 0.3s;
+    }
 
         .btn:hover {
             background-color: #004766;
         }
 
-        .titulo {
-            text-align: center;
-            font-size: 18px;
-            font-weight: bold;
-            margin-bottom: 20px;
-            color: #333;
-        }
+    .titulo {
+        text-align: center;
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        color: #333;
+    }
 
-        hr {
-            border: none;
-            border-top: 1px solid black;
-            margin: 10px 0 20px;
-        }
+    hr {
+        border: none;
+        border-top: 1px solid black;
+        margin: 10px 0 20px;
+    }
 
-        .ticket-container {
-            max-width: 800px;
-            margin: auto;
-            padding: 20px;
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-        }
+    .ticket-container {
+        max-width: 800px;
+        margin: auto;
+        padding: 20px;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    }
 
-        .ticket-header {
-            font-size: 24px;
-            font-weight: bold;
-            margin-bottom: 10px;
-            text-align: left;
-        }
+    .ticket-header {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 10px;
+        text-align: left;
+    }
 
-        .ticket-divider {
-            border: none;
-            border-top: 1px solid black;
-            margin: 10px 0 20px;
-        }
+    .ticket-divider {
+        border: none;
+        border-top: 1px solid black;
+        margin: 10px 0 20px;
+    }
 
-        .ticket-details {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 20px;
-        }
+    .ticket-details {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
 
-        .ticket-info {
-            font-size: 14px;
-            color: #333;
-        }
+    .ticket-info {
+        font-size: 14px;
+        color: #333;
+    }
 
-        .ticket-image {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
+    .ticket-image {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
 
         .ticket-image img {
             width: 100px;
@@ -805,56 +805,786 @@
             margin: 5px 0;
         }
 
-        .ticket-image button:hover {
-            background-color: #005f85;
-        }
+            .ticket-image button:hover {
+                background-color: #005f85;
+            }
 
-        .ticket-form-section {
-            background-color: #20b2aa;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-        }
+    .ticket-form-section {
+        background-color: #20b2aa;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    }
 
-        .ticket-form-group {
-            display: flex;
-            gap: 20px;
-            margin-bottom: 15px;
-        }
+    .ticket-form-group {
+        display: flex;
+        gap: 20px;
+        margin-bottom: 15px;
+    }
 
-        .ticket-form-section input,
-        .ticket-form-section textarea {
-            width: 100%;
-            padding: 10px;
-            border-radius: 5px;
-            border: none;
-            font-size: 14px;
-            box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.2);
-        }
+    .ticket-form-section input,
+    .ticket-form-section textarea {
+        width: 100%;
+        padding: 10px;
+        border-radius: 5px;
+        border: none;
+        font-size: 14px;
+        box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.2);
+    }
 
-        .ticket-form-section textarea {
-            resize: none;
-        }
+    .ticket-form-section textarea {
+        resize: none;
+    }
 
-        .ticket-btn-update {
-            display: block;
-            width: 100%;
-            padding: 10px;
-            font-size: 16px;
-            font-weight: bold;
-            color: white;
-            background-color: #004766;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            text-align: center;
-            margin-top: 10px;
-            transition: background-color 0.3s;
-        }
+    .ticket-btn-update {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        font-weight: bold;
+        color: white;
+        background-color: #004766;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        text-align: center;
+        margin-top: 10px;
+        transition: background-color 0.3s;
+    }
 
         .ticket-btn-update:hover {
             background-color: #003647;
         }
+
+    .editar-content {
+        flex: 1;
+        padding: 20px;
+        background-color: #fafafa;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    .edit-profile-card {
+        width: 100%;
+        max-width: 800px;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        overflow: hidden;
+        background-color: white;
+    }
+
+    .card-header {
+        background-color: #1e5958;
+        color: white;
+        padding: 20px;
+        font-size: 22px;
+        text-align: center;
+    }
+
+    .profile-section {
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        background-color: #f5f5f5;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .profile-picture {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        overflow: hidden;
+        position: relative;
+        margin-right: 20px;
+    }
+
+        .profile-picture img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+    .camera-icon {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        background-color: white;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        border: 1px solid #ddd;
+    }
+
+    .profile-info {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .profile-name {
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    .profile-email {
+        font-size: 14px;
+        color: #666;
+    }
+
+    .form-section {
+        padding: 20px;
+    }
+
+    .form-row {
+        display: flex;
+        gap: 20px;
+        margin-bottom: 20px;
+    }
+
+    .form-group {
+        flex: 1;
+    }
+
+    .form-label {
+        display: block;
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 8px;
+    }
+
+    .form-control {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-size: 16px;
+    }
+
+    .security-section {
+        background-color: #f5f5f5;
+        padding: 20px;
+    }
+
+    .security-title {
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 15px;
+    }
+
+    .security-option {
+        padding: 15px;
+        background-color: white;
+        border-radius: 5px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    .option-detail {
+        color: #666;
+        font-size: 14px;
+        margin-top: 5px;
+    }
+
+    .button-section {
+        padding: 20px;
+        display: flex;
+        justify-content: flex-end;
+        gap: 15px;
+    }
+
+    .btn-cancel {
+        padding: 12px 25px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        background-color: white;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    .btn-save {
+        padding: 12px 25px;
+        border: none;
+        border-radius: 5px;
+        background-color: black;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    /*Estilo Perfil*/
+    .perfil-content {
+        flex: 1;
+        padding: 20px;
+        background-color: white;
+        display: flex;
+        gap: 20px;
+    }
+
+    .perfil-sidebar {
+        width: 300px;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        overflow: hidden;
+        height: fit-content;
+    }
+
+    .perfil-picture {
+        display: flex;
+        justify-content: center;
+        padding: 20px;
+    }
+
+        .perfil-picture img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+    .perfil-info {
+        text-align: center;
+        padding: 0 20px 20px;
+    }
+
+    .perfil-name {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+    .perfil-email {
+        font-size: 14px;
+        color: #666;
+        margin-bottom: 20px;
+    }
+
+    .edit-perfil-btn {
+        background-color: #2962ff;
+        color: white;
+        border: none;
+        border-radius: 50px;
+        padding: 10px 0;
+        width: 100%;
+        font-size: 16px;
+        cursor: pointer;
+        margin-bottom: 20px;
+    }
+
+    .perfil-menu {
+        border-top: 1px solid #ddd;
+    }
+
+    .perfil-menu-item {
+        padding: 15px 20px;
+        border-bottom: 1px solid #ddd;
+        cursor: pointer;
+    }
+
+    .perfil-details {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .details-card-perfil {
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        padding: 20px;
+    }
+
+    .details-title-perfil {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 15px;
+    }
+
+    .details-grid-perfil {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+    }
+
+    .details-label-perfil {
+        font-weight: bold;
+    }
+
+    .connected-status {
+        color: #4caf50;
+    }
+    /*Fin estilo perfil*/
+    .sidebar {
+        width: 250px;
+    }
+
+    .section {
+        margin-top: 40px;
+        margin-left: 260px; /* Ajusta según el ancho de la sidebar */
+    }
+
+    /*Estilo mis incidencias*/
+    .inidecias-container {
+        display: flex;
+    }
+
+    .content-inidencias {
+        flex: 1;
+        padding: 20px;
+    }
+
+    .content-card-inidencias {
+        background-color: white;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .card-header-inidencias {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .search-filters-inidencias {
+        display: flex;
+        gap: 20px;
+        margin-bottom: 20px;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px;
+        background-color: #f9f9f9;
+        border-radius: 10px;
+    }
+
+    .filter-group {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .filter-label {
+        font-weight: bold;
+    }
+
+    .filter-input-inidencias {
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        width: 250px;
+    }
+
+    .new-incident-btn {
+        background-color: #000;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+    }
+
+        .new-incident-btn i {
+            margin-right: 5px;
+        }
+
+    .incidents-table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+        .incidents-table th {
+            background-color: #1e4d46;
+            color: white;
+            text-align: left;
+            padding: 12px;
+        }
+
+        .incidents-table td {
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+        }
+
+    .status-badge {
+        padding: 5px 15px;
+        border-radius: 15px;
+        font-size: 12px;
+        text-align: center;
+    }
+
+    .status-progress {
+        background-color: #b8c5ff;
+    }
+
+    .status-completed {
+        background-color: #96f7a8;
+    }
+
+    .status-open {
+        background-color: #fff599;
+    }
+
+    .priority-critical {
+        background-color: #ffaaa8;
+    }
+
+    .priority-low {
+        background-color: #96f7a8;
+    }
+
+    .priority-medium {
+        background-color: #fff599;
+    }
+
+    .action-btn {
+        background: none;
+        border: none;
+        cursor: pointer;
+        margin-right: 5px;
+    }
+    /*fin estilo mis incidencias*/
+
+
+    /*Estilo busqueda*/
+    /*.Busque-content {
+            margin-left: 250px;
+            padding: 20px;
+            min-height: calc(100vh - 60px);
+        }*/
+
+    .search-container-busque {
+        background-color: #f0f0f0;
+        border-radius: 10px;
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+
+    .search-fields {
+        display: flex;
+        gap: 20px;
+        margin-bottom: 20px;
+    }
+
+    .search-field {
+        flex: 1;
+    }
+
+        .search-field label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        .search-field input, .search-field select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+    .results-container {
+        background-color: #f0f0f0;
+        border-radius: 10px;
+        padding: 20px;
+    }
+
+    .result-item {
+        background-color: white;
+        border-radius: 5px;
+        padding: 15px;
+        margin-bottom: 15px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .result-id {
+        background-color: #e0e0e0;
+        padding: 5px 10px;
+        border-radius: 15px;
+        font-size: 0.9em;
+    }
+
+    .result-details {
+        flex: 1;
+        margin-left: 15px;
+    }
+
+    .result-name {
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+    .result-description {
+        color: #666;
+        font-size: 0.9em;
+    }
+
+    .result-status {
+        padding: 5px 15px;
+        border-radius: 15px;
+        font-size: 0.9em;
+    }
+
+    .status-completed {
+        background-color: #a0ff9d;
+        color: #1a5517;
+    }
+
+    .status-open {
+        background-color: #ffeaa0;
+        color: #8a5a00;
+    }
+
+    .arrow-icon {
+        font-size: 1.5em;
+        margin-left: 15px;
+    }
+    /*Fin estilo busqueda*/
+
+    /*Estilo ver con detalles*/
+    .ticket-container {
+        background-color: #f0f0f0;
+        border-radius: 10px;
+        padding: 25px;
+        margin: 20px 0;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .ticket-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 15px;
+    }
+
+    .ticket-title {
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    .ticket-date {
+        color: #666;
+        font-size: 14px;
+        margin-top: 5px;
+    }
+
+    .status-badges {
+        display: flex;
+        gap: 10px;
+    }
+
+    .badge {
+        padding: 8px 15px;
+        border-radius: 20px;
+        font-size: 14px;
+        font-weight: 500;
+    }
+
+    .badge-critical {
+        background-color: #ffb3b3;
+        color: #cc0000;
+    }
+
+    .badge-complete {
+        background-color: #b3ffb3;
+        color: #008800;
+    }
+
+    .ticket-content {
+        display: flex;
+        gap: 20px;
+        margin-top: 20px;
+    }
+
+    .ticket-details {
+        flex: 2;
+    }
+
+    .ticket-section {
+        background-color: white;
+        border-radius: 8px;
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+
+    .section-title {
+        font-weight: bold;
+        margin-bottom: 15px;
+        font-size: 18px;
+    }
+
+    .ticket-metadata {
+        flex: 1;
+    }
+
+    .metadata-item {
+        margin-bottom: 15px;
+    }
+
+    .metadata-label {
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+    .metadata-value {
+        color: #555;
+    }
+
+    .file-attachment {
+        display: flex;
+        align-items: center;
+        background-color: #f8f8f8;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        padding: 10px;
+        margin-top: 10px;
+    }
+
+    .file-icon {
+        margin-right: 10px;
+    }
+
+    .comments-box {
+        width: 100%;
+        height: 100px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        padding: 10px;
+        resize: vertical;
+    }
+    /*Fin ver con detalles*/
+
+    /*Estilo reportar*/
+
+
+    .report-container {
+        background-color: #f0f0f0;
+        border-radius: 10px;
+        width: 100%;
+        max-width: 800px;
+        padding: 30px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .report-container {
+        position: relative;
+        left: 60px; /* Ajusta según necesites */
+    }
+
+    .report-title {
+        font-size: 28px;
+        font-weight: bold;
+        margin-bottom: 30px;
+        color: #222;
+    }
+
+    .report-group {
+        margin-bottom: 25px;
+    }
+
+    .report-label {
+        display: block;
+        font-size: 18px;
+        margin-bottom: 10px;
+        color: #333;
+    }
+
+    .report-control {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+    }
+
+        .report-control:focus {
+            outline: none;
+            border-color: #007bff;
+            box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+        }
+
+    textarea.form-control {
+        min-height: 150px;
+        resize: vertical;
+    }
+
+    .file-upload-area {
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        padding: 40px 20px;
+        text-align: center;
+        background-color: white;
+        position: relative;
+        cursor: pointer;
+    }
+
+    .file-upload-icon {
+        display: block;
+        margin: 0 auto 15px;
+        width: 50px;
+        height: 50px;
+        fill: #888;
+    }
+
+    .file-upload-text {
+        color: #888;
+        font-size: 16px;
+    }
+
+    .file-upload-input {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        cursor: pointer;
+    }
+
+    .buttons-container {
+        display: flex;
+        justify-content: flex-end;
+        gap: 15px;
+        margin-top: 30px;
+    }
+
+    .btn {
+        padding: 12px 30px;
+        border-radius: 5px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+        border: none;
+    }
+
+    .btn-cancel {
+        background-color: white;
+        color: #333;
+        border: 1px solid #ddd;
+    }
+
+        .btn-cancel:hover {
+            background-color: #f0f0f0;
+        }
+
+    .btn-save {
+        background-color: #000;
+        color: white;
+    }
+
+        .btn-save:hover {
+            background-color: #333;
+        }
+    /*fin reportar*/
+
+
     </style>
 </head>
 
@@ -862,12 +1592,14 @@
     <form id="form1" runat="server">
         <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
         <asp:UpdatePanel ID="UpdatePanel1" runat="server">
-            <contenttemplate>
+            <ContentTemplate>
 
 
                 <header>
                     <img src="Imagenes/1.png" alt="Logo">
                 </header>
+
+
                 <div class="sidebar">
                     <h4>Vista General</h4>
                     <a href="#" data-target="inicio"><i class="bi bi-house-door-fill icon"></i>Inicio</a>
@@ -877,6 +1609,8 @@
                     <a href="#" data-target="nuevo"><i class="bi bi-check-circle-fill icon"></i>Nuevo ticket</a>
                     <a href="#" data-target="editar"><i class="bi bi-tags-fill icon"></i>Editar ticket</a>
                     <a href="#" data-target="buscar"><i class="bi bi-laptop-fill icon"></i>Buscar ticket</a>
+                    <a href="#" data-target="vercondetalles"><i class="bi bi-laptop-fill icon"></i>Ver ticket</a>
+
 
                     <div class="cerrar-sesion-btn-container">
                         <asp:Button ID="btnCerrarSesion" runat="server" Text="Cerrar Sesión"
@@ -886,277 +1620,484 @@
                 </div>
 
 
-                <div class="main-content">
-                    <div id="inicio" class="section" style="display: block;">
+                <div id="inicio" class="section" style="display: block;">
 
-                        <section class="welcome-section">
-                            <img src="Imagenes/Rectangle 39.jpg" alt="Fondo">
-                            <div class="welcome-text">Bienvenido Max</div>
-                        </section>
+                    <section class="welcome-section">
+                        <img src="Imagenes/Rectangle 39.jpg" alt="Fondo">
+                        <div class="welcome-text">Bienvenido Max</div>
+                    </section>
 
-                        <section class="card-container">
-                            <div class="card">
-                                <h2>Tickets</h2>
-                                <p>Visualiza el estado de tus tickets</p>
-                                <button>Tickets </button>
+                    <section class="card-container">
+                        <div class="card">
+                            <h2>Tickets</h2>
+                            <p>Visualiza el estado de tus tickets</p>
+                            <button>Tickets </button>
+                        </div>
+                        <div class="card">
+                            <h2>Nuevo ticket</h2>
+                            <p>Crear nuevo ticket</p>
+                            <button>Tickets</button>
+                        </div>
+                        <div class="card">
+                            <h2>Busqueda</h2>
+                            <p>Busca la solución en nuestra base de conocimiento</p>
+                            <button>Tickets</button>
+                        </div>
+
+                    </section>
+                </div>
+
+
+                <div id="perfil" class="section" style="display: none;">
+                    <div class="perfil-content">
+                        <div class="perfil-sidebar">
+                            <div class="perfil-picture">
+                                <asp:Image ID="Image1" runat="server" ImageUrl="~/images/profile-picture.png" AlternateText="Profile Picture" />
                             </div>
-                            <div class="card">
-                                <h2>Nuevo ticket</h2>
-                                <p>Crear nuevo ticket</p>
-                                <button>Tickets</button>
+                            <div class="perfil-info">
+                                <div class="perfil-name">
+                                    <asp:Literal ID="Literal1" runat="server">Max Maldonado</asp:Literal>
+                                </div>
+                                <div class="perfil-email">
+                                    <asp:Literal ID="Literal2" runat="server">maxmaldonado@gmail.com</asp:Literal>
+                                </div>
+                                <asp:Button ID="btnEditProfile" runat="server" Text="Editar Perfil" CssClass="edit-perfil-btn" />
                             </div>
-                            <div class="card">
-                                <h2>Busqueda</h2>
-                                <p>Busca la solución en nuestra base de conocimiento</p>
-                                <button>Tickets</button>
+                            <div class="perfil-menu">
+                                <div class="perfil-menu-item">
+                                    <asp:LinkButton ID="lnkConfiguracion" runat="server">Configuración</asp:LinkButton>
+                                </div>
+                                <div class="perfil-menu-item">
+                                    <asp:LinkButton ID="lnkNotificacion" runat="server">Notificación</asp:LinkButton>
+                                </div>
+                                <div class="perfil-menu-item">
+                                    <asp:LinkButton ID="lnkPrivacidad" runat="server">Privacidad y Seguridad</asp:LinkButton>
+                                </div>
+                                <div class="perfil-menu-item">
+                                    <asp:LinkButton ID="lnkAyuda" runat="server">Ayuda</asp:LinkButton>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="perfil-details">
+                            <div class="details-card-perfil">
+                                <div class="details-title-perfil">Información Personal</div>
+                                <div class="details-grid-perfil">
+                                    <div>
+                                        <div class="details-label-perfil">Nombre</div>
+                                        <asp:Literal ID="litNombre" runat="server">Max Maldonado</asp:Literal>
+                                    </div>
+                                    <div>
+                                        <div class="details-label-perfil">Correo</div>
+                                        <asp:Literal ID="litCorreo" runat="server">maxmaldonado@gmail.com</asp:Literal>
+                                    </div>
+                                    <div>
+                                        <div class="details-label-perfil">Celular</div>
+                                        <asp:Literal ID="litCelular" runat="server">+593961758460</asp:Literal>
+                                    </div>
+                                    <div>
+                                        <div class="details-label-perfil">Ubicación</div>
+                                        <asp:Literal ID="litUbicacion" runat="server">Ecuador, Quito</asp:Literal>
+                                    </div>
+                                </div>
                             </div>
 
-                        </section>
+                            <div class="details-card-perfil">
+                                <div class="details-title-perfil">Detalles</div>
+                                <div class="details-grid-perfil">
+                                    <div>
+                                        <div class="details-label-perfil">Usuario</div>
+                                        <asp:Literal ID="litUsuario" runat="server">Max09</asp:Literal>
+                                    </div>
+                                    <div>
+                                        <div class="details-label-perfil">Fecha de Nacimiento</div>
+                                        <asp:Literal ID="litFechaNacimiento" runat="server">09-12-1997</asp:Literal>
+                                    </div>
+                                    <div>
+                                        <div class="details-label-perfil">Lenguaje</div>
+                                        <asp:Literal ID="litLenguaje" runat="server">Español</asp:Literal>
+                                    </div>
+                                </div>
+                            </div>
 
-
+                            <div class="details-card-perfil">
+                                <div class="details-title-perfil">Cuentas Conectadas</div>
+                                <div class="details-grid-perfil">
+                                    <div>
+                                        <div class="details-label-perfil">Google</div>
+                                        <asp:Literal ID="litGoogle" runat="server"><span class="connected-status">Conectado</span></asp:Literal>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
+
 
                 <div id="editarperfil" class="section" style="display: none;">
-                    <div>
-                        <br />
-                        <br />
-                    </div>
-                    <div class="Titulo">
-                        Mi Perfil
-                        <hr />
-                    </div>
-                    <div class="editar_card">
-                        <h2>Detalles de la Incidencia</h2>
-                        <div class="form-group">
-                            <label for="txtNombre">Nombre:</label>
-                            <asp:TextBox ID="TextBox1" runat="server" CssClass="form-control" Text="Kevin"
-                                ReadOnly="true"></asp:TextBox>
+                    <div class="editar-content">
+                        <div class="edit-profile-card">
+                            <div class="card-header">
+                                Editar perfil
+                            </div>
+                            <div class="profile-section">
+                                <div class="profile-picture">
+                                    <asp:Image ID="imgProfilePic" runat="server" ImageUrl="~/images/profile-juan.jpg" AlternateText="Profile Picture" />
+                                    <div class="camera-icon">
+                                        <asp:LinkButton ID="lnkChangePicture" runat="server">📷</asp:LinkButton>
+                                    </div>
+                                </div>
+                                <div class="profile-info">
+                                    <div class="profile-name">
+                                        <asp:Literal ID="litProfileName" runat="server">Juan Peréz</asp:Literal>
+                                    </div>
+                                    <div class="profile-email">
+                                        <asp:Literal ID="litProfileEmail" runat="server">juanperez@gmail.com</asp:Literal>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-section">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <asp:Label ID="lblNombre" runat="server" CssClass="form-label" Text="Nombre" AssociatedControlID="txtNombre"></asp:Label>
+                                        <asp:TextBox ID="txtNombre" runat="server" CssClass="form-control" placeholder="Juan"></asp:TextBox>
+                                    </div>
+                                    <div class="form-group">
+                                        <asp:Label ID="lblApellido" runat="server" CssClass="form-label" Text="Apellido" AssociatedControlID="txtApellido"></asp:Label>
+                                        <asp:TextBox ID="txtApellido" runat="server" CssClass="form-control" placeholder="Peréz"></asp:TextBox>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <asp:Label ID="lblCorreo" runat="server" CssClass="form-label" Text="Correo" AssociatedControlID="txtCorreo"></asp:Label>
+                                        <asp:TextBox ID="txtCorreo" runat="server" CssClass="form-control" placeholder="juanperez@gmail.com"></asp:TextBox>
+                                    </div>
+                                    <div class="form-group">
+                                        <asp:Label ID="lblTelefono" runat="server" CssClass="form-label" Text="Teléfono" AssociatedControlID="txtTelefono"></asp:Label>
+                                        <asp:TextBox ID="txtTelefono" runat="server" CssClass="form-control" placeholder="+593 99 123 4567"></asp:TextBox>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="security-section">
+                                <div class="security-title">Seguridad</div>
+                                <div class="security-option">
+                                    <div>
+                                        <div>Cambiar contraseña</div>
+                                        <div class="option-detail">Actualize tu contraseña</div>
+                                    </div>
+                                    <asp:LinkButton ID="lnkChangePassword" runat="server">❯</asp:LinkButton>
+                                </div>
+                            </div>
+
+                            <div class="button-section">
+                                <asp:Button ID="btnCancel" runat="server" Text="Cancelar" CssClass="btn-cancel" />
+                                <asp:Button ID="btnSave" runat="server" Text="Guardar Cambios" CssClass="btn-save" />
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="txtCorreo">Correo:</label>
-                            <asp:TextBox ID="TextBox2" runat="server" CssClass="form-control" Text="Kevin@gmail.com"
-                                ReadOnly="true"></asp:TextBox>
-                        </div>
-                        <div class="form-group">
-                            <label for="txtCedula">Cédula:</label>
-                            <asp:TextBox ID="TextBox3" runat="server" CssClass="form-control" Text="178*******7"
-                                ReadOnly="true"></asp:TextBox>
-                        </div>
-                        <div class="form-group">
-                            <label for="txtTelefono">Teléfono:</label>
-                            <asp:TextBox ID="txtTelefono" runat="server" CssClass="form-control" Text="0962724834">
-                            </asp:TextBox>
-                        </div>
-                        <div class="form-group">
-                            <label for="txtContrasena1">Contraseña:</label>
-                            <asp:TextBox ID="txtContrasena1" runat="server" CssClass="form-control" TextMode="Password"
-                                Text="********"></asp:TextBox>
-                        </div>
-                        <div class="form-group">
-                            <label for="txtContrasena2">Contraseña:</label>
-                            <asp:TextBox ID="txtContrasena2" runat="server" CssClass="form-control" TextMode="Password"
-                                Text="********"></asp:TextBox>
-                        </div>
-                        <asp:Button ID="btnActualizar12" runat="server" CssClass="btn" Text="Actualizar" OnClick="btnActualizar12_Click"/>
                     </div>
                 </div>
-
 
 
                 <div id="tickets" class="section" style="display: none;">
-                    <div>
-                        <br />
-                        <br />
-                    </div>
-                    <section class="section-container">
-                        <h2>Mis tickets</h2>
-                        <div class="header-line"></div>
-                    </section>
-                    <div>
+                    <div class="inidencias-container">
 
-                        <asp:HiddenField ID="iddc" runat="server" />
-                        <table class="tickets-table" align="center">
-                            <tr>
+                        <div class="content-inidencias">
+                            <div class="content-card-inidencias">
+                                <h2 class="card-header">MIS INCIDENCIAS</h2>
 
-                                <td class="grid">
-                                    <asp:GridView ID="GridView1" AutoGenerateColumns="False" runat="server"
-                                        BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px"
-                                        CellPadding="4" CssClass="auto-style6" ForeColor="Black" CellSpacing="2">
-                                        <Columns>
-                                            <asp:BoundField DataField="ci_id" HeaderText="Id" />
-                                            <asp:BoundField DataField="ci_nombre" HeaderText="Nombre" />
-                                            <asp:BoundField DataField="ci_cedula" HeaderText="Cedula" />
-                                            <asp:BoundField DataField="ci_correo" HeaderText="Correo" />
-                                            <asp:BoundField DataField="ci_password" HeaderText="Contraseña" />
-                                            <asp:BoundField DataField="ci_direccion" HeaderText="Direccion" />
-                                            <asp:BoundField DataField="ci_bloqueado" HeaderText="Estado" />
-                                            <asp:TemplateField HeaderText="Imagen">
-                                                <ItemTemplate>
-                                                    <asp:Image ID="Image2" runat="server"
-                                                        ImageUrl='<%# "data:image/png;base64," + Eval("ci_problema_base64") %>'
-                                                        Style="width: 100px; height: 100px;" />
-                                                </ItemTemplate>
-                                            </asp:TemplateField>
-                                            <asp:BoundField DataField="ci_ticket" HeaderText="Tipo" />
-                                            <asp:TemplateField>
-                                                <ItemTemplate>
-                                                    <asp:Button ID="btnActualizar" CausesValidation="false"
-                                                        runat="server" Text="Actualizar"
-                                                        CommandArgument='<%# Eval("ci_id") %>' class="btn btn-dark" OnClick="btnActualizar_Click1" />
-                                                    <asp:Button ID="Eliminar" CausesValidation="false" runat="server"
-                                                        Text="Eliminar" CommandArgument='<%# Eval("ci_id") %>'
-                                                        class="btn btn-dark" OnClick="Eliminar_Click" />
-                                                </ItemTemplate>
-                                            </asp:TemplateField>
-                                        </Columns>
-                                        <FooterStyle BackColor="#CCCCCC" />
-                                        <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
-                                        <PagerStyle BackColor="#CCCCCC" ForeColor="Black" HorizontalAlign="Left" />
-                                        <RowStyle BackColor="White" />
-                                        <SelectedRowStyle BackColor="#000099" Font-Bold="True" ForeColor="White" />
-                                        <SortedAscendingCellStyle BackColor="#F1F1F1" />
-                                        <SortedAscendingHeaderStyle BackColor="#808080" />
-                                        <SortedDescendingCellStyle BackColor="#CAC9C9" />
-                                        <SortedDescendingHeaderStyle BackColor="#383838" />
-                                    </asp:GridView>
-                                </td>
+                                <div class="search-filters-inidencias">
+                                    <div class="filter-group">
+                                        <label class="filter-label">ID Incidencia</label>
+                                        <input type="text" class="filter-input-inidencias" placeholder="Buscar por ID" />
+                                    </div>
 
-                            </tr>
-                        </table>
+                                    <div class="filter-group">
+                                        <label class="filter-label">Estado</label>
+                                        <asp:DropDownList ID="ddlEstado" runat="server" CssClass="filter-input-inidencias">
+                                            <asp:ListItem Text="Todos" Value="0" />
+                                            <asp:ListItem Text="En Progreso" Value="1" />
+                                            <asp:ListItem Text="Completo" Value="2" />
+                                            <asp:ListItem Text="Abierto" Value="3" />
+                                        </asp:DropDownList>
+                                    </div>
 
+                                    <button class="new-incident-btn">
+                                        <i class="fas fa-plus"></i>Nueva Incidencia
+                                    </button>
+                                </div>
+
+                                <asp:GridView ID="gvIncidencias" runat="server" AutoGenerateColumns="false" CssClass="incidents-table"
+                                    OnRowCommand="gvIncidencias_RowCommand">
+                                    <Columns>
+                                        <asp:BoundField DataField="ID" HeaderText="ID" />
+                                        <asp:BoundField DataField="Nombre" HeaderText="Nombre" />
+                                        <asp:BoundField DataField="Categoria" HeaderText="Categoria" />
+                                        <asp:TemplateField HeaderText="Estado">
+                                            <ItemTemplate>
+                                                <div class="status-badge <%# GetStatusClass(Eval("Estado").ToString()) %>">
+                                                    <%# Eval("Estado") %>
+                                                </div>
+                                            </ItemTemplate>
+                                        </asp:TemplateField>
+                                        <asp:TemplateField HeaderText="Prioridad">
+                                            <ItemTemplate>
+                                                <div class="status-badge <%# GetPriorityClass(Eval("Prioridad").ToString()) %>">
+                                                    <%# Eval("Prioridad") %>
+                                                </div>
+                                            </ItemTemplate>
+                                        </asp:TemplateField>
+                                        <asp:BoundField DataField="Asignado" HeaderText="Asignado" />
+                                        <asp:TemplateField HeaderText="Acción">
+                                            <ItemTemplate>
+                                                <asp:LinkButton ID="btnVer" runat="server" CommandName="Ver" CommandArgument='<%# Eval("ID") %>' CssClass="action-btn">
+                        <i class="fas fa-eye"></i>
+                                                </asp:LinkButton>
+                                                <asp:LinkButton ID="btnEditar" runat="server" CommandName="Editar" CommandArgument='<%# Eval("ID") %>' CssClass="action-btn">
+                        <i class="fas fa-edit"></i>
+                                                </asp:LinkButton>
+                                                <asp:LinkButton ID="btnEliminar" runat="server" CommandName="Eliminar" CommandArgument='<%# Eval("ID") %>' CssClass="action-btn">
+                        <i class="fas fa-trash-alt"></i>
+                                                </asp:LinkButton>
+                                            </ItemTemplate>
+                                        </asp:TemplateField>
+                                    </Columns>
+                                </asp:GridView>
+                            </div>
+                        </div>
                     </div>
 
                 </div>
+
 
                 <div id="nuevo" class="section" style="display: none;">
-                    <div>
-                        <br />
-                        <br />
-                    </div>
-                    <div class="nuevo-container">
-                        <section class="titulo-container">
-                            <h2>Registrar incidencias</h2>
-                            <div class="titulo-line"></div>
-                        </section>
-                        <form>
-                            <div class="form-group">
-                                <label for="categoria">Categoría:</label>
-                                <select id="categoria" name="categoria">
-                                    <option value="general">General</option>
-                                    <option value="tecnica">Técnica</option>
-                                    <option value="soporte">Soporte</option>
-                                </select>
+                    <div id="formReportarIncidencia" runat="server">
+                        <div class="report-container">
+                            <h1 class="report-title">REPORTAR INICDENCIA</h1>
+
+                            <div class="report-group">
+                                <label for="txtTitulo" class="report-label">Título:</label>
+                                <asp:TextBox ID="TextBox1" runat="server" CssClass="report-control" required="required"></asp:TextBox>
                             </div>
-                            <div class="form-group">
-                                <label for="titulo">Título:</label>
-                                <input type="text" id="titulo" name="titulo" placeholder="Ingrese el título">
+
+                            <div class="report-group">
+                                <label for="ddlCategoria" class="report-label">Categoría:</label>
+                                <asp:DropDownList ID="ddlCategoria" runat="server" CssClass="form-control">
+                                    <asp:ListItem Text="Seleccione una categoría" Value="" Selected="True"></asp:ListItem>
+                                    <asp:ListItem Text="Hardware" Value="Hardware"></asp:ListItem>
+                                    <asp:ListItem Text="Software" Value="Software"></asp:ListItem>
+                                    <asp:ListItem Text="Red" Value="Red"></asp:ListItem>
+                                    <asp:ListItem Text="Seguridad" Value="Seguridad"></asp:ListItem>
+                                    <asp:ListItem Text="Otros" Value="Otros"></asp:ListItem>
+                                </asp:DropDownList>
+                                <asp:RequiredFieldValidator ID="rfvCategoria" runat="server"
+                                    ControlToValidate="ddlCategoria"
+                                    InitialValue=""
+                                    ErrorMessage="Por favor seleccione una categoría"
+                                    Display="Dynamic"
+                                    ForeColor="Red">
+                                </asp:RequiredFieldValidator>
                             </div>
-                            <div class="form-group">
-                                <label for="descripcion">Descripción:</label>
-                                <textarea id="descripcion" name="descripcion"
-                                    placeholder="Ingrese la descripción"></textarea>
+
+                            <div class="report-group">
+                                <label for="txtDescripcion" class="report-label">Descripción:</label>
+                                <asp:TextBox ID="TextBox2" runat="server" CssClass="report-control"
+                                    TextMode="MultiLine" required="required"></asp:TextBox>
                             </div>
-                            <div class="image-section">
-                                <img src="placeholder.png" alt="Imagen seleccionada">
-                                <div>
-                                    <button type="button">Seleccione</button>
-                                    <button type="button">Ver</button>
+
+                            <div class="report-group">
+                                <label class="report-label">Adjuntar Archivos</label>
+                                <div class="file-upload-area">
+                                    <svg class="file-upload-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v4h3l-4 4-4-4h3z" />
+                                    </svg>
+                                    <p class="file-upload-text">Arrastra o haz click para subir imagenes</p>
+                                    <asp:FileUpload ID="fileUpload" runat="server" CssClass="file-upload-input" AllowMultiple="true" />
                                 </div>
                             </div>
-                            <button type="submit" class="submit-btn">Enviar</button>
-                        </form>
+
+                            <div class="buttons-container">
+                                <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" CssClass="btn btn-cancel"
+                                    OnClick="btnCancelar_Click" CausesValidation="false" />
+                                <asp:Button ID="btnGuardar" runat="server" Text="Guardar Cambios" CssClass="btn btn-save"
+                                    OnClick="btnGuardar_Click" />
+                            </div>
+                        </div>
                     </div>
-
-
                 </div>
+
 
                 <div id="editar" class="section" style="display: none;">
-                    <div>
-                        <br />
-                        <br />
-                    </div>
-                    <div class="ticket-container">
-                        <div class="ticket-header">Editar ticket</div>
-                        <hr class="ticket-divider" />
-                        <div class="ticket-details">
-                            <div class="ticket-info">
-                                <p><strong>Categoría:</strong> Software</p>
-                                <p><strong>Fecha:</strong> 20-01-2025</p>
-                                <p><strong>Título:</strong> Visual</p>
-                                <p><strong>Descripción:</strong> No carga el visual</p>
+                    <div id="Div1" runat="server">
+                        <div class="report-container">
+                            <h1 class="report-title">EDITAR INICDENCIA</h1>
+
+                            <div class="report-group">
+                                <label for="txtTitulo" class="report-label">Título:</label>
+                                <asp:TextBox ID="TextBox3" runat="server" CssClass="report-control" required="required"></asp:TextBox>
                             </div>
-                            <div class="ticket-image">
-                                <img src="https://via.placeholder.com/100" alt="Imagen de ticket" />
-                                <button type="button">Seleccione</button>
-                                <button type="button">Ver</button>
+
+                            <div class="report-group">
+                                <label for="ddlCategoria" class="report-label">Categoría:</label>
+                                <asp:DropDownList ID="DropDownList2" runat="server" CssClass="form-control">
+                                    <asp:ListItem Text="Seleccione una categoría" Value="" Selected="True"></asp:ListItem>
+                                    <asp:ListItem Text="Hardware" Value="Hardware"></asp:ListItem>
+                                    <asp:ListItem Text="Software" Value="Software"></asp:ListItem>
+                                    <asp:ListItem Text="Red" Value="Red"></asp:ListItem>
+                                    <asp:ListItem Text="Seguridad" Value="Seguridad"></asp:ListItem>
+                                    <asp:ListItem Text="Otros" Value="Otros"></asp:ListItem>
+                                </asp:DropDownList>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server"
+                                    ControlToValidate="ddlCategoria"
+                                    InitialValue=""
+                                    ErrorMessage="Por favor seleccione una categoría"
+                                    Display="Dynamic"
+                                    ForeColor="Red">
+                                </asp:RequiredFieldValidator>
                             </div>
-                        </div>
-                        <div class="ticket-form-section">
-                            <div class="ticket-form-group">
-                                <asp:TextBox ID="txtCategoria" runat="server" CssClass="form-control"
-                                    placeholder="Categoría"></asp:TextBox>
-                                <asp:TextBox ID="TextBox4" runat="server" CssClass="form-control" placeholder="Fecha">
-                                </asp:TextBox>
+
+                            <div class="report-group">
+                                <label for="txtDescripcion" class="report-label">Descripción:</label>
+                                <asp:TextBox ID="TextBox4" runat="server" CssClass="report-control"
+                                    TextMode="MultiLine" required="required"></asp:TextBox>
                             </div>
-                            <div class="ticket-form-group">
-                                <asp:TextBox ID="txtTitulo" runat="server" CssClass="form-control" placeholder="Título">
-                                </asp:TextBox>
-                                <asp:TextBox ID="txtDescripcion" runat="server" CssClass="form-control"
-                                    TextMode="MultiLine" Rows="4" placeholder="Descripción"></asp:TextBox>
+
+                            <div class="report-group">
+                                <label class="report-label">Adjuntar Archivos</label>
+                                <div class="file-upload-area">
+                                    <svg class="file-upload-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v4h3l-4 4-4-4h3z" />
+                                    </svg>
+                                    <p class="file-upload-text">Arrastra o haz click para subir imagenes</p>
+                                    <asp:FileUpload ID="fileUpload1" runat="server" CssClass="file-upload-input" AllowMultiple="true" />
+                                </div>
                             </div>
-                            <asp:Button ID="Button1" runat="server" CssClass="ticket-btn-update" Text="Actualizar"/>
+
+                            <div class="buttons-container">
+                                <asp:Button ID="Button1" runat="server" Text="Cancelar" CssClass="btn btn-cancel"
+                                    OnClick="btnCancelar_Click" CausesValidation="false" />
+                                <asp:Button ID="Button2" runat="server" Text="Guardar Cambios" CssClass="btn btn-save"
+                                    OnClick="btnGuardar_Click" />
+                            </div>
                         </div>
                     </div>
                 </div>
 
+
                 <div id="buscar" class="section" style="display: none;">
-                    <div class="search-title">Buscar</div>
-                    <hr class="separator" />
-                    <div class="opciones">
-                        <asp:TextBox ID="txtBuscar" runat="server" Placeholder="Buscar..."></asp:TextBox>
-                        <asp:DropDownList ID="ddlCategoria" runat="server">
-                        </asp:DropDownList>
-                        <asp:DropDownList ID="ddlTipo" runat="server">
-                        </asp:DropDownList>
+                    <div class="Busque-content">
+                        <h1>Busqueda de incidencias</h1>
+                        <br />
+                        <div class="search-container-busque">
+                            <div class="search-fields">
+                                <div class="search-field">
+                                    <label for="txtIncidenciaID">ID Incidencia</label>
+                                    <asp:TextBox ID="txtIncidenciaID" runat="server" placeholder="Buscar por ID"></asp:TextBox>
+                                </div>
+                                <div class="search-field">
+                                    <label for="ddlEstado">Estado</label>
+                                    <asp:DropDownList ID="DropDownList1" runat="server">
+                                        <asp:ListItem Text="Todos" Value="0" Selected="True"></asp:ListItem>
+                                        <asp:ListItem Text="Abierto" Value="1"></asp:ListItem>
+                                        <asp:ListItem Text="En Progreso" Value="2"></asp:ListItem>
+                                        <asp:ListItem Text="Completo" Value="3"></asp:ListItem>
+                                    </asp:DropDownList>
+                                </div>
+                                <div class="search-field">
+                                    <label for="txtFecha">Fecha</label>
+                                    <asp:TextBox ID="txtFecha" runat="server" placeholder="dd/mm/aaaa" TextMode="Date"></asp:TextBox>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="results-container">
+                            <h2>Resultados</h2>
+                            <br />
+                            <asp:Repeater ID="rptIncidencias" runat="server">
+                                <ItemTemplate>
+                                    <div class="result-item">
+                                        <div class="result-id">
+                                            <%# Eval("ID") %>
+                                        </div>
+                                        <div class="result-details">
+                                            <div class="result-name"><%# Eval("Nombre") %></div>
+                                            <div class="result-description"><%# Eval("Descripcion") %></div>
+                                        </div>
+                                        <div class="result-status <%# Eval("EstadoCSS") %>">
+                                            <%# Eval("Estado") %>
+                                        </div>
+                                        <div class="arrow-icon">→</div>
+                                    </div>
+                                </ItemTemplate>
+                            </asp:Repeater>
+                        </div>
                     </div>
-                    <div class="knowledge-base">
-                        <h1>Base de Conocimiento</h1>
-                        <div class="divider"></div>
-                        <div class="columns">
-                            <div class="column">
-                                <h2>Problemas comunes</h2>
-                                <ul>
-                                    <li>Error: contraseña incorrecta.</li>
-                                    <li>No tengo permisos para abrir un archivo.</li>
-                                    <li>Problemas de rendimiento en la plataforma.</li>
-                                    <li>Sin acceso a internet.</li>
-                                </ul>
+                </div>
+
+
+                <div id="vercondetalles" class="section" style="display: none;">
+                    <div class="m-content">
+                        <div class="ticket-container">
+                            <div class="ticket-header">
+                                <div>
+                                    <div class="ticket-title">Al iniciar sesión se presento la BIOS</div>
+                                    <div class="ticket-date">Creado el 5 de febrero del 2025</div>
+                                </div>
+                                <div class="status-badges">
+                                    <span class="badge badge-critical">Crítico</span>
+                                    <span class="badge badge-complete">Completo</span>
+                                </div>
                             </div>
-                            <div class="column">
-                                <h2>Errores Técnicos</h2>
-                                <ul>
-                                    <li>Detalles de error #98765.</li>
-                                    <li>Error 500 en el servidor.</li>
-                                    <li>Requisitos para el sistema X.</li>
-                                </ul>
-                            </div>
-                            <div class="column">
-                                <h2>Categorías o Áreas</h2>
-                                <ul>
-                                    <li>Errores de aplicación en el sistema contable.</li>
-                                    <li>Reparación de laptops.</li>
-                                    <li>Corte de internet en oficinas.</li>
-                                    <li>Error en correo corporativo.</li>
-                                </ul>
-                            </div>
-                            <div class="column">
-                                <h2>Soluciones</h2>
-                                <ul>
-                                    <li>Cómo recuperar mi contraseña.</li>
-                                    <li>Errores frecuentes en el sistema de facturación.</li>
-                                    <li>Solución temporal para caídas de red.</li>
-                                </ul>
+
+                            <div class="ticket-content">
+                                <div class="ticket-details">
+                                    <div class="ticket-section">
+                                        <div class="section-title">Descripción</div>
+                                        <p>Al encender el ordenador no inicio de manera normal sino que ento en la BIOS</p>
+                                    </div>
+
+                                    <div class="ticket-section">
+                                        <div class="section-title">Archivos Adjuntos</div>
+                                        <div class="file-attachment">
+                                            <div class="file-icon">
+                                                <img src="images/image-icon.png" alt="Image" width="24" height="24" />
+                                            </div>
+                                            <div>Error_Bios.png</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="ticket-section">
+                                        <div class="section-title">Comentarios</div>
+                                        <asp:TextBox ID="txtComentarios" runat="server" CssClass="comments-box" TextMode="MultiLine"></asp:TextBox>
+                                    </div>
+                                </div>
+
+                                <div class="ticket-metadata">
+                                    <div class="ticket-section">
+                                        <div class="section-title">Detalles</div>
+
+                                        <div class="metadata-item">
+                                            <div class="metadata-label">Asignado a:</div>
+                                            <div class="metadata-value">Juanperez@gmail.com</div>
+                                        </div>
+
+                                        <div class="metadata-item">
+                                            <div class="metadata-label">Reportado por:</div>
+                                            <div class="metadata-value">Emiliapaez@gmail.com</div>
+                                        </div>
+
+                                        <div class="metadata-item">
+                                            <div class="metadata-label">Fecha límite:</div>
+                                            <div class="metadata-value">14/03/2025</div>
+                                        </div>
+
+                                        <div class="metadata-item">
+                                            <div class="metadata-label">Categoría:</div>
+                                            <div class="metadata-value">Software</div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1219,7 +2160,7 @@
                         }
                     }
                 </script>--%>
-            </contenttemplate>
+            </ContentTemplate>
         </asp:UpdatePanel>
 
     </form>
