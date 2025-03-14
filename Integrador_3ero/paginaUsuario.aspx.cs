@@ -187,9 +187,9 @@ namespace Integrador_3ero
                 try
                 {
                     // Get form values
-                    string titulo = txtTitulo.Text;
-                    string categoria = ddlCategoria.SelectedValue;
-                    string descripcion = txtDescripcion.Text;
+                    //string titulo = txtTitulo.Text;
+                    //string categoria = ddlCategoria.SelectedValue;
+                    //string descripcion = txtDescripcion.Text;
 
                     // Process file upload if files were selected
                     if (fileUpload.HasFiles)

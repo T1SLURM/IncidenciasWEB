@@ -331,7 +331,7 @@
     <form id="form1" runat="server">
 
         <header class="d-flex justify-content-between align-items-center">
-            <img src="Imagenes/Component 8.png" alt="Logo">
+            <img src="Imagenes/eqweqwe 1.png" alt="Logo" style="width: 110px; height: auto;">
             <nav>
                 <ul>
                     <li><a href="#services">Servicios</a></li>

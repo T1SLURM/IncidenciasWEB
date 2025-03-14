@@ -1751,7 +1751,7 @@
                     <div class="perfil-content">
                         <div class="profile-sidebar">
                             <div class="profile-picture">
-                                <asp:Image ID="imgProfilePic" runat="server" ImageUrl="~/images/profile-picture.png" AlternateText="Profile Picture" />
+                                <asp:Image ID="imgProfilePic" runat="server" ImageUrl="Imagenes/premium_photo-1689568126014-06fea9d5d341.jpg" AlternateText="Profile Picture" />
                             </div>
                             <div class="profile-info">
                                 <div class="profile-name">
@@ -1841,7 +1841,7 @@
                             </div>
                             <div class="profile-section-editar">
                                 <div class="profile-picture-editar">
-                                    <asp:Image ID="Image1" runat="server" ImageUrl="~/images/profile-juan.jpg" AlternateText="Profile Picture" />
+                                    <asp:Image ID="Image1" runat="server" ImageUrl="Imagenes/premium_photo-1689568126014-06fea9d5d341.jpg" AlternateText="Profile Picture" />
                                     <div class="camera-icon">
                                         <asp:LinkButton ID="lnkChangePicture" runat="server">📷</asp:LinkButton>
                                     </div>
@@ -2223,8 +2223,8 @@
                             </div>
 
                             <div class="button-group">
-                                <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" CssClass="btn btn-secondary" OnClick="btnCancelar_Click" />
-                                <asp:Button ID="btnEnviar" runat="server" Text="Enviar" CssClass="btn btn-primary" OnClick="btnEnviar_Click" />
+                                <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" CssClass="btn btn-secondary"  />
+                                <asp:Button ID="btnEnviar" runat="server" Text="Enviar" CssClass="btn btn-primary" />
                             </div>
                         </div>
                     </div>
