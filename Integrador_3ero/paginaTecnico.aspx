@@ -1612,6 +1612,7 @@
                     </div>
                 </div>
             </ContentTemplate>
+        
         </asp:UpdatePanel>
 
         <script>
@@ -1654,7 +1655,6 @@
             // Ejecuta la función cuando la página termina de cargar
             window.addEventListener("load", () => addMessage());
         </script>
-        </contenttemplate>
 
     </form>
 </body>
